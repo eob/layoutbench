@@ -1,0 +1,24 @@
+{
+  "name": "layoutbench",
+  "version": "0.1.0",
+  "description": "LayoutBench: Visual layout direction, alignment, justification, gap spacing, and padding identification benchmark for multimodal vision-language models.",
+  "type": "module",
+  "scripts": {
+    "render": "bun run src/render.ts",
+    "test:ts": "bun test src",
+    "test:python": ".venv/bin/python -m pytest",
+    "test": "bun run test:ts && bun run test:python",
+    "benchmark": ".venv/bin/python -m baseline.runner",
+    "benchmark:mock": ".venv/bin/python -m baseline.runner --mock",
+    "export": ".venv/bin/python -m baseline.export_structured"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "playwright": "^1.63.0"
+  }
+}

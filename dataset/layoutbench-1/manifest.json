@@ -1,0 +1,1816 @@
+{
+  "benchmark_id": "layoutbench-1",
+  "name": "LayoutBench-1",
+  "version": "1.0.0",
+  "description": "Visual layout direction, alignment, justification, gap spacing, and padding identification benchmark for multimodal vision-language models.",
+  "total_tasks": 100,
+  "canonical_canvas": {
+    "width_px": 560,
+    "height_px": 380,
+    "card_width_px": 480,
+    "card_height_px": 300,
+    "dpr": 2
+  },
+  "tasks": [
+    {
+      "taskId": "layoutbench-001",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-001.png",
+      "imageFilename": "layoutbench-001.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-002",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-002.png",
+      "imageFilename": "layoutbench-002.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-003",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-003.png",
+      "imageFilename": "layoutbench-003.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-004",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-004.png",
+      "imageFilename": "layoutbench-004.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-005",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-005.png",
+      "imageFilename": "layoutbench-005.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-006",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-006.png",
+      "imageFilename": "layoutbench-006.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 4,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-007",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-007.png",
+      "imageFilename": "layoutbench-007.png",
+      "groundTruth": {
+        "direction": "grid-3col",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 6,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-008",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-008.png",
+      "imageFilename": "layoutbench-008.png",
+      "groundTruth": {
+        "direction": "grid-3col",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 6,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-009",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-009.png",
+      "imageFilename": "layoutbench-009.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-010",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-010.png",
+      "imageFilename": "layoutbench-010.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-011",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-011.png",
+      "imageFilename": "layoutbench-011.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-012",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-012.png",
+      "imageFilename": "layoutbench-012.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-013",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-013.png",
+      "imageFilename": "layoutbench-013.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "end",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-014",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-014.png",
+      "imageFilename": "layoutbench-014.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "end",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-015",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-015.png",
+      "imageFilename": "layoutbench-015.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-016",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-016.png",
+      "imageFilename": "layoutbench-016.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-017",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-017.png",
+      "imageFilename": "layoutbench-017.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-around",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-018",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-018.png",
+      "imageFilename": "layoutbench-018.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-around",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-019",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-019.png",
+      "imageFilename": "layoutbench-019.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "start",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-020",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-020.png",
+      "imageFilename": "layoutbench-020.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-021",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-021.png",
+      "imageFilename": "layoutbench-021.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "end",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-022",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-022.png",
+      "imageFilename": "layoutbench-022.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-023",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-023.png",
+      "imageFilename": "layoutbench-023.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "start",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-024",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-024.png",
+      "imageFilename": "layoutbench-024.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-025",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-025.png",
+      "imageFilename": "layoutbench-025.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "end",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-026",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-026.png",
+      "imageFilename": "layoutbench-026.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-027",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-027.png",
+      "imageFilename": "layoutbench-027.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-028",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-028.png",
+      "imageFilename": "layoutbench-028.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-029",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-029.png",
+      "imageFilename": "layoutbench-029.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "4px",
+        "gap_px": 4,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-030",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-030.png",
+      "imageFilename": "layoutbench-030.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "4px",
+        "gap_px": 4,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-031",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-031.png",
+      "imageFilename": "layoutbench-031.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-032",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-032.png",
+      "imageFilename": "layoutbench-032.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-033",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-033.png",
+      "imageFilename": "layoutbench-033.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-034",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-034.png",
+      "imageFilename": "layoutbench-034.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-035",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-035.png",
+      "imageFilename": "layoutbench-035.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-036",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-036.png",
+      "imageFilename": "layoutbench-036.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-037",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-037.png",
+      "imageFilename": "layoutbench-037.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "24px",
+        "gap_px": 24,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-038",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-038.png",
+      "imageFilename": "layoutbench-038.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "24px",
+        "gap_px": 24,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-039",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-039.png",
+      "imageFilename": "layoutbench-039.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "32px",
+        "gap_px": 32,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-040",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-040.png",
+      "imageFilename": "layoutbench-040.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "32px",
+        "gap_px": 32,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-041",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-041.png",
+      "imageFilename": "layoutbench-041.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "8px",
+        "padding_px": 8,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-042",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-042.png",
+      "imageFilename": "layoutbench-042.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-043",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-043.png",
+      "imageFilename": "layoutbench-043.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-044",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-044.png",
+      "imageFilename": "layoutbench-044.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "32px",
+        "padding_px": 32,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-045",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-045.png",
+      "imageFilename": "layoutbench-045.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-046",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-046.png",
+      "imageFilename": "layoutbench-046.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-047",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-047.png",
+      "imageFilename": "layoutbench-047.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "24px",
+        "gap_px": 24,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-048",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-048.png",
+      "imageFilename": "layoutbench-048.png",
+      "groundTruth": {
+        "direction": "grid-3col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 6,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-049",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-049.png",
+      "imageFilename": "layoutbench-049.png",
+      "groundTruth": {
+        "direction": "grid-3col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 6,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-050",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-050.png",
+      "imageFilename": "layoutbench-050.png",
+      "groundTruth": {
+        "direction": "grid-3col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "24px",
+        "gap_px": 24,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 6,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-051",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-051.png",
+      "imageFilename": "layoutbench-051.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-052",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-052.png",
+      "imageFilename": "layoutbench-052.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "end",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-053",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-053.png",
+      "imageFilename": "layoutbench-053.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-054",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-054.png",
+      "imageFilename": "layoutbench-054.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-055",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-055.png",
+      "imageFilename": "layoutbench-055.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-056",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-056.png",
+      "imageFilename": "layoutbench-056.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 4,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-057",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-057.png",
+      "imageFilename": "layoutbench-057.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-058",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-058.png",
+      "imageFilename": "layoutbench-058.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-059",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-059.png",
+      "imageFilename": "layoutbench-059.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-060",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-060.png",
+      "imageFilename": "layoutbench-060.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-061",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-061.png",
+      "imageFilename": "layoutbench-061.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-062",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-062.png",
+      "imageFilename": "layoutbench-062.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-063",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-063.png",
+      "imageFilename": "layoutbench-063.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-064",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-064.png",
+      "imageFilename": "layoutbench-064.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "center",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-065",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-065.png",
+      "imageFilename": "layoutbench-065.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "end",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-066",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-066.png",
+      "imageFilename": "layoutbench-066.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "space-between",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-067",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-067.png",
+      "imageFilename": "layoutbench-067.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "start",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-068",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-068.png",
+      "imageFilename": "layoutbench-068.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "end",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-069",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-069.png",
+      "imageFilename": "layoutbench-069.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "stretch",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-070",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-070.png",
+      "imageFilename": "layoutbench-070.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "end",
+        "align_items": "start",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-071",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-071.png",
+      "imageFilename": "layoutbench-071.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "end",
+        "align_items": "end",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-072",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-072.png",
+      "imageFilename": "layoutbench-072.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "end",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-073",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-073.png",
+      "imageFilename": "layoutbench-073.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "start",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-074",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-074.png",
+      "imageFilename": "layoutbench-074.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "end",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-075",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-075.png",
+      "imageFilename": "layoutbench-075.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-076",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-076.png",
+      "imageFilename": "layoutbench-076.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-around",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-077",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-077.png",
+      "imageFilename": "layoutbench-077.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-078",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-078.png",
+      "imageFilename": "layoutbench-078.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-079",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-079.png",
+      "imageFilename": "layoutbench-079.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-080",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-080.png",
+      "imageFilename": "layoutbench-080.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "4px",
+        "gap_px": 4,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 5,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-081",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-081.png",
+      "imageFilename": "layoutbench-081.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 5,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-082",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-082.png",
+      "imageFilename": "layoutbench-082.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 5,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-083",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-083.png",
+      "imageFilename": "layoutbench-083.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "end",
+        "align_items": "center",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 2,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-084",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-084.png",
+      "imageFilename": "layoutbench-084.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "space-between",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-085",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-085.png",
+      "imageFilename": "layoutbench-085.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "space-between",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-086",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-086.png",
+      "imageFilename": "layoutbench-086.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "8px",
+        "gap_px": 8,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 4,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-087",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-087.png",
+      "imageFilename": "layoutbench-087.png",
+      "groundTruth": {
+        "direction": "grid-3col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 6,
+        "content_variant": "uniform",
+        "theme": "dark"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-088",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-088.png",
+      "imageFilename": "layoutbench-088.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-089",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-089.png",
+      "imageFilename": "layoutbench-089.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-090",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-090.png",
+      "imageFilename": "layoutbench-090.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-091",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-091.png",
+      "imageFilename": "layoutbench-091.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "center",
+        "align_items": "stretch",
+        "gap": "0px",
+        "gap_px": 0,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-092",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-092.png",
+      "imageFilename": "layoutbench-092.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "8px",
+        "padding_px": 8,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-093",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-093.png",
+      "imageFilename": "layoutbench-093.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "16px",
+        "padding_px": 16,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-094",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-094.png",
+      "imageFilename": "layoutbench-094.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-095",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-095.png",
+      "imageFilename": "layoutbench-095.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "32px",
+        "padding_px": 32,
+        "item_count": 3,
+        "content_variant": "uniform",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-096",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-096.png",
+      "imageFilename": "layoutbench-096.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "start",
+        "align_items": "center",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-097",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-097.png",
+      "imageFilename": "layoutbench-097.png",
+      "groundTruth": {
+        "direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "gap": "16px",
+        "gap_px": 16,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-098",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-098.png",
+      "imageFilename": "layoutbench-098.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "start",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-099",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-099.png",
+      "imageFilename": "layoutbench-099.png",
+      "groundTruth": {
+        "direction": "column",
+        "justify_content": "start",
+        "align_items": "end",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 3,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    },
+    {
+      "taskId": "layoutbench-100",
+      "imagePath": "/mnt/disks/data/layoutbench/dataset/rendered/layoutbench-100.png",
+      "imageFilename": "layoutbench-100.png",
+      "groundTruth": {
+        "direction": "grid-2col",
+        "justify_content": "start",
+        "align_items": "stretch",
+        "gap": "12px",
+        "gap_px": 12,
+        "padding": "24px",
+        "padding_px": 24,
+        "item_count": 4,
+        "content_variant": "variable",
+        "theme": "light"
+      },
+      "prompt": "Analyze the container layout in this UI screenshot.\nThe image shows a standardized UI card container rendered on a canvas with child elements laid out inside it.\n\nEvaluate these 5 core layout attributes and respond ONLY with a valid JSON object matching this schema:\n{\n  \"direction\": \"row\" | \"column\" | \"grid-2col\" | \"grid-3col\",\n  \"justify_content\": \"start\" | \"center\" | \"end\" | \"space-between\" | \"space-around\",\n  \"align_items\": \"start\" | \"center\" | \"end\" | \"stretch\",\n  \"gap\": \"0px\" | \"4px\" | \"8px\" | \"12px\" | \"16px\" | \"24px\" | \"32px\",\n  \"padding\": \"8px\" | \"16px\" | \"24px\" | \"32px\"\n}\n\nDefinitions:\n- direction: the primary layout flow of items inside the container (\"row\", \"column\", \"grid-2col\", \"grid-3col\").\n- justify_content: main-axis item distribution (\"start\", \"center\", \"end\", \"space-between\", \"space-around\").\n- align_items: cross-axis item alignment (\"start\", \"center\", \"end\", \"stretch\").\n- gap: spacing between neighboring child items (\"0px\", \"4px\", \"8px\", \"12px\", \"16px\", \"24px\", \"32px\").\n- padding: internal padding inset between the container border and the outer child items (\"8px\", \"16px\", \"24px\", \"32px\")."
+    }
+  ]
+}
