@@ -14,18 +14,9 @@ from urllib.parse import quote
 
 import httpx
 from PIL import Image
-from pydantic import BaseModel, Field
 
 
 ErrorKind = Literal["credits", "rate_limit", "authentication", "unavailable", "invalid_response", "other"]
-
-
-class LayoutPrediction(BaseModel):
-    direction: Literal["row", "column", "grid-2col", "grid-3col"]
-    justify_content: Literal["start", "center", "end", "space-between", "space-around"]
-    align_items: Literal["start", "center", "end", "stretch"]
-    gap: Literal["0px", "4px", "8px", "12px", "16px", "24px", "32px"]
-    padding: Literal["8px", "16px", "24px", "32px"]
 
 
 @dataclass

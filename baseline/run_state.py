@@ -180,6 +180,21 @@ class RunStore:
             ).fetchall()
         return {task_id: json.loads(result_json) for task_id, result_json in rows}
 
+    def attempts(self, run_id: str, model_id: str | None = None) -> list[dict]:
+        query = "SELECT rowid, attempt_id, model_id, task_id, result_json, cost_usd, created_at FROM attempts WHERE run_id = ?"
+        parameters: tuple = (run_id,)
+        if model_id is not None:
+            query += " AND model_id = ?"
+            parameters += (model_id,)
+        query += " ORDER BY rowid"
+        with self._lock:
+            rows = self._connection.execute(query, parameters).fetchall()
+        return [
+            {"sequence": sequence, "run_id": run_id, "attempt_id": attempt_id, "model_id": m_id, "task_id": task_id,
+             "result": json.loads(result_json), "cost_usd": cost, "created_at": created_at}
+            for sequence, attempt_id, m_id, task_id, result_json, cost, created_at in rows
+        ]
+
     def completed_results(self, run_id: str, model_id: str) -> dict[str, dict]:
         return {task_id: result for task_id, result in self.results(run_id, model_id).items() if _is_completed(result)}
 
