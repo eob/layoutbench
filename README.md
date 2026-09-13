@@ -1,58 +1,40 @@
 # LayoutBench
 
-**LayoutBench** is a vision-language benchmark evaluating multimodal AI models on UI spatial geometry, layout flow direction, alignment, justification, gap spacing, and padding in software screenshots.
+**LayoutBench** is a vision-language benchmark evaluating multimodal AI models on spatial arrangement in rendered UI: flow direction, axis distribution and alignment, text columns and justification, and spacing around headers, regions, and table cells.
 
 It forms the third foundational benchmark in Ted Benson's design perception suite:
 1. [FontBench](https://github.com/eob/fontbench): Typography (family, category, weight, kerning, line-height)
 2. [BorderBench](https://github.com/eob/borderbench): Surfaces & Edges (stroke width, style, sides, corner radius curvature, elevation/shadow)
-3. **LayoutBench**: Spatial Geometry & Flow (direction, justify-content, align-items, gap tokens, padding tokens)
+3. **LayoutBench**: Spatial Geometry & Flow (direction, distribution, alignment, columns, justification, spacing)
+4. [ColorBench](https://github.com/eob/colorbench): Color (matching, lightness, chroma, hue, binding, gradients, reconstruction)
 
 ---
 
-## Dimensions Evaluated
+## Question bank (208 tasks, 13 families, 150 images)
 
-LayoutBench evaluates models across a standardized 480×300 CSS px card container rendered on high-resolution Retina canvases (2× DPR, 560×380 px) across 5 core spatial dimensions:
+Every stimulus renders on a frozen 800x600 CSS px canvas at 2x DPR with a pinned body font. One scored question per task; no answer text appears in any pixel.
 
-1. **Layout Flow Direction** (`direction`):
-   - `row`: Horizontal flexbox flow
-   - `column`: Vertical flexbox stack
-   - `grid-2col`: Two-column CSS grid matrix
-   - `grid-3col`: Three-column CSS grid matrix
+**Abstract side** (neutral cards, no text in pixels):
 
-2. **Main-Axis Justification** (`justify_content`):
-   - `start`: Packed to leading edge
-   - `center`: Centered along main axis
-   - `end`: Packed to trailing edge
-   - `space-between`: Distributed edge-to-edge
-   - `space-around`: Distributed with half-space at edges
+1. **Flow** (`flow`, 16): row, column, 2-col grid, or 3-col grid.
+2. **Distribution** (`distribute`, 20): packed at start, centered, packed at end, edge-to-edge, or half-space at edges; rows and columns.
+3. **Alignment** (`align`, 16): cross-axis start, center, end, or stretch; variable-size items.
+4. **Gap tokens** (`gap`, 16): spacing between items from {0, 4, 8, 12, 16, 24, 32}px, nearest-neighbor distractors.
+5. **Container padding** (`pad`, 16): edge-to-item spacing from {8, 16, 24, 32, 48}px.
 
-3. **Cross-Axis Alignment** (`align_items`):
-   - `start`: Aligned to cross-axis origin (top in row, left in column)
-   - `center`: Centered along cross axis
-   - `end`: Aligned to cross-axis end (bottom in row, right in column)
-   - `stretch`: Stretched to fill full cross-axis dimension
+**Document side** (fixed neutral copy, pinned font):
 
-4. **Gap Spacing Tokens** (`gap`):
-   - `0px`, `4px`, `8px`, `12px`, `16px`, `24px`, `32px`
+6. **Columns** (`columns`, 12): one, two, or three text columns.
+7. **Text justification** (`textjustify`, 16): left, centered, right, or both-edges alignment.
+8. **Header padding** (`headerpad`, 18): more space above the header, below it, or equal.
+9. **Region padding** (`regionpad`, 16): padding around a content region from {8, 16, 24, 32, 48}px, bordered-card vs bare-canvas crossed.
+10. **Table padding** (`tablepad`, 12): cell text-to-border spacing from {4, 8, 12, 16}px.
 
-5. **Container Inset Padding Tokens** (`padding`):
-   - `8px`, `16px`, `24px`, `32px`
+**Numeric side** (px estimates on shared images):
 
-6. **Content Proportions & Themes**:
-   - `uniform` vs `variable` child item heights/widths (isolating cross-axis stretch vs center vs start)
-   - `light` vs `dark` themes
+11. **Gap estimate** (`gapnum`, 16), **header estimate** (`headerpx`, 18, above + below), **region estimate** (`regionpx`, 16).
 
----
-
-## Dataset Breakdown (100 Tasks)
-
-The benchmark comprises exactly 100 systematic tasks covering:
-- **Direction Sweeps**: Row vs Column vs Grid-2col vs Grid-3col
-- **Main-Axis Justification**: Start, Center, End, Space-Between, Space-Around across Row & Column
-- **Cross-Axis Alignment**: Start, Center, End, Stretch with variable height/width items
-- **Gap Spacing Grids**: Fine-grained metric sweeps from 0px (flush segmented controls) to 32px
-- **Container Inset Padding**: 8px through 32px
-- **UI Archetypes**: Segmented controls, navbar action bars, modal button rows, metric stat decks, form stacks, and settings lists.
+Every swept value is crossed against theme plus structural nuisances; spacing truth is decoded from rendered geometry. See [docs/methodology.md](docs/methodology.md).
 
 ---
 
@@ -66,53 +48,52 @@ python3 -m venv .venv
 .venv/bin/pip install -e .
 ```
 
-### 2. Render Benchmark Dataset
+### 2. Render the dataset
 
-Renders all 100 high-DPI screenshots with Playwright Chromium and generates `dataset/layoutbench-1/manifest.json`:
+Renders 150 high-DPI screenshots with Playwright Chromium and generates `dataset/layoutbench-v0.1/manifest.json` with decoded rects:
 
 ```bash
 bun run render
+bun run validate
 ```
 
-### 3. Run Benchmark Baseline
+### 3. Run the baseline
 
 ```bash
-# Run quick mock test
+# Quick mock test (no API calls)
 bun run benchmark:mock
 
-# Run real evaluation against frontier vision models
-.venv/bin/python baseline/runner.py --models gemini-3.1-pro-preview gemini-3.8-flash claude-sonnet-5 gpt-5.6-sol
+# Frozen release run against configured models
+.venv/bin/python -m baseline.runner --release 0.1.0 --run-id pilot-20260913 --max-tasks 208 --concurrency 6 --budget-usd 25
 ```
 
-### 4. Export Structured Summary
+### 4. Seal a run
 
 ```bash
-bun run export
+.venv/bin/python -m baseline.finalize --run-dir results/runs/0.1.0/pilot-20260913 --scope full
+.venv/bin/python -m baseline.finalize --run-dir results/runs/0.1.0/pilot-20260913 --verify
 ```
+
+See [releases/README.md](releases/README.md) and [releases/FINALIZATION.md](releases/FINALIZATION.md).
 
 ---
 
-## Manifest Task Format
+## Manifest task format
 
-Each task in `dataset/layoutbench-1/manifest.json` provides:
+Each task in `dataset/layoutbench-v0.1/manifest.json` provides:
+
 ```json
 {
-  "taskId": "layoutbench-001",
-  "imagePath": "/path/to/dataset/rendered/layoutbench-001.png",
-  "imageFilename": "layoutbench-001.png",
-  "groundTruth": {
-    "direction": "row",
-    "justify_content": "start",
-    "align_items": "center",
-    "gap": "12px",
-    "gap_px": 12,
-    "padding": "16px",
-    "padding_px": 16,
-    "item_count": 3,
-    "content_variant": "uniform",
-    "theme": "light"
-  },
-  "prompt": "Analyze the container layout in this UI screenshot..."
+  "taskId": "layoutbench-gap-01",
+  "family": "gap",
+  "groupId": "gap-01",
+  "imageFilename": "gap-01.png",
+  "imageSha256": "…",
+  "groundTruth": { "choice": "B" },
+  "prompt": "Look at the card in this image. …",
+  "design": { "kind": "abstract", "direction": "row", "gap_px": 16, "decoded": { "gap": 16.0 } },
+  "domText": "",
+  "rendered": { "width": 800, "height": 600, "dpr": 2, "colorSpace": "srgb", "font": { "path": "fonts/DejaVuSans.ttf", "sha256": "…" }, "regions": [ … ] }
 }
 ```
 
@@ -121,15 +102,9 @@ Each task in `dataset/layoutbench-1/manifest.json` provides:
 ## Testing
 
 ```bash
-# Test specimen generation and token integrity
+# Builder, crossing, and determinism tests
 bun test
 
-# Test evaluator scoring and SQLite state store
+# Protocol, grading, statistics, dataset gate, and state store tests
 .venv/bin/pytest tests
 ```
-
----
-
-## License
-
-MIT © Edward Benson

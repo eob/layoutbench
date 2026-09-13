@@ -10,7 +10,8 @@
     "test": "bun run test:ts && bun run test:python",
     "benchmark": ".venv/bin/python -m baseline.runner",
     "benchmark:mock": ".venv/bin/python -m baseline.runner --mock",
-    "export": ".venv/bin/python -m baseline.export_structured"
+    "validate": ".venv/bin/python -m baseline.validate_dataset",
+    "validate:release": ".venv/bin/python -m baseline.releases --release 0.1.0"
   },
   "devDependencies": {
     "@types/bun": "latest"
