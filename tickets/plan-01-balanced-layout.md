@@ -295,6 +295,6 @@ per-family pydantic schemas threaded through from the evaluator.
 | Release gate | `bun run validate:release` | 0.1.0 identity verified |
 | Mock campaign | `baseline.runner --mock` (full 208) | completes, always-A provider at chance |
 | Real smoke | 8 tasks, gemini-3.5-flash-lite | completes through provider path |
-| Finalize smoke | `baseline.finalize --scope full` on smoke run | seals and verifies |
+| Finalize smoke | `baseline.finalize --scope common` on 8-task smoke run (in a throwaway clone; scratch stays uncommitted) + `--verify` | seals and verifies |
 | Validator mutation tests | choice swaps, design flips, crossing breaks (throwaway /tmp copies) | all caught at the intended layer |
 
