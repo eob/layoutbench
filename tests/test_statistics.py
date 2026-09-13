@@ -13,7 +13,7 @@ def choice_row(choice="A", truth="A", valid=True):
     }
 
 
-def numeric_row(err=0.0, valid=True, bands=None):
+def numeric_row(err=0.0, valid=True, bands=None, truth=0):
     return {
         "family": "gapnum",
         "valid": valid,
@@ -22,6 +22,7 @@ def numeric_row(err=0.0, valid=True, bands=None):
         "err": err if valid else None,
         "key_errors": {"gap_px": err} if valid else None,
         "within_bands": bands if valid else None,
+        "ground_truth": {"gap_px": truth},
     }
 
 

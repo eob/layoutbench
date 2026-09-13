@@ -41,6 +41,11 @@ export function choiceLabels(family: LayoutFamily): string[] {
   switch (family) {
     case "distribute":
       return ["A", "B", "C", "D", "E"];
+    case "gap":
+      return ["A", "B", "C", "D", "E", "F", "G"];
+    case "pad":
+    case "regionpad":
+      return ["A", "B", "C", "D", "E"];
     case "columns":
     case "headerpad":
       return ["A", "B", "C"];

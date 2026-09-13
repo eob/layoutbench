@@ -12,6 +12,9 @@ from baseline.protocol import (
 def test_choice_labels_per_family():
     assert choice_labels("flow") == ["A", "B", "C", "D"]
     assert choice_labels("distribute") == ["A", "B", "C", "D", "E"]
+    assert choice_labels("gap") == ["A", "B", "C", "D", "E", "F", "G"]
+    assert choice_labels("pad") == ["A", "B", "C", "D", "E"]
+    assert choice_labels("regionpad") == ["A", "B", "C", "D", "E"]
     assert choice_labels("columns") == ["A", "B", "C"]
     assert choice_labels("headerpad") == ["A", "B", "C"]
     with pytest.raises(ValueError):
@@ -21,11 +24,14 @@ def test_choice_labels_per_family():
 def test_parse_choice_normalizes_case_and_whitespace():
     assert parse_prediction('{"choice": "c"}', "flow") == {"choice": "C"}
     assert parse_prediction('  {"choice":"B"}  ', "gap") == {"choice": "B"}
+    assert parse_prediction('{"choice": "g"}', "gap") == {"choice": "G"}
 
 
 def test_parse_rejects_bad_shapes():
     for raw, family in [
         ('{"choice": "F"}', "flow"),
+        ('{"choice": "H"}', "gap"),
+        ('{"choice": "F"}', "pad"),
         ('{"choice": "D"}', "columns"),
         ('{"choice": "E"}', "flow"),
         ('{"choice": "A", "extra": 1}', "flow"),
@@ -98,7 +104,7 @@ def test_prompts_cover_all_families():
     assert "gap_px" in get_prompt("gapnum")
     assert "above_px" in get_prompt("headerpx") and "below_px" in get_prompt("headerpx")
     assert "pad_px" in get_prompt("regionpx")
-    assert get_prompt("gap", ["8px", "12px", "16px", "24px"]).splitlines()[-2:] == [
-        "D: 24px",
+    assert get_prompt("gap", ["0px", "4px", "8px", "12px", "16px", "24px", "32px"]).splitlines()[-2:] == [
+        "G: 32px",
         'Return only a JSON object with one key, "choice", whose value is the selected option letter.',
     ]

@@ -29,12 +29,12 @@ LABELS = {
     "flow": ["A", "B", "C", "D"],
     "distribute": ["A", "B", "C", "D", "E"],
     "align": ["A", "B", "C", "D"],
-    "gap": ["A", "B", "C", "D"],
-    "pad": ["A", "B", "C", "D"],
+    "gap": ["A", "B", "C", "D", "E", "F", "G"],
+    "pad": ["A", "B", "C", "D", "E"],
     "columns": ["A", "B", "C"],
     "textjustify": ["A", "B", "C", "D"],
     "headerpad": ["A", "B", "C"],
-    "regionpad": ["A", "B", "C", "D"],
+    "regionpad": ["A", "B", "C", "D", "E"],
     "tablepad": ["A", "B", "C", "D"],
 }
 
@@ -49,6 +49,8 @@ PAD_TOKENS = [8, 16, 24, 32, 48]
 TABLE_TOKENS = [4, 8, 12, 16]
 TOKEN_SETS = {"gap": GAP_TOKENS, "pad": PAD_TOKENS, "regionpad": PAD_TOKENS,
               "tablepad": TABLE_TOKENS}
+TOKEN_KEYS = {"gap": "gap_px", "pad": "padding_px", "regionpad": "pad_px",
+              "tablepad": "cell_pad_px"}
 
 PALETTE = {
     "light": {"canvas": (241, 245, 249), "card": (255, 255, 255),
@@ -90,7 +92,7 @@ def expected_prompt(family: str, options: list[str] | None) -> str:
     template = load_prompts()[family]
     if "{options}" not in template:
         return template
-    letters = ["A", "B", "C", "D", "E"]
+    letters = ["A", "B", "C", "D", "E", "F", "G"]
     block = "\n".join(f"{letters[i]}: {value}" for i, value in enumerate(options or []))
     return template.replace("{options}", block)
 
@@ -196,20 +198,18 @@ def check_choice_ground_truth(tasks: list[dict]) -> None:
         if set(seen) != set(letters) or hi - lo > 1:
             raise ValueError(f"Unbalanced truth letters {family}: {seen}")
         if family in TOKEN_SETS:
-            check_token_options(family, members)
+            check_full_options(family, members)
 
 
-def nearest_neighbors(truth: int, tokens: list[int]) -> list[int]:
-    return sorted([t for t in tokens if t != truth], key=lambda t: abs(t - truth))[:3]
-
-
-def check_token_options(family: str, members: list[dict]) -> None:
+def check_full_options(family: str, members: list[dict]) -> None:
+    # Every task offers the whole token set, so the option set is identical
+    # across tasks and cannot leak the truth. Only the truth slot varies.
     tokens = TOKEN_SETS[family]
-    key = {"gap": "gap_px", "pad": "padding_px", "regionpad": "pad_px",
-           "tablepad": "cell_pad_px"}[family]
+    key = TOKEN_KEYS[family]
+    letters = LABELS[family]
     for task in members:
         options = task["design"].get("options")
-        if not options or len(options) != 4 or len(set(options)) != 4:
+        if not options or len(options) != len(tokens) or len(set(options)) != len(tokens):
             raise ValueError(f"Bad options: {task['taskId']}")
         values = []
         for option in options:
@@ -217,13 +217,14 @@ def check_token_options(family: str, members: list[dict]) -> None:
             if not match or int(match.group(1)) not in tokens:
                 raise ValueError(f"Option outside token set {task['taskId']}: {option}")
             values.append(int(match.group(1)))
+        if sorted(values) != sorted(tokens):
+            raise ValueError(f"Options are not the full token set: {task['taskId']}")
         truth_px = task["design"][key]
-        if truth_px not in values:
-            raise ValueError(f"Truth missing from options: {task['taskId']}")
-        if sorted(values) != sorted([truth_px, *nearest_neighbors(truth_px, tokens)]):
-            raise ValueError(f"Distractors not nearest neighbors: {task['taskId']}")
-        letters = ["A", "B", "C", "D"]
-        if task["groundTruth"]["choice"] != letters[values.index(truth_px)]:
+        truth_index = values.index(truth_px)
+        others = [value for i, value in enumerate(values) if i != truth_index]
+        if others != sorted(others):
+            raise ValueError(f"Distractor order differs: {task['taskId']}")
+        if task["groundTruth"]["choice"] != letters[truth_index]:
             raise ValueError(f"Choice letter mislabels truth: {task['taskId']}")
 
 
@@ -233,12 +234,34 @@ def check_crossing(tasks: list[dict]) -> None:
         by_family.setdefault(task["family"], []).append(task)
 
     def crossed(family: str, key_fn, levels: set) -> None:
+        # Letter grouping is meaningful only where the choice letter is a
+        # deterministic function of the design (verified by check_choice_maps).
         seen: dict[str, set] = {}
         for task in by_family[family]:
             seen.setdefault(task["groundTruth"]["choice"], set()).add(key_fn(task))
         for answer, values in seen.items():
             if values != levels:
-                raise ValueError(f"Uncrossed {family} {answer}: {sorted(values)}")
+                raise ValueError(f"Uncrossed {family} {answer}: {sorted(values, key=repr)}")
+
+    def spanned(family: str, key_fn, levels: set) -> None:
+        # Token families randomize the letter, so cross the TOKEN VALUE against
+        # each nuisance axis: no nuisance level may predict the token.
+        seen: dict[int, set] = {}
+        for task in by_family[family]:
+            seen.setdefault(task["design"][TOKEN_KEYS[family]], set()).add(key_fn(task))
+        for token, values in seen.items():
+            if values != levels:
+                raise ValueError(f"Token {token} uncrossed in {family}: {sorted(values, key=repr)}")
+
+    def distinct_letters(family: str) -> None:
+        # The truth letter is the option slot: within one token value no slot
+        # may repeat, so the slot carries no information about the token.
+        seen: dict[int, list] = {}
+        for task in by_family[family]:
+            seen.setdefault(task["design"][TOKEN_KEYS[family]], []).append(task["groundTruth"]["choice"])
+        for token, letters in seen.items():
+            if len(set(letters)) != len(letters):
+                raise ValueError(f"Repeated truth slot for token {token} in {family}: {letters}")
 
     themes = {"light", "dark"}
     for family in ("flow", "distribute", "align"):
@@ -247,17 +270,235 @@ def check_crossing(tasks: list[dict]) -> None:
     for family in ("distribute", "align"):
         crossed(family, lambda t: t["design"]["direction"], {"row", "column"})
     for family in ("gap", "pad"):
-        crossed(family, lambda t: t["design"]["theme"], themes)
-        crossed(family, lambda t: t["design"]["direction"], {"row", "column"})
+        spanned(family, lambda t: t["design"]["theme"], themes)
+        spanned(family, lambda t: t["design"]["direction"], {"row", "column"})
+        distinct_letters(family)
     for family in ("columns", "textjustify"):
         crossed(family, lambda t: t["design"]["theme"], themes)
     crossed("columns", lambda t: t["design"]["text_align"], {"left", "justify"})
     crossed("textjustify", lambda t: t["design"]["column_count"], {1, 2})
     crossed("headerpad", lambda t: t["design"]["theme"], themes)
-    crossed("regionpad", lambda t: t["design"]["theme"], themes)
-    crossed("regionpad", lambda t: t["design"]["bordered"], {True, False})
+    spanned("regionpad", lambda t: t["design"]["theme"], themes)
+    spanned("regionpad", lambda t: t["design"]["bordered"], {True, False})
+    distinct_letters("regionpad")
+    spanned("tablepad", lambda t: t["design"]["theme"], themes)
+    spanned("tablepad", lambda t: (t["design"]["rows"], t["design"]["cols"]),
+            {(2, 2), (2, 3), (3, 3)})
     crossed("tablepad", lambda t: (t["design"]["rows"], t["design"]["cols"]),
             {(2, 2), (2, 3), (3, 3)})
+    check_flow_counts(by_family["flow"])
+
+
+def check_flow_counts(members: list[dict]) -> None:
+    # Item count must neither identify the direction nor collapse within one:
+    # every count value occurs with at least two directions and vice versa.
+    by_count: dict[int, set] = {}
+    by_direction: dict[str, set] = {}
+    for task in members:
+        by_count.setdefault(task["design"]["item_count"], set()).add(task["design"]["direction"])
+        by_direction.setdefault(task["design"]["direction"], set()).add(task["design"]["item_count"])
+    for count, directions in by_count.items():
+        if len(directions) < 2:
+            raise ValueError(f"Item count {count} identifies one flow direction: {directions}")
+    for direction, counts in by_direction.items():
+        if len(counts) < 2:
+            raise ValueError(f"Flow direction {direction} has one item count: {counts}")
+
+
+RECT_TOL = 1.0
+
+
+def _bands(items: list[dict], axis: int) -> list[list[dict]]:
+    key = (lambda r: (r["y"], r["x"])) if axis == 1 else (lambda r: (r["x"], r["y"]))
+    ordered = sorted(items, key=key)
+    bands = [[ordered[0]]]
+    for item in ordered[1:]:
+        first = bands[-1][0]
+        lo = item["y"] if axis == 1 else item["x"]
+        size = item["height"] if axis == 1 else item["width"]
+        first_lo = first["y"] if axis == 1 else first["x"]
+        first_size = first["height"] if axis == 1 else first["width"]
+        if lo < first_lo + first_size and first_lo < lo + size:
+            bands[-1].append(item)
+        else:
+            bands.append([item])
+    return bands
+
+
+def derive_direction(items: list[dict]) -> str:
+    """Recover row/column/grid from item boxes, never from the design."""
+    if len(items) < 2:
+        raise ValueError("Too few items to judge direction")
+    rows = _bands(items, 1)
+    cols = _bands(items, 0)
+    if len(rows) == 1 and len(cols) == len(items):
+        return "row"
+    if len(cols) == 1 and len(rows) == len(items):
+        return "column"
+    if len(rows) > 1 and len(cols) > 1:
+        if len(cols) == 2:
+            return "grid-2col"
+        if len(cols) == 3:
+            return "grid-3col"
+    raise ValueError(f"Ambiguous layout bands: {len(cols)} columns x {len(rows)} rows")
+
+
+def _axis_spans(items: list[dict], stage: dict, pad: float, direction: str) -> tuple:
+    if direction == "row":
+        lo = min(item["x"] for item in items)
+        hi = max(item["x"] + item["width"] for item in items)
+        stage_lo, stage_hi = stage["x"], stage["x"] + stage["width"]
+        ordered = sorted(items, key=lambda r: r["x"])
+        inners = [ordered[k + 1]["x"] - (ordered[k]["x"] + ordered[k]["width"])
+                  for k in range(len(ordered) - 1)]
+    else:
+        lo = min(item["y"] for item in items)
+        hi = max(item["y"] + item["height"] for item in items)
+        stage_lo, stage_hi = stage["y"], stage["y"] + stage["height"]
+        ordered = sorted(items, key=lambda r: r["y"])
+        inners = [ordered[k + 1]["y"] - (ordered[k]["y"] + ordered[k]["height"])
+                  for k in range(len(ordered) - 1)]
+    return lo - (stage_lo + pad), (stage_hi - pad) - hi, inners
+
+
+def derive_justify(items: list[dict], stage: dict, pad: float, gap: float, direction: str) -> str:
+    """Recover main-axis distribution from edge gaps and inner gaps.
+
+    Note the flex `gap` participates: under space-around each edge holds half
+    a free-space unit while each inner holds a full unit PLUS the fixed gap,
+    so edge == (inner - gap) / 2, not inner / 2.
+    """
+    if direction not in ("row", "column"):
+        raise ValueError(f"Justify is not swept for {direction}")
+    edge_lo, edge_hi, inners = _axis_spans(items, stage, pad, direction)
+    if edge_lo < -RECT_TOL or edge_hi < -RECT_TOL:
+        raise ValueError(f"Content overflows padding: {edge_lo:.1f}/{edge_hi:.1f}")
+    equal_inners = all(abs(gap_px - inners[0]) <= RECT_TOL for gap_px in inners)
+    if edge_lo <= RECT_TOL and edge_hi <= RECT_TOL:
+        if equal_inners and inners[0] > gap + RECT_TOL:
+            return "space-between"
+        raise ValueError("Content fills the axis without space-between gaps")
+    if equal_inners:
+        around_edge = (inners[0] - gap) / 2
+        if abs(edge_lo - around_edge) <= RECT_TOL and abs(edge_hi - around_edge) <= RECT_TOL:
+            return "space-around"
+    if edge_lo <= RECT_TOL:
+        return "start"
+    if edge_hi <= RECT_TOL:
+        return "end"
+    if abs(edge_lo - edge_hi) <= RECT_TOL:
+        return "center"
+    raise ValueError(f"Ambiguous justify edges: {edge_lo:.1f}/{edge_hi:.1f}")
+
+
+def derive_align(items: list[dict], stage: dict, pad: float, direction: str) -> str:
+    """Recover cross-axis alignment from the cross-axis span."""
+    if direction == "row":
+        lo = min(item["y"] for item in items)
+        hi = max(item["y"] + item["height"] for item in items)
+        stage_lo, stage_hi = stage["y"], stage["y"] + stage["height"]
+        sizes = [item["height"] for item in items]
+    elif direction == "column":
+        lo = min(item["x"] for item in items)
+        hi = max(item["x"] + item["width"] for item in items)
+        stage_lo, stage_hi = stage["x"], stage["x"] + stage["width"]
+        sizes = [item["width"] for item in items]
+    else:
+        raise ValueError(f"Align is not swept for {direction}")
+    edge_lo, edge_hi = lo - (stage_lo + pad), (stage_hi - pad) - hi
+    full = (stage_hi - pad) - (stage_lo + pad)
+    if all(size >= full - RECT_TOL for size in sizes) and edge_lo <= RECT_TOL and edge_hi <= RECT_TOL:
+        return "stretch"
+    if edge_lo < -RECT_TOL or edge_hi < -RECT_TOL:
+        raise ValueError(f"Content overflows padding: {edge_lo:.1f}/{edge_hi:.1f}")
+    if edge_lo <= RECT_TOL and edge_hi <= RECT_TOL:
+        raise ValueError("Content fills the cross axis without stretching")
+    if edge_lo <= RECT_TOL:
+        return "start"
+    if edge_hi <= RECT_TOL:
+        return "end"
+    if abs(edge_lo - edge_hi) <= RECT_TOL:
+        return "center"
+    raise ValueError(f"Ambiguous align edges: {edge_lo:.1f}/{edge_hi:.1f}")
+
+
+def check_table_cells(task: dict) -> None:
+    # Every cell, not just 0-0: top/left/bottom pads equal the token (single
+    # line of text, top-aligned); the right side only needs to stay inside.
+    regions = regions_by_role(task)
+    cells = {rect_id: rect for (role, rect_id), rect in regions.items() if role == "cell"}
+    texts = {rect_id: rect for (role, rect_id), rect in regions.items() if role == "celltext"}
+    design = task["design"]
+    want_rows = {(r, c) for r in range(design["rows"]) for c in range(design["cols"])}
+    if {tuple(map(int, key.split("-"))) for key in cells} != want_rows:
+        raise ValueError(f"Cell census differs: {task['taskId']}")
+    for key, cell in cells.items():
+        text = texts.get(key)
+        if text is None:
+            raise ValueError(f"Cell text missing: {task['taskId']} {key}")
+        pads = {
+            "top": text["y"] - (cell["y"] + 1),
+            "left": text["x"] - (cell["x"] + 1),
+            "bottom": (cell["y"] + cell["height"] - 1) - (text["y"] + text["height"]),
+        }
+        for side, value in pads.items():
+            if abs(value - design["cell_pad_px"]) > 0.6:
+                raise ValueError(f"Cell {key} {side} pad differs {task['taskId']}: {value}")
+        right = (cell["x"] + cell["width"] - 1) - (text["x"] + text["width"])
+        if right < -0.1:
+            raise ValueError(f"Cell {key} text overflows {task['taskId']}: {right}")
+
+
+FLOW_CHOICE = {"row": "A", "column": "B", "grid-2col": "C", "grid-3col": "D"}
+DISTRIBUTE_CHOICE = {"start": "A", "center": "B", "end": "C",
+                     "space-between": "D", "space-around": "E"}
+ALIGN_CHOICE = {"start": "A", "center": "B", "end": "C", "stretch": "D"}
+COLUMNS_CHOICE = {1: "A", 2: "B", 3: "C"}
+TEXT_ALIGN_CHOICE = {"left": "A", "center": "B", "right": "C", "justify": "D"}
+
+
+def check_choice_maps(tasks: list[dict]) -> None:
+    # Every fixed-option choice letter must equal the mapping of the DECODED
+    # construct, so a builder mislabel cannot hide behind balanced letters.
+    for task in tasks:
+        family = task["family"]
+        if family not in ("flow", "distribute", "align", "columns",
+                          "textjustify", "headerpad"):
+            continue
+        design = task["design"]
+        decoded = design.get("decoded") or {}
+        want = None
+        if family in ("flow", "distribute", "align"):
+            regions = regions_by_role(task)
+            items = sorted((rect for (role, _), rect in regions.items() if role == "item"),
+                           key=lambda r: int(r["id"]))
+            stage = regions[("stage", "stage")]
+            try:
+                if family == "flow":
+                    want = FLOW_CHOICE[derive_direction(items)]
+                elif family == "distribute":
+                    want = DISTRIBUTE_CHOICE[derive_justify(items, stage, design["padding_px"],
+                                                           design["gap_px"], design["direction"])]
+                else:
+                    want = ALIGN_CHOICE[derive_align(items, stage, design["padding_px"],
+                                                   design["direction"])]
+            except (ValueError, KeyError) as error:
+                raise ValueError(f"Choice undecodable {task['taskId']}: {error}") from error
+        elif family == "columns":
+            want = COLUMNS_CHOICE.get(decoded.get("column_count"))
+        elif family == "textjustify":
+            try:
+                derived = {derive_alignment(lines) for lines in (design.get("lines") or {}).values()}
+            except ValueError as error:
+                raise ValueError(f"Choice undecodable {task['taskId']}: {error}") from error
+            if len(derived) != 1:
+                raise ValueError(f"Columns disagree {task['taskId']}: {sorted(derived)}")
+            want = TEXT_ALIGN_CHOICE[derived.pop()]
+        else:
+            above, below = decoded.get("above", -1), decoded.get("below", -1)
+            want = "A" if above > below else "B" if below > above else "C"
+        if task["groundTruth"]["choice"] != want:
+            raise ValueError(f"Choice mislabels decoded construct {task['taskId']}: want {want}")
 
 
 def check_decoded(tasks: list[dict]) -> None:
@@ -280,22 +521,50 @@ def check_decoded(tasks: list[dict]) -> None:
                 raise ValueError(f"Decoded pad_left differs: {task['taskId']}")
             if rests_top and abs(decoded.get("pad_top", -1) - design["padding_px"]) > 0.6:
                 raise ValueError(f"Decoded pad_top differs: {task['taskId']}")
+            regions = regions_by_role(task)
+            items = sorted((rect for (role, _), rect in regions.items() if role == "item"),
+                           key=lambda r: int(r["id"]))
+            stage = regions[("stage", "stage")]
+            try:
+                derived_direction = derive_direction(items)
+            except ValueError as error:
+                raise ValueError(f"Direction undecodable {task['taskId']}: {error}") from error
+            if derived_direction != design["direction"]:
+                raise ValueError(f"Direction differs {task['taskId']}: {derived_direction}")
+            if not design["direction"].startswith("grid"):
+                try:
+                    derived_justify = derive_justify(items, stage, design["padding_px"],
+                                                   design["gap_px"], design["direction"])
+                    derived_align = derive_align(items, stage, design["padding_px"],
+                                               design["direction"])
+                except ValueError as error:
+                    raise ValueError(f"Justify/align undecodable {task['taskId']}: {error}") from error
+                if derived_justify != design["justify_content"]:
+                    raise ValueError(f"Justify differs {task['taskId']}: {derived_justify}")
+                if derived_align != design["align_items"]:
+                    raise ValueError(f"Align differs {task['taskId']}: {derived_align}")
         elif design["archetype"] == "header":
             for key in ("above", "below"):
                 if abs(decoded.get(key, -1) - design[f"{key}_px"]) > 0.6:
                     raise ValueError(f"Decoded {key} differs: {task['taskId']}")
-            above, below = design["above_px"], design["below_px"]
-            want = "A" if above > below else "B" if below > above else "C"
-            if task["family"] == "headerpad" and task["groundTruth"]["choice"] != want:
-                raise ValueError(f"Header comparison mislabeled: {task['taskId']}")
         elif design["archetype"] == "region":
             sides = [decoded.get(side, -1) for side in ("pad_top", "pad_left", "pad_bottom", "pad_right")]
             if any(abs(side - design["pad_px"]) > 0.6 for side in sides):
                 raise ValueError(f"Region pad not uniform: {task['taskId']} {sides}")
+            roles = {(role, rect_id) for (role, rect_id) in regions_by_role(task)}
+            if design["bordered"]:
+                if ("card", "card") not in roles:
+                    raise ValueError(f"Bordered region has no card: {task['taskId']}")
+            else:
+                if ("card", "card") in roles:
+                    raise ValueError(f"Bare region renders a card: {task['taskId']}")
+                if ("bare-wrap", "bare") not in roles:
+                    raise ValueError(f"Bare region has no bare wrap: {task['taskId']}")
         elif design["archetype"] == "table":
             for key in ("cell_pad_top", "cell_pad_left"):
                 if abs(decoded.get(key, -1) - design["cell_pad_px"]) > 0.6:
                     raise ValueError(f"Decoded {key} differs: {task['taskId']}")
+            check_table_cells(task)
         else:
             if decoded.get("column_count") != design["column_count"]:
                 raise ValueError(f"Decoded column count differs: {task['taskId']}")
@@ -432,6 +701,37 @@ def adjacent_pairs(items: list[dict], direction: str) -> list[tuple[dict, dict]]
     return pairs
 
 
+def check_content_bands(task: dict, image: Image.Image, palette: dict,
+                        items: list[dict], stage: dict) -> None:
+    # Anchor the decoded boxes to paint: every band between the stage edge and
+    # the content span is background at its midpoint, and just inside each
+    # content edge is item ink. Band midpoints are provably empty: each lies
+    # outside every item box on its side's axis.
+    left = min(items, key=lambda r: r["x"])
+    right = max(items, key=lambda r: r["x"] + r["width"])
+    top = min(items, key=lambda r: r["y"])
+    bottom = max(items, key=lambda r: r["y"] + r["height"])
+    stage_right, stage_bottom = stage["x"] + stage["width"], stage["y"] + stage["height"]
+    bands = [
+        ((stage["x"] + left["x"]) / 2, left["y"] + left["height"] / 2),
+        ((right["x"] + right["width"] + stage_right) / 2, right["y"] + right["height"] / 2),
+        (top["x"] + top["width"] / 2, (stage["y"] + top["y"]) / 2),
+        (bottom["x"] + bottom["width"] / 2, (bottom["y"] + bottom["height"] + stage_bottom) / 2),
+    ]
+    for x, y in bands:
+        if px(image, x, y) != palette["card"]:
+            raise ValueError(f"Content band not background: {task['taskId']} ({x:.1f},{y:.1f})")
+    ink = [
+        (left["x"] + 3, left["y"] + left["height"] / 2),
+        (right["x"] + right["width"] - 3, right["y"] + right["height"] / 2),
+        (top["x"] + top["width"] / 2, top["y"] + 3),
+        (bottom["x"] + bottom["width"] / 2, bottom["y"] + bottom["height"] - 3),
+    ]
+    for x, y in ink:
+        if px(image, x, y) == palette["card"]:
+            raise ValueError(f"Content edge not ink: {task['taskId']} ({x:.1f},{y:.1f})")
+
+
 def check_pixels(tasks: list[dict], images: dict[str, Image.Image]) -> None:
     for task in tasks:
         image = images[task["imageFilename"]]
@@ -479,8 +779,7 @@ def check_pixels(tasks: list[dict], images: dict[str, Image.Image]) -> None:
                     mid_x = first["x"] + min(first["width"], second["width"]) / 2
                     if px(image, mid_x, (seam + other) / 2) != palette["card"]:
                         raise ValueError(f"Gap midline not background: {task['taskId']}")
-            if px(image, stage["x"] + 20, stage["y"] + 20) != palette["card"]:
-                raise ValueError(f"Padding corner not background: {task['taskId']}")
+            check_content_bands(task, image, palette, items, stage)
         elif design["archetype"] == "header":
             above = regions[("above-spacer", "above")]
             below = regions[("below-spacer", "below")]
@@ -503,21 +802,27 @@ def check_pixels(tasks: list[dict], images: dict[str, Image.Image]) -> None:
                 raise ValueError(f"Content block not tinted: {task['taskId']}")
             if design["bordered"]:
                 card = regions[("card", "card")]
+                # Border centers, not edges: for a 1px border [e, e+1], sampling
+                # e+0.5 always lands a device pixel fully inside the border.
                 edges = [
-                    (card["x"], card["y"] + card["height"] / 2),
-                    (card["x"] + card["width"] - 1, card["y"] + card["height"] / 2),
-                    (card["x"] + card["width"] / 2, card["y"]),
-                    (card["x"] + card["width"] / 2, card["y"] + card["height"] - 1),
+                    (card["x"] + 0.5, card["y"] + card["height"] / 2),
+                    (card["x"] + card["width"] - 0.5, card["y"] + card["height"] / 2),
+                    (card["x"] + card["width"] / 2, card["y"] + 0.5),
+                    (card["x"] + card["width"] / 2, card["y"] + card["height"] - 0.5),
                 ]
                 for x, y in edges:
                     if px(image, x, y) != palette["border"]:
                         raise ValueError(f"Card border pixel missing: {task['taskId']}")
         elif design["archetype"] == "table":
-            cell = regions[("cell", "0-0")]
-            if px(image, cell["x"], cell["y"] + cell["height"] / 2) != palette["border"]:
-                raise ValueError(f"Cell border pixel missing: {task['taskId']}")
-            if px(image, cell["x"] + 3, cell["y"] + 3) != palette["tint"]:
-                raise ValueError(f"Cell interior not tinted: {task['taskId']}")
+            cells = sorted((rect for (role, _), rect in regions.items() if role == "cell"),
+                           key=lambda r: r["id"])
+            if not cells:
+                raise ValueError(f"No table cells: {task['taskId']}")
+            for cell in cells:
+                if px(image, cell["x"] + 0.5, cell["y"] + cell["height"] / 2) != palette["border"]:
+                    raise ValueError(f"Cell border pixel missing: {task['taskId']} {cell['id']}")
+                if px(image, cell["x"] + 3, cell["y"] + 3) != palette["tint"]:
+                    raise ValueError(f"Cell interior not tinted: {task['taskId']} {cell['id']}")
         else:
             tcols = sorted(
                 (r for (role, _), r in regions.items() if role == "tcol"),
@@ -543,6 +848,7 @@ def require_valid_dataset(manifest_path: str | Path | None = None) -> list[dict]
     check_choice_ground_truth(tasks)
     check_crossing(tasks)
     check_decoded(tasks)
+    check_choice_maps(tasks)
     check_alignment(tasks)
     check_numeric_truth(tasks)
     check_shared_images(tasks)

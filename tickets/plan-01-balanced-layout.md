@@ -77,11 +77,11 @@ differs; remaining cells render alone.
 
 | Family | Question | Answers | Chance | Tasks |
 | --- | --- | --- | --- | --- |
-| `flow` | In which direction do the items flow? | A row (left-to-right), B column (top-to-bottom), C 2-column grid, D 3-column grid | 25% | 16: 4 dirs x 2 themes x 2 content variants |
+| `flow` | In which direction do the items flow? | A row (left-to-right), B column (top-to-bottom), C 2-column grid, D 3-column grid | 25% | 16: 4 dirs x 2 themes x 2 content variants; item counts overlap across dirs (3: row/col/grid-2col; 4: all; 6: grids) |
 | `distribute` | How are items spread along the main axis? | A packed at start, B centered, C packed at end, D spread edge-to-edge, E spread with half-space at edges | 20% | 20: 5 options x 2 flow dirs x 2 themes |
 | `align` | How are items aligned across the axis? | A top/left, B centered, C bottom/right, D stretched to fill | 25% | 16: 4 options x 2 flow dirs x 2 themes; variable-size items only |
-| `gap` | How much space is between neighboring items? | 4 lettered px values sampled per task (truth + 3 distractors, adjacent-biased) from {0,4,8,12,16,24,32} | 25% | 16: each token >= 2, row/col balanced |
-| `pad` | How much space is between the container edge and the items? | 4 lettered px values sampled per task from {8,16,24,32,48} | 25% | 16: each token >= 3, row/col x theme balanced |
+| `gap` | How much space is between neighboring items? | Full token set A-G from {0,4,8,12,16,24,32} on every task; truth slot varies | 14.3% | 16: each token >= 2, token x row/col x theme crossed |
+| `pad` | How much space is between the container edge and the items? | Full token set A-E from {8,16,24,32,48} on every task; truth slot varies | 20% | 16: each token >= 3, token x row/col x theme crossed |
 
 ### Document side (5 families, 74 tasks)
 
@@ -90,8 +90,8 @@ differs; remaining cells render alone.
 | `columns` | How many columns of text are there? | A one, B two, C three | 33.3% | 12: 3 counts x 2 text-justifications x 2 themes |
 | `textjustify` | How is the body text aligned? | A left, B centered, C right, D justified on both edges | 25% | 16: 4 options x 2 column-counts x 2 themes |
 | `headerpad` | Which space is larger: above the header or below it? | A above, B below, C equal | 33.3% | 18: 3 answers x 3 magnitudes x 2 themes; above/below drawn from {8,16,24,32,48} |
-| `regionpad` | How much padding surrounds the content region? | 4 lettered px values sampled per task from {8,16,24,32,48} | 25% | 16: each token >= 3, bordered-card vs bare-canvas crossed |
-| `tablepad` | How much space is between the cell text and the cell borders? | 4 lettered px values sampled per task from {4,8,12,16} | 25% | 12: 4 tokens x 3 table sizes (2x2, 2x3, 3x3), theme balanced |
+| `regionpad` | How much padding is there between the content and the surrounding edge (card border, or image edge)? | Full token set A-E from {8,16,24,32,48} on every task; truth slot varies | 20% | 16: each token >= 3, token x bordered/bare x theme crossed |
+| `tablepad` | How much space is between the cell text and the cell borders? | Full token set A-D from {4,8,12,16} on every task; truth slot varies | 25% | 12: 4 tokens x 3 table sizes (2x2, 2x3, 3x3), token x size x theme crossed |
 
 ### Numeric side (3 families, 50 tasks, images shared)
 
@@ -131,26 +131,34 @@ within the band). Invalid answers score 0 and carry null bands.
   padding = container content-box inset to outer items; header
   above/below = header box to container top / body box top). Truth for
   numeric families is the decoded value, rounded to int.
-- **Pixel verification.** The validator samples pixels along gap
-  midlines and padding bands and requires stage/canvas background;
-  requires item interiors to differ from background; requires bordered
-  cards to show border pixels on all four sides and bare-canvas tasks
-  to show none; requires decoded spacing to match intended tokens
-  within 0.6 px (sub-pixel rounding) and numeric truth to equal the
-  rounded decode exactly.
-- **Crossing.** Every swept value is crossed against its nuisance
-  axes: theme (light/dark), flow direction or column count, item/table
-  size, content variant, and border-vs-edge for `regionpad`. The
-  validator enforces the crossing table in the Corpus section (each
-  answer x each nuisance level present) so no family can be solved
-  from a correlated cue.
-- **Distractor discipline.** Token-choice distractors are the nearest
-  neighbors of the truth in the token set (e.g. truth 16 ->
-  {8,12,24,32} choose 3), with option-letter positions balanced per
-  family. No task may have a unique pixel checksum that identifies its
-  answer across the corpus (validator checks: identical (family,
-  answer) pairs must still differ in at least one nuisance pixel
-  region... more precisely, no two tasks share an identical PNG).
+- **Pixel verification.** The validator anchors decoded boxes to
+  paint: content-band midpoints must be background, points just inside
+  each content edge must be item ink, gap midlines must be background,
+  item interiors must differ from background; bordered cards must show
+  border pixels (sampled at border centers) on all four sides while
+  bare-canvas tasks render no card region at all; every table cell is
+  probed for border and tint. Decoded spacing must match intended
+  tokens within 0.6 px (sub-pixel rounding); numeric truth must equal
+  the rounded decode exactly.
+- **Layout derivation.** Flow direction, main-axis distribution, and
+  cross-axis alignment are re-derived from item boxes (band structure,
+  edge gaps vs inner gaps with the flex `gap` accounted for) and must
+  match the design; choice letters for `flow`/`distribute`/`align` are
+  checked against the derived values, `columns` against the decoded
+  count, `textjustify` against per-column derived alignment, and
+  `headerpad` against the decoded comparison.
+- **Crossing.** Every swept token value is crossed against its
+  nuisance axes: theme (light/dark), flow direction, item/table size,
+  content variant, and border-vs-edge for `regionpad`. The validator
+  enforces token-value x nuisance coverage (each token with each
+  nuisance level) plus distinct truth slots per token, so no family
+  can be solved from a correlated cue. Fixed-option families cross
+  answers against nuisances.
+- **Full-set options.** Token-choice tasks offer the whole token set
+  on every trial with balanced truth letters, so the option set is
+  identical across tasks and cannot leak the truth. No two tasks share
+  an identical PNG (validator enforces unique image bytes per
+  filename).
 
 ## Scoring and experimental units
 
@@ -161,9 +169,10 @@ within the band). Invalid answers score 0 and carry null bands.
 - Shared images (`gap`/`gapnum`, `headerpad`/`headerpx`,
   `regionpad`/`regionpx`) are correlated observations; report notes
   this. Families never pool across each other.
-- Chance baselines are declared per family (20% / 25% / 33.3%);
-  numeric families report an always-guess-16 constant baseline instead
-  of chance.
+- Chance baselines are declared per family (14.3% gap, 20%
+  distribute/pad/regionpad, 25% flow/align/textjustify/tablepad, 33.3%
+  columns/headerpad); numeric families report an always-guess-16
+  constant baseline instead of chance.
 
 ## Repository structure and reuse
 
@@ -235,9 +244,57 @@ gate.
 
 ## Adversarial review (pre-paid-run)
 
-(To be recorded.)
+Independent read-only review of builders, renderer, protocol,
+validators, and 8 rendered PNGs returned **NOT READY** with 4
+blockers, 5 majors, and 3 minors. All were triaged against the code,
+fixed, re-validated, and mutation-tested; the 0.1.0 corpus was rebuilt
+and re-frozen before any paid run.
+
+Blockers fixed:
+
+- **B1 option-set leakage.** Nearest-neighbor distractor subsets were
+  unique per truth (e.g. gap `{8,12,16,24}` only ever meant 16).
+  Token families now offer the full token set on every task (gap A-G,
+  pad/regionpad A-E, tablepad A-D); only the truth slot varies.
+- **B2 token x nuisance confounding.** Shuffling preserved
+  (token, nuisance) triplets (gap token 0 only ever light) and the
+  validator crossed letters, not tokens. Plans now rejection-sample
+  theme/direction/bordered/letter independently under per-token span
+  constraints, and the validator crosses token values.
+- **B3 choice mapping unchecked.** Fixed-option letters were only
+  balance-checked. `check_choice_maps` now verifies every letter
+  against the decoded construct (derived direction/justify/align,
+  decoded column count, derived text alignment, decoded comparison).
+- **B4 renderer trusted on direction/justify/align.** The validator
+  now derives all three from item boxes and anchors the boxes to paint
+  (content-band background + content-edge ink probes).
+
+Majors fixed: uniform corner style at all gaps (M1); distribute
+start/end wording mirrors align for vertical stacks, regionpad names
+its reference edge (M3/M4); explicit per-token/per-size theme crossing
+for tablepad (M5); flow item counts overlap across directions (m1);
+bare-region structure asserted, all table cells decoded and probed,
+border-center sampling, content-band checks replace the vacuous corner
+sample (m2); protocol fingerprint covers `finalize.py` and statistics
+auto-report the always-16 baseline (m3). M2 (4px minimum step without
+human calibration) is kept as a documented limitation with
+per-token-pair pilot analysis.
+
+The review missed one crash the mock-plus-smoke run caught instead:
+`baseline/providers.py` referenced an undefined `LayoutPrediction`
+schema, breaking every real provider call. Providers now use
+per-family pydantic schemas threaded through from the evaluator.
 
 ## Validation gate matrix
 
-(To be recorded.)
+| Gate | Command | Result |
+| --- | --- | --- |
+| Bun builders | `bun test` | 7 pass |
+| Pytest suite | `.venv/bin/python -m pytest tests/` | 70 pass |
+| Dataset gate | `bun run validate` | 208 tasks, 150 images valid |
+| Release gate | `bun run validate:release` | 0.1.0 identity verified |
+| Mock campaign | `baseline.runner --mock` (full 208) | completes, always-A provider at chance |
+| Real smoke | 8 tasks, gemini-3.5-flash-lite | completes through provider path |
+| Finalize smoke | `baseline.finalize --scope full` on smoke run | seals and verifies |
+| Validator mutation tests | choice swaps, design flips, crossing breaks (throwaway /tmp copies) | all caught at the intended layer |
 

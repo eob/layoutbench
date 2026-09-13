@@ -2,7 +2,7 @@
 
 import math
 
-from baseline.protocol import CHOICE_FAMILIES, FAMILIES, NUMERIC_SCORING, choice_labels
+from baseline.protocol import CHOICE_FAMILIES, FAMILIES, NUMERIC_KEYS, NUMERIC_SCORING, choice_labels, grade_prediction
 
 
 def quantile(values: list[float], probability: float) -> float | None:
@@ -44,11 +44,15 @@ def family_metrics(tasks: list[dict], family: str) -> dict:
         bands = [str(band) for band in NUMERIC_SCORING["exact_bands"]]
         hits = {band: sum(row["within_bands"][band] is True for row in valid) / len(valid) if valid else None
                 for band in bands}
+        constant = {key: 16 for key in NUMERIC_KEYS[family]}
+        graded = [grade_prediction(family, constant, row["ground_truth"]) for row in rows]
         value.update(mean_score=sum(row["score"] for row in rows) / count if count else None,
                      mean_tight_score=sum(row["tight_score"] for row in rows) / count if count else None,
                      mean_err=sum(error / len(errors) for error in errors) if errors else None,
                      median_err=quantile(errors, .5), p90_err=quantile(errors, .9),
-                     mean_key_errors=means, key_known_count=known, band_hit_rate=hits)
+                     mean_key_errors=means, key_known_count=known, band_hit_rate=hits,
+                     constant16_mean_score=sum(g["score"] for g in graded) / count if count else None,
+                     constant16_mean_err=sum(g["err"] for g in graded) / count if count else None)
     return value
 
 

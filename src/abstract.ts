@@ -38,30 +38,27 @@ export function shuffled<T>(items: T[], rng: () => number): T[] {
   return out;
 }
 
-function nearestNeighbors(truth: number, tokens: number[], count: number): number[] {
-  return [...tokens]
-    .filter((t) => t !== truth)
-    .sort((a, b) => Math.abs(a - truth) - Math.abs(b - truth))
-    .slice(0, count);
-}
-
 export interface TokenOptions {
   options: string[];
   choice: string;
 }
 
+// Full token set on every task: the option SET is identical across tasks, so
+// it cannot leak the truth (a nearest-neighbor subset would). Only the truth's
+// slot varies, assigned independently of the token value.
 export function tokenOptions(
   truthPx: number,
   tokens: number[],
   truthLetter: string,
 ): TokenOptions {
-  const letters = ["A", "B", "C", "D"];
-  const distractors = nearestNeighbors(truthPx, tokens, 3);
-  const ordered = [truthPx, ...distractors].sort((a, b) => a - b);
+  const letters = ["A", "B", "C", "D", "E", "F", "G"];
+  if (!tokens.includes(truthPx)) throw new Error(`Truth ${truthPx} outside token set`);
   const truthIndex = letters.indexOf(truthLetter);
-  const others = ordered.filter((v) => v !== truthPx);
+  if (truthIndex < 0 || truthIndex >= tokens.length)
+    throw new Error(`Truth letter ${truthLetter} outside option range`);
+  const others = [...tokens].sort((a, b) => a - b).filter((v) => v !== truthPx);
   const placed: number[] = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < tokens.length; i++) {
     placed.push(i === truthIndex ? truthPx : others.shift()!);
   }
   return {
@@ -91,6 +88,95 @@ export function stratifiedLetters(keys: string[], seed: string, letters: string[
   return assigned;
 }
 
+// Balanced letter multiset for counts that do not divide evenly: counts differ
+// by at most one, extras fall on shuffled letters, order shuffled.
+export function balancedLetters(count: number, letters: string[], seed: string): string[] {
+  const rng = mulberry32(fnv1a(`balanced-letters:${seed}`));
+  const base = Math.floor(count / letters.length);
+  const extras = shuffled([...letters], rng).slice(0, count % letters.length);
+  const sequence: string[] = [];
+  for (const letter of letters) {
+    const n = base + (extras.includes(letter) ? 1 : 0);
+    for (let i = 0; i < n; i++) sequence.push(letter);
+  }
+  return shuffled(sequence, rng);
+}
+
+export interface CrossedAxis {
+  key: string;
+  levels: unknown[];
+}
+
+export interface SpanConstraint {
+  group: (slot: number) => string;
+  axisKey: string;
+}
+
+export interface UniqueConstraint {
+  group: (slot: number) => string;
+  axisKeys: string[];
+}
+
+// Seeded rejection sampler: shuffles each axis multiset independently until
+// every span group covers every level of its axis, every distinct group holds
+// no repeated level, and every unique group holds no repeated level tuple.
+// Deterministic; throws instead of silently biasing.
+export function assignCrossed(
+  slotCount: number,
+  axes: CrossedAxis[],
+  span: SpanConstraint[],
+  distinct: SpanConstraint[],
+  unique: UniqueConstraint[],
+  seed: string,
+): Record<string, unknown>[] {
+  for (const axis of axes) {
+    if (axis.levels.length !== slotCount)
+      throw new Error(`Axis ${axis.key} has ${axis.levels.length} levels for ${slotCount} slots`);
+  }
+  const rng = mulberry32(fnv1a(`crossed:${seed}`));
+  for (let attempt = 0; attempt < 20000; attempt++) {
+    const shuffledAxes = new Map<string, unknown[]>();
+    for (const axis of axes) shuffledAxes.set(axis.key, shuffled(axis.levels, rng));
+    const valuesFor = (constraint: SpanConstraint) => {
+      const groups = new Map<string, unknown[]>();
+      for (let slot = 0; slot < slotCount; slot++) {
+        const key = constraint.group(slot);
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key)!.push(shuffledAxes.get(constraint.axisKey)![slot]);
+      }
+      return groups;
+    };
+    const spansHold = span.every((constraint) => {
+      const axis = axes.find((a) => a.key === constraint.axisKey)!;
+      return [...valuesFor(constraint).values()].every(
+        (values) => new Set(values).size === new Set(axis.levels).size,
+      );
+    });
+    const distinctHold = distinct.every((constraint) =>
+      [...valuesFor(constraint).values()].every((values) => new Set(values).size === values.length),
+    );
+    const uniqueHold = unique.every((constraint) => {
+      const groups = new Map<string, string[]>();
+      for (let slot = 0; slot < slotCount; slot++) {
+        const key = constraint.group(slot);
+        if (!groups.has(key)) groups.set(key, []);
+        groups
+          .get(key)!
+          .push(constraint.axisKeys.map((axisKey) => String(shuffledAxes.get(axisKey)![slot])).join("|"));
+      }
+      return [...groups.values()].every((tuples) => new Set(tuples).size === tuples.length);
+    });
+    if (spansHold && distinctHold && uniqueHold) {
+      return Array.from({ length: slotCount }, (_, slot) => {
+        const assignment: Record<string, unknown> = {};
+        for (const axis of axes) assignment[axis.key] = shuffledAxes.get(axis.key)![slot];
+        return assignment;
+      });
+    }
+  }
+  throw new Error(`No crossed assignment found for ${seed}`);
+}
+
 interface AbstractArgs {
   family: LayoutFamily;
   direction: FlowDirection;
@@ -115,13 +201,33 @@ function fullCross<T>(...axes: T[][]): T[][] {
   );
 }
 
-// flow: 4 dirs x 2 themes x 2 variants = 16
+// flow: 4 dirs x 2 themes x 2 variants = 16. Item counts overlap across
+// directions (3: row/column/grid-2col; 4: all four; 6: both grids) so no count
+// value identifies a direction. Grid-3col never takes 3: a single row of three
+// would be indistinguishable from a row.
+const FLOW_COUNTS: Record<FlowDirection, number[]> = {
+  row: [3, 3, 4, 4],
+  column: [3, 3, 4, 4],
+  "grid-2col": [3, 3, 4, 6],
+  "grid-3col": [4, 4, 6, 6],
+};
 for (const [direction, theme, variant] of fullCross<FlowDirection | Theme | ContentVariant>(
   ["row", "column", "grid-2col", "grid-3col"],
   ["light", "dark"],
   ["uniform", "variable"],
 )) {
   const dir = direction as FlowDirection;
+  const cells: [Theme, ContentVariant][] = [
+    ["light", "uniform"],
+    ["light", "variable"],
+    ["dark", "uniform"],
+    ["dark", "variable"],
+  ];
+  const order = shuffled(
+    [0, 1, 2, 3],
+    mulberry32(fnv1a(`flow-counts:${dir}`)),
+  );
+  const cellIndex = cells.findIndex(([t, v]) => t === theme && v === variant);
   abstractTasks.push({
     family: "flow",
     direction: dir,
@@ -129,7 +235,7 @@ for (const [direction, theme, variant] of fullCross<FlowDirection | Theme | Cont
     align_items: "center",
     gap_px: 16,
     padding_px: 24,
-    item_count: dir === "grid-2col" ? 4 : dir === "grid-3col" ? 6 : 3,
+    item_count: FLOW_COUNTS[dir]![order[cellIndex]!],
     content_variant: variant as ContentVariant,
     theme: theme as Theme,
     choice: { row: "A", column: "B", "grid-2col": "C", "grid-3col": "D" }[dir]!,
@@ -192,22 +298,41 @@ for (const [option, direction, theme] of fullCross(
 const GAP_TOKENS = [0, 4, 8, 12, 16, 24, 32];
 const PAD_TOKENS = [8, 16, 24, 32, 48];
 
-// gap: 16 tasks, each token >= 2, row/col x theme balanced
-const gapPlan: { token: number; direction: FlowDirection; theme: Theme }[] = [];
+// gap: 16 tasks, each token >= 2. Tokens are fixed slots; theme, direction and
+// truth letter are shuffled independently under crossing constraints, so no
+// nuisance axis predicts the token.
+const gapPlan: { token: number; direction: FlowDirection; theme: Theme; letter: string }[] = [];
 {
   const tokens = [0, 0, 4, 4, 8, 8, 8, 12, 12, 16, 16, 16, 24, 24, 32, 32];
-  const dirs: FlowDirection[] = tokens.map((_, i) => (i % 2 === 0 ? "row" : "column"));
-  const themes: Theme[] = tokens.map((_, i) => (i % 4 < 2 ? "light" : "dark"));
-  const rng = mulberry32(fnv1a("gap:nuisance"));
-  const order = shuffled(tokens.map((_, i) => i), rng);
-  for (const i of order) {
-    gapPlan.push({ token: tokens[i]!, direction: dirs[i]!, theme: themes[i]! });
+  const group = (slot: number) => `token:${tokens[slot]}`;
+  const assigned = assignCrossed(
+    tokens.length,
+    [
+      { key: "theme", levels: [...Array<Theme>(8).fill("light"), ...Array<Theme>(8).fill("dark")] },
+      { key: "direction", levels: [...Array<FlowDirection>(8).fill("row"), ...Array<FlowDirection>(8).fill("column")] },
+      { key: "letter", levels: balancedLetters(tokens.length, ["A", "B", "C", "D", "E", "F", "G"], "gap") },
+    ],
+    [
+      { group, axisKey: "theme" },
+      { group, axisKey: "direction" },
+    ],
+    [{ group, axisKey: "letter" }],
+    [{ group, axisKeys: ["theme", "direction"] }],
+    "gap",
+  );
+  const rng = mulberry32(fnv1a("gap:order"));
+  for (const i of shuffled(tokens.map((_, slot) => slot), rng)) {
+    gapPlan.push({
+      token: tokens[i]!,
+      direction: assigned[i]!["direction"] as FlowDirection,
+      theme: assigned[i]!["theme"] as Theme,
+      letter: assigned[i]!["letter"] as string,
+    });
   }
 }
 {
-  const letters = stratifiedLetters(gapPlan.map((t) => `${t.theme}:${t.direction}`), "gap", ["A", "B", "C", "D"]);
-  gapPlan.forEach((plan, index) => {
-    const sampled = tokenOptions(plan.token, GAP_TOKENS, letters[index]!);
+  gapPlan.forEach((plan) => {
+    const sampled = tokenOptions(plan.token, GAP_TOKENS, plan.letter);
     abstractTasks.push({
       family: "gap",
       direction: plan.direction,
@@ -225,22 +350,39 @@ const gapPlan: { token: number; direction: FlowDirection; theme: Theme }[] = [];
   });
 }
 
-// pad: 16 tasks across 5 tokens, row/col x theme balanced
-const padPlan: { token: number; direction: FlowDirection; theme: Theme }[] = [];
+// pad: 16 tasks across 5 tokens. Same crossed construction as gap.
+const padPlan: { token: number; direction: FlowDirection; theme: Theme; letter: string }[] = [];
 {
   const tokens = [8, 8, 8, 16, 16, 16, 16, 24, 24, 24, 32, 32, 32, 48, 48, 48];
-  const dirs: FlowDirection[] = tokens.map((_, i) => (i % 2 === 0 ? "row" : "column"));
-  const themes: Theme[] = tokens.map((_, i) => (i % 4 < 2 ? "light" : "dark"));
-  const rng = mulberry32(fnv1a("pad:nuisance"));
-  const order = shuffled(tokens.map((_, i) => i), rng);
-  for (const i of order) {
-    padPlan.push({ token: tokens[i]!, direction: dirs[i]!, theme: themes[i]! });
+  const group = (slot: number) => `token:${tokens[slot]}`;
+  const assigned = assignCrossed(
+    tokens.length,
+    [
+      { key: "theme", levels: [...Array<Theme>(8).fill("light"), ...Array<Theme>(8).fill("dark")] },
+      { key: "direction", levels: [...Array<FlowDirection>(8).fill("row"), ...Array<FlowDirection>(8).fill("column")] },
+      { key: "letter", levels: balancedLetters(tokens.length, ["A", "B", "C", "D", "E"], "pad") },
+    ],
+    [
+      { group, axisKey: "theme" },
+      { group, axisKey: "direction" },
+    ],
+    [{ group, axisKey: "letter" }],
+    [{ group, axisKeys: ["theme", "direction"] }],
+    "pad",
+  );
+  const rng = mulberry32(fnv1a("pad:order"));
+  for (const i of shuffled(tokens.map((_, slot) => slot), rng)) {
+    padPlan.push({
+      token: tokens[i]!,
+      direction: assigned[i]!["direction"] as FlowDirection,
+      theme: assigned[i]!["theme"] as Theme,
+      letter: assigned[i]!["letter"] as string,
+    });
   }
 }
 {
-  const letters = stratifiedLetters(padPlan.map((t) => `${t.theme}:${t.direction}`), "pad", ["A", "B", "C", "D"]);
-  padPlan.forEach((plan, index) => {
-    const sampled = tokenOptions(plan.token, PAD_TOKENS, letters[index]!);
+  padPlan.forEach((plan) => {
+    const sampled = tokenOptions(plan.token, PAD_TOKENS, plan.letter);
     abstractTasks.push({
       family: "pad",
       direction: plan.direction,

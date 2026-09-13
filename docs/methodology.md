@@ -22,11 +22,14 @@ center a tinted block on the bare canvas instead.
 Spacing ground truth is decoded from rendered geometry, never trusted
 from stylesheets: Playwright bounding rects for containers, items,
 spacers, text line boxes, and table cells are recorded per task, and a
-frozen validator re-derives every swept value (gap, padding,
-above/below, cell padding, column count, alignment from line-box
-edges) within sub-pixel tolerance, then probes background, border, and
-tint pixels at computed band midpoints. Numeric truth is the rounded
-decode, not the stylesheet value.
+frozen validator re-derives every swept value within sub-pixel
+tolerance: gap, padding, above/below, all-cell table padding, column
+count, text alignment from line-box edges, and — from item boxes —
+flow direction, main-axis distribution, and cross-axis alignment. It
+then anchors the boxes to paint: content-band midpoints must be
+background, points just inside each content edge must be item ink, gap
+midlines must be background, and borders/tint must sample correctly.
+Numeric truth is the rounded decode, not the stylesheet value.
 
 Box-to-box is the operational definition of spacing: header pads run
 box edge to box edge, not glyph ink to glyph ink. Absolute px
@@ -37,34 +40,47 @@ error against a 16px ceiling (4px tight).
 ## Experimental design
 
 Thirteen families, 208 tasks, 150 images. Ten choice families use
-exact-letter scoring against 3-5 lettered options (chance 20-33.3%);
-token-choice distractors are nearest neighbors of the truth with
-letters stratified across nuisance axes. Three numeric families share
+exact-letter scoring against 3-7 lettered options (chance 14.3-33.3%
+depending on family). Token-choice tasks offer the full token set on
+every trial — the option set is identical across tasks, so it cannot
+leak the truth; only the truth's slot varies, assigned independently
+of the token value with balanced letters. Three numeric families share
 images with choice siblings and score absolute px error; the 8
 intersecting columns/justification cells share one render each and are
 disclosed as correlated observations.
 
-Every swept value is crossed against theme (light/dark) plus its
-structural nuisances (flow direction or column count, item/table size,
-content variant, bordered vs bare canvas). Abstract fixed values are
-disjoint across families (gap tasks pad 40, pad tasks gap 20) so no
-two families can render identical stimuli. No answer-adjacent word,
+Every swept token value is crossed against theme (light/dark) plus its
+structural nuisances (flow direction, bordered vs bare canvas, table
+size): each token occurs with every nuisance level, verified on token
+value rather than answer letter. Fixed-option families cross answers
+against nuisances; flow item counts overlap across directions so no
+count identifies a direction. Abstract fixed values are disjoint
+across families (gap tasks pad 40, pad tasks gap 20) so no two
+families can render identical stimuli. No answer-adjacent word,
 digit, or px value appears in any pixel; a frozen word list enforces
 this on rendered DOM text. Grid tasks always stretch items to fill
-cells so box gaps equal the gutter; `justify_content` is not swept
-for grids. Prompts use visual language and are frozen per family.
+cells so box gaps equal the gutter; `justify_content`/`align_items`
+are not swept for grids. Prompts use visual language and are frozen
+per family.
+
+Fairness limitation: the finest token step is 4 CSS px (8 device px
+before model-side rescaling), with no human-agreement calibration in
+this pilot. Per-token-pair accuracy in the pilot report shows which
+discriminations models actually resolve; steps that prove
+unresolvable would be widened or dropped in a revision.
 
 ## Validation and evidence
 
 `baseline/validate_dataset.py` is the frozen dataset gate: task
 identity and corpus census, PNG dimensions/hash uniqueness, canvas and
 font pins, neutral-text grep, prompt-template replay, choice-label
-balance, nearest-neighbor distractors, full crossing tables, decoded
-spacing, line-rect alignment derivation, exact numeric truth,
-share-pair and group discipline, and pixel probes. The release gate
-additionally checks Git provenance, manifest bytes, artifact census,
-fingerprints, and protocol identity. Paid work is refused if any of
-these differ.
+balance, full-set options with truth-slot checks, token-value crossing
+tables, decoded spacing plus direction/distribution/alignment
+derivation, choice letters checked against decoded constructs,
+line-rect alignment derivation, exact numeric truth, share-pair and
+group discipline, and pixel probes. The release gate additionally
+checks Git provenance, manifest bytes, artifact census, fingerprints,
+and protocol identity. Paid work is refused if any of these differ.
 
 ## Scoring and publication
 

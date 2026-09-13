@@ -29,7 +29,9 @@ PROMPTS_PATH = Path(__file__).with_name("prompts.json")
 
 
 def choice_labels(family: str) -> list[str]:
-    if family == "distribute":
+    if family == "gap":
+        return ["A", "B", "C", "D", "E", "F", "G"]
+    if family in ("distribute", "pad", "regionpad"):
         return ["A", "B", "C", "D", "E"]
     if family in ("columns", "headerpad"):
         return ["A", "B", "C"]
@@ -47,7 +49,7 @@ def get_prompt(family: str, options: list[str] | None = None) -> str:
     template = _prompts()[family]
     if "{options}" not in template:
         return template
-    letters = ["A", "B", "C", "D", "E"]
+    letters = ["A", "B", "C", "D", "E", "F", "G"]
     block = "\n".join(f"{letters[i]}: {value}" for i, value in enumerate(options or []))
     return template.replace("{options}", block)
 

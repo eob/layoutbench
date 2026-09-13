@@ -19,7 +19,7 @@ Every stimulus renders on a frozen 800x600 CSS px canvas at 2x DPR with a pinned
 1. **Flow** (`flow`, 16): row, column, 2-col grid, or 3-col grid.
 2. **Distribution** (`distribute`, 20): packed at start, centered, packed at end, edge-to-edge, or half-space at edges; rows and columns.
 3. **Alignment** (`align`, 16): cross-axis start, center, end, or stretch; variable-size items.
-4. **Gap tokens** (`gap`, 16): spacing between items from {0, 4, 8, 12, 16, 24, 32}px, nearest-neighbor distractors.
+4. **Gap tokens** (`gap`, 16): spacing between items from {0, 4, 8, 12, 16, 24, 32}px, full token set offered every task.
 5. **Container padding** (`pad`, 16): edge-to-item spacing from {8, 16, 24, 32, 48}px.
 
 **Document side** (fixed neutral copy, pinned font):

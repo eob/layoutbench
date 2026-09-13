@@ -4,7 +4,15 @@ import type {
   Specimen,
   Theme,
 } from "./types.ts";
-import { fnv1a, mulberry32, shuffled, stratifiedLetters, tokenOptions } from "./abstract.ts";
+import {
+  assignCrossed,
+  balancedLetters,
+  fnv1a,
+  mulberry32,
+  shuffled,
+  stratifiedLetters,
+  tokenOptions,
+} from "./abstract.ts";
 
 export const SENTENCES = [
   "Quiet harbors shelter wooden boats during autumn storms.",
@@ -145,26 +153,40 @@ for (const theme of ["light", "dark"] as Theme[]) {
   }
 }
 
-// regionpad: 5 tokens x bordered/bare x themes = 16
+// regionpad: 5 tokens x bordered/bare x themes = 16. Tokens are fixed slots;
+// bordered, theme and truth letter shuffle independently under crossing
+// constraints, so no nuisance axis predicts the token.
 const REGION_TOKENS = [8, 16, 24, 32, 48];
 {
-  const plan: { token: number; bordered: boolean; theme: Theme }[] = [];
+  const plan: { token: number; bordered: boolean; theme: Theme; letter: string }[] = [];
   const tokens = [8, 8, 8, 16, 16, 16, 16, 24, 24, 24, 32, 32, 32, 48, 48, 48];
-  const rng = mulberry32(fnv1a("region:nuisance"));
-  const order = shuffled(
-    tokens.map((_, i) => i),
-    rng,
+  const group = (slot: number) => `token:${tokens[slot]}`;
+  const assigned = assignCrossed(
+    tokens.length,
+    [
+      { key: "bordered", levels: [...Array<boolean>(8).fill(true), ...Array<boolean>(8).fill(false)] },
+      { key: "theme", levels: [...Array<Theme>(8).fill("light"), ...Array<Theme>(8).fill("dark")] },
+      { key: "letter", levels: balancedLetters(tokens.length, ["A", "B", "C", "D", "E"], "regionpad") },
+    ],
+    [
+      { group, axisKey: "bordered" },
+      { group, axisKey: "theme" },
+    ],
+    [{ group, axisKey: "letter" }],
+    [{ group, axisKeys: ["bordered", "theme"] }],
+    "regionpad",
   );
-  for (const i of order) {
+  const rng = mulberry32(fnv1a("region:order"));
+  for (const i of shuffled(tokens.map((_, slot) => slot), rng)) {
     plan.push({
       token: tokens[i]!,
-      bordered: i % 2 === 0,
-      theme: i % 4 < 2 ? "light" : "dark",
+      bordered: assigned[i]!["bordered"] as boolean,
+      theme: assigned[i]!["theme"] as Theme,
+      letter: assigned[i]!["letter"] as string,
     });
   }
-  const letters = stratifiedLetters(plan.map((t) => `${t.theme}:${t.bordered}`), "regionpad", ["A", "B", "C", "D"]);
-  plan.forEach((item, index) => {
-    const sampled = tokenOptions(item.token, REGION_TOKENS, letters[index]!);
+  plan.forEach((item) => {
+    const sampled = tokenOptions(item.token, REGION_TOKENS, item.letter);
     documentTasks.push({
       family: "regionpad",
       design: {
@@ -181,7 +203,8 @@ const REGION_TOKENS = [8, 16, 24, 32, 48];
   });
 }
 
-// tablepad: 4 tokens x 3 table sizes = 12, themes balanced
+// tablepad: 4 tokens x 3 table sizes = 12. Themes shuffle under explicit
+// constraints: every token and every table size spans both themes.
 {
   const plan: { token: number; rows: number; cols: number; theme: Theme }[] = [];
   const combos = fullCross([4, 8, 12, 16], [
@@ -189,12 +212,23 @@ const REGION_TOKENS = [8, 16, 24, 32, 48];
     [2, 3],
     [3, 3],
   ]);
+  const assigned = assignCrossed(
+    combos.length,
+    [{ key: "theme", levels: [...Array<Theme>(6).fill("light"), ...Array<Theme>(6).fill("dark")] }],
+    [
+      { group: (slot) => `token:${combos[slot]![0]}`, axisKey: "theme" },
+      { group: (slot) => `size:${(combos[slot]![1] as number[]).join("x")}`, axisKey: "theme" },
+    ],
+    [],
+    [],
+    "tablepad",
+  );
   combos.forEach(([token, size], i) => {
     plan.push({
       token: token as number,
       rows: (size as number[])[0]!,
       cols: (size as number[])[1]!,
-      theme: i % 2 === 0 ? "light" : "dark",
+      theme: assigned[i]!["theme"] as Theme,
     });
   });
   const letters = stratifiedLetters(plan.map((t) => `${t.rows}x${t.cols}`), "tablepad", ["A", "B", "C", "D"]);

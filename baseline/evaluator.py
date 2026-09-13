@@ -15,7 +15,7 @@ from baseline.providers import PredictionClient, PredictionResponse
 GRADING_VERSION = "1"
 
 PROTOCOL_FILES = ("prompts.json", "protocol.py", "evaluator.py", "statistics.py",
-                  "reporting.py", "validate_dataset.py")
+                  "reporting.py", "validate_dataset.py", "finalize.py")
 
 
 def evaluation_protocol_fingerprint() -> str:
@@ -127,7 +127,7 @@ class BaselineEvaluator:
         if self.mock:
             prediction = MOCK_PREDICTIONS[family]
             return PredictionResponse(json.dumps(prediction), prediction, input_tokens=0, output_tokens=0)
-        return self._client.predict(image_path, prompt)
+        return self._client.predict(image_path, prompt, family)
 
     def _eval_single_task(self, item: dict, prompt_default: str = "") -> TaskEvaluationResult:
         prompt = item.get("prompt", prompt_default)

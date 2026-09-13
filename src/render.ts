@@ -90,18 +90,9 @@ function abstractItemsHtml(design: AbstractDesign): string {
         if (design.align_items !== "stretch") heightStyle = "height: 52px;";
       }
     }
-    let radius = "border-radius: 8px;";
-    if (design.gap_px === 0 && design.item_count > 1) {
-      if (design.direction === "row") {
-        if (i === 0) radius = "border-radius: 8px 0 0 8px;";
-        else if (i === design.item_count - 1) radius = "border-radius: 0 8px 8px 0;";
-        else radius = "border-radius: 0; border-left: none;";
-      } else if (design.direction === "column") {
-        if (i === 0) radius = "border-radius: 8px 8px 0 0;";
-        else if (i === design.item_count - 1) radius = "border-radius: 0 0 8px 8px;";
-        else radius = "border-radius: 0; border-top: none;";
-      }
-    }
+    // Same corner style at every gap: zero-gap items touch border-to-border
+    // with honest corner notches rather than a fused special case.
+    const radius = "border-radius: 8px;";
     return `<div class="item" data-role="item" data-id="${i}" style="background: ${bg}; border: 1px solid ${border}; ${radius} ${widthStyle} ${heightStyle}"><div class="dot" style="background: ${dot};"></div><div class="bars"><div class="bar" style="width: 62%;"></div><div class="bar" style="width: 41%;"></div></div></div>`;
   }).join("\n");
 }
@@ -430,7 +421,7 @@ function buildPrompt(specimen: Specimen): string {
   if (!template) throw new Error(`Missing prompt template for ${specimen.family}`);
   if (!template.includes("{options}")) return template;
   const options = specimen.options ?? [];
-  const letters = ["A", "B", "C", "D", "E"];
+  const letters = ["A", "B", "C", "D", "E", "F", "G"];
   const block = options.map((value, i) => `${letters[i]}: ${value}`).join("\n");
   return template.replace("{options}", block);
 }

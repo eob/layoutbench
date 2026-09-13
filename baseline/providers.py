@@ -14,9 +14,60 @@ from urllib.parse import quote
 
 import httpx
 from PIL import Image
+from pydantic import BaseModel, ConfigDict
+
+from baseline.protocol import CHOICE_FAMILIES, FAMILIES
 
 
 ErrorKind = Literal["credits", "rate_limit", "authentication", "unavailable", "invalid_response", "other"]
+
+
+class ChoicePrediction(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    choice: str
+
+
+class GapNumPrediction(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    gap_px: int
+
+
+class HeaderPxPrediction(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    above_px: int
+    below_px: int
+
+
+class RegionPxPrediction(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    pad_px: int
+
+
+_PREDICTION_MODELS = {
+    "choice": ChoicePrediction,
+    "gapnum": GapNumPrediction,
+    "headerpx": HeaderPxPrediction,
+    "regionpx": RegionPxPrediction,
+}
+
+
+def prediction_model(family: str) -> type[BaseModel]:
+    """JSON-shape gate for one task family (the evaluator re-checks semantics)."""
+    if family not in FAMILIES:
+        raise ValueError(f"Unknown family: {family}")
+    if family in CHOICE_FAMILIES:
+        return ChoicePrediction
+    return _PREDICTION_MODELS[family]
+
+
+def prediction_json_schema(family: str) -> dict:
+    schema = prediction_model(family).model_json_schema()
+    schema["additionalProperties"] = False
+    return schema
 
 
 @dataclass
@@ -80,9 +131,8 @@ class PredictionClient:
     def close(self) -> None:
         self._http.close()
 
-    def _request(self, data: str, mime_type: str, prompt: str, api_key: str) -> tuple[str, dict, dict]:
-        schema = LayoutPrediction.model_json_schema()
-        schema["additionalProperties"] = False
+    def _request(self, data: str, mime_type: str, prompt: str, api_key: str, family: str) -> tuple[str, dict, dict]:
+        schema = prediction_json_schema(family)
         headers = {"Content-Type": "application/json"}
         if self.provider == "openai":
             headers["Authorization"] = f"Bearer {api_key}"
@@ -157,7 +207,7 @@ class PredictionClient:
             raise ValueError("Response contained no prediction text")
         return text
 
-    def predict(self, image_path: str, prompt: str) -> PredictionResponse:
+    def predict(self, image_path: str, prompt: str, family: str) -> PredictionResponse:
         api_key = os.environ.get(self.api_key_env)
         if not api_key and self._google_key_fallback:
             api_key = os.environ.get("GOOGLE_API_KEY")
@@ -170,7 +220,7 @@ class PredictionClient:
                 image.verify()
         except (OSError, ValueError) as error:
             return PredictionResponse("", error=str(error), error_kind="other")
-        url, headers, request_body = self._request(base64.b64encode(raw_image).decode("ascii"), mime_type, prompt, api_key)
+        url, headers, request_body = self._request(base64.b64encode(raw_image).decode("ascii"), mime_type, prompt, api_key, family)
         result = PredictionResponse("")
         for attempt in range(2):
             result.request_attempts += 1
@@ -206,7 +256,7 @@ class PredictionClient:
                         if isinstance(parsed, dict):
                             parsed = {key: value.strip().lower() if isinstance(value, str) else value
                                       for key, value in parsed.items()}
-                        result.parsed = LayoutPrediction.model_validate(parsed).model_dump()
+                        result.parsed = prediction_model(family).model_validate(parsed).model_dump()
                         result.error = result.error_kind = None
                     except (ValueError, TypeError, KeyError, AttributeError) as error:
                         result.error = str(error).replace(api_key, "[REDACTED]")
