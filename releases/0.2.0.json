@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "benchmark_version": "0.2.0",
+  "status": "pilot",
+  "human_validation": "not_performed",
+  "dataset_manifest": "dataset/layoutbench-v0.2/manifest.json",
+  "dataset_path": "dataset/layoutbench-v0.2",
+  "dataset_git_commit": "7e633b9d91adb7f54009df6bfb71c4a86a8aaf11",
+  "dataset_fingerprint": "36a60a7c43689476a70651e26e3f2721fe3c31e8a341e22bc88649bb16de66cb",
+  "evaluation_protocol_fingerprint": "f1fd71a11d7b56b202367d6e08920dfbfdeccf8919d444f03c19a72352c33e4b",
+  "expected_task_count": 208
+}
