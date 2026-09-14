@@ -63,8 +63,8 @@ count alone provides no advantage over chance. Abstract fixed values are disjoin
 across families (gap tasks pad 40, pad tasks gap 20) so no two
 families can render identical stimuli. No answer-adjacent word,
 digit, or px value appears in any pixel; a frozen word list enforces
-this on rendered DOM text. Grid tasks always stretch items to fill
-cells so box gaps equal the gutter; `justify_content`/`align_items`
+this on rendered DOM text. Grid tasks stretch items across each column so horizontal box gaps equal
+the gutter; vertical placement also depends on the row tracks and item heights. `justify_content`/`align_items`
 are not swept for grids. Prompts use visual language and are frozen
 per family.
 

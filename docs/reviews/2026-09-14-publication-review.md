@@ -70,3 +70,18 @@ directory rebuild and failed on its temporarily absent manifest; the
 ordered post-render run passed all 71 tests. No implementation change was
 made for that execution-order error. A pre-publication scan of all 422
 historical Git objects found none of the 14 configured secret values.
+
+## Scope of the source and corpus audit
+
+- Builders: traced all thirteen families, every answer mapping, option permutation, token distribution, theme/geometry level coverage, neutral copy, and sibling render reuse. The revised old remove-one-sort attacker has its true answer among candidates in 0/16 gap, 0/16 padding, 0/16 region, and 0/12 table tasks. This directly breaks the demonstrated rule; it is not proof against every possible finite-bank shortcut.
+- Renderer and pixels: verified fixed canvas/DPR and font bytes, DOM overflow gates, actual PNG hashes, geometry-derived flow/distribution/alignment, line-box text justification, all table cells, visible header edges, outer region bands, gap midlines and item-ink probes. Inspected revised light header, dark variable six-item row, dark six-item grid, three-column justified document, and small-padding table. Grid boxes stretch horizontally; vertical tracks also determine spacing. The documentation now makes that distinction.
+- Protocol: read strict JSON parsing, duplicate-key rejection, exact schemas, integer bounds, case normalization, invalid handling, choice grades, numeric ceilings, max-error bands for two-key headers, quantiles, confusion denominators, and constant-16 baselines. Native request paths contain image bytes and the family prompt only; they expose no manifest answer, task ID, filename, or design metadata to a model. No previous response is included in a later request.
+- Runner/state: reviewed frozen gates before paid calls, deterministic task order, per-provider key scopes, explicit model catalog, request/token ceilings, conservative budget reservations, SQLite result/attempt separation, retry classification, valid-versus-infrastructure completion, checkpoint resume identity, model configuration persistence, and sealed-run refusal. Costs reflect stored catalog prices, not a provider invoice; the $50 budget is separate from score accuracy.
+- Finalization: read the committed-source byte check, closed-WAL requirement, SQLite integrity and ledger reconciliation, attempt chronology, exact model/scorecard census, raw answer replay, cohort intersection/full-scope requirements, metering completeness, hash seal, immutable roster, and repeat verification. The independent audit script imports none of these scoring modules, recomputes each grade directly from raw text, and checks all family accuracy, confusion, numeric score/error/quantile/band/baseline, cost, latency, and group-count metrics. It first passed all 2,288 historical responses. Corrupting either a saved grade or an aggregate accuracy is rejected in dedicated tests.
+
+The run records `runner_git_dirty: true`: the sole untracked file when the
+2a8e9aa invocation began was generated TypeScript incremental build metadata
+(`tsconfig.tsbuildinfo`). Dataset, protocol, catalog and implementation were
+committed. The metadata flag is preserved honestly. The file pattern is now
+ignored; the separately pinned dataset/protocol and final source evidence
+remain fully verifiable.

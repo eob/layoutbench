@@ -44,6 +44,7 @@ Every swept value covers every theme and structural nuisance level; sparse famil
 
 ```bash
 bun install
+bunx playwright install chromium
 python3 -m venv .venv
 .venv/bin/pip install -e .
 ```

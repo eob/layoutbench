@@ -9,3 +9,4 @@ test_output/
 *.tmp
 .DS_Store
 *.egg-info/
+*.tsbuildinfo
