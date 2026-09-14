@@ -50,7 +50,7 @@ Base commit: `62a557c`.
 | New targeted regressions | All three failed before repair for the stated cause |
 | Revised builder, Python, static checks | 9 TS tests / 884 assertions; 71 Python tests; `bunx tsc --noEmit` and `git diff --check` pass |
 | Revised render repeat / image inspection | All 153 artifact hashes identical across repeat render; header blocks and six-item variable row inspected |
-| Full 0.2.0 campaign and independent recomputation | Pending |
+| Full 0.2.0 campaign and independent recomputation | 2,288/2,288 final observations; source seal and separate raw-answer/geometry audit passed |
 
 ## Decisions and limitations
 
@@ -93,3 +93,34 @@ construct derivations and pixel probes. All 128 agree in both releases;
 mutating numeric truth and its saved decode together is rejected. The
 rerender used Chromium 153.0.8010.12, paired with the locked Playwright
 installation. Python tests now total 75 after the independent audit checks.
+
+## Completed publication campaign
+
+`review-20260914` completed all 208 questions for all 11 configurations in 18.5 minutes, with 8 concurrent requests. The source checkpoint is commit `4b13617`. All 2,288 responses are final observations; there were no separate infrastructure-failure attempts. 0 responses were invalid and remain scored zero. Recorded campaign spending was $25.697663 against the $50 cap. Two attempts include conservative unmetered reserves, so this spending total is not an invoice and affected response-cost means are null. The finalizer independently reconciled the SQLite checkpoint, attempts, scorecards, chronology and committed bytes, then reparsed every raw answer. A second verification pass and the separate audit script both passed.
+
+The table reports the range across configurations, not uncertainty intervals or a model ranking. Small denominators make close scores inconclusive.
+
+| Family | Questions per model | Observed range |
+| --- | ---: | --- |
+| flow | 16 | 87.5–100.0% accuracy |
+| distribute | 20 | 65.0–100.0% accuracy |
+| align | 16 | 56.2–100.0% accuracy |
+| gap | 16 | 6.2–100.0% accuracy |
+| pad | 16 | 18.8–100.0% accuracy |
+| columns | 12 | 91.7–100.0% accuracy |
+| textjustify | 16 | 43.8–100.0% accuracy |
+| headerpad | 18 | 33.3–100.0% accuracy |
+| regionpad | 16 | 6.2–62.5% accuracy |
+| tablepad | 12 | 16.7–100.0% accuracy |
+| gapnum | 16 | 0.00–21.12px mean absolute error |
+| headerpx | 18 | 0.00–18.42px mean absolute error |
+| regionpx | 16 | 7.50–27.94px mean absolute error |
+
+Full per-model metrics, numeric constant baselines and token-value confusion tables appear in [the independent audit export](0.2.0-independent-summary.json). The [sealed result](../../results/runs/0.2.0/review-20260914/final_results.json) contains every raw answer and source identity. Reproduce the audit with:
+
+```sh
+.venv/bin/python -m baseline.finalize --run-dir results/runs/0.2.0/review-20260914 --verify
+.venv/bin/python scripts/audit_results.py results/runs/0.2.0/review-20260914/final_results.json
+```
+
+Final validation on implementation commit `3027924`: 76 Python tests, 9 TypeScript tests / 884 assertions, TypeScript typechecking, exact render replay, release validation, and diff hygiene passed. Temporarily omitting `providers.py` from the fingerprint reproduces the new wire-contract regression failure; the frozen provider-inclusive protocol passes. The simplification pass consolidated only the duplicated Cartesian-product helper; the independent auditor intentionally duplicates formulas to keep verification independent. The review ticket and public PR are complete once the verified source artifacts are merged.

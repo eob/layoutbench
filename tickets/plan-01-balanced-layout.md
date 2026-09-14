@@ -1,6 +1,6 @@
 # plan-01: Balanced LayoutBench perception design
 
-- **Status:** In Progress
+- **Status:** Completed — historical 0.1.0 pilot; superseded by `review-02-publication`
 - **Date:** 2026-09-13
 - **Assignee:** Edward Benson
 - **Branch:** `rebuild-01-balanced`

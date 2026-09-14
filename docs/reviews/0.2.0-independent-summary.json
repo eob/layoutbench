@@ -1,0 +1,1720 @@
+{
+  "release": "0.2.0",
+  "run_id": "review-20260914",
+  "response_count": 2288,
+  "source_sha256": "56f61f9ca00193a385deaefbc6e0c07b08874f1b8708534f7e644fae5c3493bb",
+  "models": {
+    "claude-fable-5-1": {
+      "flow": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "distribute": {
+        "correct": 19,
+        "count": 20,
+        "accuracy": 0.95
+      },
+      "align": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "gap": {
+        "correct": 14,
+        "count": 16,
+        "accuracy": 0.875,
+        "value_confusion": {
+          "8px": {
+            "8px": 3
+          },
+          "0px": {
+            "0px": 2
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "8px": 1,
+            "12px": 1
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "headerpad": {
+        "correct": 12,
+        "count": 18,
+        "accuracy": 0.6666666666666666
+      },
+      "regionpad": {
+        "correct": 8,
+        "count": 16,
+        "accuracy": 0.5,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "16px": 2
+          },
+          "32px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "24px": 3
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "4px": {
+            "4px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "12px": {
+            "12px": 3
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 92.578125,
+        "mean_err": 1.1875,
+        "p90_err": 3.5,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 96.35416666666667,
+        "mean_err": 0.5833333333333335,
+        "p90_err": 1.0,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 57.421875,
+        "mean_err": 7.8125,
+        "p90_err": 20.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "claude-haiku-4-5-20251001": {
+      "flow": {
+        "correct": 14,
+        "count": 16,
+        "accuracy": 0.875
+      },
+      "distribute": {
+        "correct": 13,
+        "count": 20,
+        "accuracy": 0.65
+      },
+      "align": {
+        "correct": 9,
+        "count": 16,
+        "accuracy": 0.5625
+      },
+      "gap": {
+        "correct": 1,
+        "count": 16,
+        "accuracy": 0.0625,
+        "value_confusion": {
+          "8px": {
+            "24px": 1,
+            "16px": 2
+          },
+          "0px": {
+            "16px": 1,
+            "8px": 1
+          },
+          "12px": {
+            "16px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "32px": 1
+          },
+          "32px": {
+            "16px": 2
+          },
+          "4px": {
+            "16px": 2
+          },
+          "24px": {
+            "24px": 1,
+            "16px": 1
+          }
+        }
+      },
+      "pad": {
+        "correct": 3,
+        "count": 16,
+        "accuracy": 0.1875,
+        "value_confusion": {
+          "32px": {
+            "48px": 2,
+            "32px": 1
+          },
+          "8px": {
+            "48px": 1,
+            "16px": 1,
+            "24px": 1
+          },
+          "16px": {
+            "16px": 1,
+            "24px": 2,
+            "32px": 1
+          },
+          "24px": {
+            "32px": 2,
+            "8px": 1
+          },
+          "48px": {
+            "24px": 1,
+            "48px": 1,
+            "16px": 1
+          }
+        }
+      },
+      "columns": {
+        "correct": 11,
+        "count": 12,
+        "accuracy": 0.9166666666666666
+      },
+      "textjustify": {
+        "correct": 7,
+        "count": 16,
+        "accuracy": 0.4375
+      },
+      "headerpad": {
+        "correct": 6,
+        "count": 18,
+        "accuracy": 0.3333333333333333
+      },
+      "regionpad": {
+        "correct": 1,
+        "count": 16,
+        "accuracy": 0.0625,
+        "value_confusion": {
+          "48px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "16px": {
+            "48px": 2,
+            "32px": 2
+          },
+          "32px": {
+            "48px": 2,
+            "32px": 1
+          },
+          "24px": {
+            "8px": 1,
+            "48px": 2
+          },
+          "8px": {
+            "48px": 3
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 2,
+        "count": 12,
+        "accuracy": 0.16666666666666666,
+        "value_confusion": {
+          "4px": {
+            "8px": 3
+          },
+          "8px": {
+            "16px": 2,
+            "12px": 1
+          },
+          "12px": {
+            "8px": 2,
+            "12px": 1
+          },
+          "16px": {
+            "16px": 1,
+            "12px": 2
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 15.625,
+        "mean_err": 21.125,
+        "p90_err": 40.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 30.90277777777778,
+        "mean_err": 12.111111111111112,
+        "p90_err": 19.800000000000004,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 10.15625,
+        "mean_err": 21.5,
+        "p90_err": 38.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "claude-opus-5": {
+      "flow": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "distribute": {
+        "correct": 20,
+        "count": 20,
+        "accuracy": 1.0
+      },
+      "align": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "gap": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "8px": {
+            "8px": 3
+          },
+          "0px": {
+            "0px": 2
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "4px": 2
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "headerpad": {
+        "correct": 17,
+        "count": 18,
+        "accuracy": 0.9444444444444444
+      },
+      "regionpad": {
+        "correct": 8,
+        "count": 16,
+        "accuracy": 0.5,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "16px": 2
+          },
+          "32px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "24px": 3
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 11,
+        "count": 12,
+        "accuracy": 0.9166666666666666,
+        "value_confusion": {
+          "4px": {
+            "4px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "12px": {
+            "12px": 3
+          },
+          "16px": {
+            "16px": 2,
+            "8px": 1
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 94.53125,
+        "mean_err": 0.875,
+        "p90_err": 2.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 95.48611111111111,
+        "mean_err": 0.7222222222222224,
+        "p90_err": 1.1500000000000004,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 54.296875,
+        "mean_err": 8.3125,
+        "p90_err": 20.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "claude-sonnet-5": {
+      "flow": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375
+      },
+      "distribute": {
+        "correct": 13,
+        "count": 20,
+        "accuracy": 0.65
+      },
+      "align": {
+        "correct": 13,
+        "count": 16,
+        "accuracy": 0.8125
+      },
+      "gap": {
+        "correct": 9,
+        "count": 16,
+        "accuracy": 0.5625,
+        "value_confusion": {
+          "8px": {
+            "8px": 2,
+            "16px": 1
+          },
+          "0px": {
+            "4px": 2
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 2,
+            "32px": 1
+          },
+          "32px": {
+            "32px": 1,
+            "16px": 1
+          },
+          "4px": {
+            "12px": 1,
+            "8px": 1
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 14,
+        "count": 16,
+        "accuracy": 0.875,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "8px": 2,
+            "16px": 1
+          },
+          "16px": {
+            "16px": 3,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 14,
+        "count": 16,
+        "accuracy": 0.875
+      },
+      "headerpad": {
+        "correct": 14,
+        "count": 18,
+        "accuracy": 0.7777777777777778
+      },
+      "regionpad": {
+        "correct": 7,
+        "count": 16,
+        "accuracy": 0.4375,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "16px": 2
+          },
+          "32px": {
+            "24px": 2,
+            "32px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "24px": 2,
+            "48px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 5,
+        "count": 12,
+        "accuracy": 0.4166666666666667,
+        "value_confusion": {
+          "4px": {
+            "12px": 1,
+            "8px": 2
+          },
+          "8px": {
+            "16px": 1,
+            "12px": 2
+          },
+          "12px": {
+            "16px": 1,
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 51.171875,
+        "mean_err": 9.5625,
+        "p90_err": 17.5,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 18.229166666666668,
+        "mean_err": 18.416666666666668,
+        "p90_err": 32.25,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 42.578125,
+        "mean_err": 10.1875,
+        "p90_err": 20.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "gemini-3.1-pro-preview": {
+      "flow": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "distribute": {
+        "correct": 18,
+        "count": 20,
+        "accuracy": 0.9
+      },
+      "align": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "gap": {
+        "correct": 9,
+        "count": 16,
+        "accuracy": 0.5625,
+        "value_confusion": {
+          "8px": {
+            "12px": 1,
+            "8px": 1,
+            "16px": 1
+          },
+          "0px": {
+            "0px": 1,
+            "4px": 1
+          },
+          "12px": {
+            "16px": 1,
+            "12px": 1
+          },
+          "16px": {
+            "24px": 1,
+            "16px": 2
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "8px": 2
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "32px": 1,
+            "8px": 2
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 13,
+        "count": 16,
+        "accuracy": 0.8125
+      },
+      "headerpad": {
+        "correct": 18,
+        "count": 18,
+        "accuracy": 1.0
+      },
+      "regionpad": {
+        "correct": 10,
+        "count": 16,
+        "accuracy": 0.625,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "32px": 1,
+            "24px": 1,
+            "16px": 2
+          },
+          "32px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "8px": 2,
+            "24px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 6,
+        "count": 12,
+        "accuracy": 0.5,
+        "value_confusion": {
+          "4px": {
+            "8px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "12px": {
+            "16px": 3
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 78.125,
+        "mean_err": 3.5,
+        "p90_err": 12.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 61.28472222222222,
+        "mean_err": 6.916666666666667,
+        "p90_err": 17.500000000000004,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 22.265625,
+        "mean_err": 27.9375,
+        "p90_err": 60.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "gemini-3.5-flash-lite": {
+      "flow": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375
+      },
+      "distribute": {
+        "correct": 16,
+        "count": 20,
+        "accuracy": 0.8
+      },
+      "align": {
+        "correct": 11,
+        "count": 16,
+        "accuracy": 0.6875
+      },
+      "gap": {
+        "correct": 4,
+        "count": 16,
+        "accuracy": 0.25,
+        "value_confusion": {
+          "8px": {
+            "12px": 2,
+            "8px": 1
+          },
+          "0px": {
+            "8px": 1,
+            "12px": 1
+          },
+          "12px": {
+            "16px": 1,
+            "8px": 1
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "16px": 2
+          },
+          "4px": {
+            "8px": 1,
+            "12px": 1
+          },
+          "24px": {
+            "8px": 1,
+            "16px": 1
+          }
+        }
+      },
+      "pad": {
+        "correct": 3,
+        "count": 16,
+        "accuracy": 0.1875,
+        "value_confusion": {
+          "32px": {
+            "48px": 3
+          },
+          "8px": {
+            "32px": 1,
+            "48px": 2
+          },
+          "16px": {
+            "48px": 2,
+            "32px": 2
+          },
+          "24px": {
+            "48px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 8,
+        "count": 16,
+        "accuracy": 0.5
+      },
+      "headerpad": {
+        "correct": 6,
+        "count": 18,
+        "accuracy": 0.3333333333333333
+      },
+      "regionpad": {
+        "correct": 3,
+        "count": 16,
+        "accuracy": 0.1875,
+        "value_confusion": {
+          "48px": {
+            "48px": 3
+          },
+          "16px": {
+            "48px": 2,
+            "32px": 2
+          },
+          "32px": {
+            "48px": 3
+          },
+          "24px": {
+            "48px": 3
+          },
+          "8px": {
+            "24px": 1,
+            "32px": 1,
+            "48px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 5,
+        "count": 12,
+        "accuracy": 0.4166666666666667,
+        "value_confusion": {
+          "4px": {
+            "8px": 1,
+            "12px": 2
+          },
+          "8px": {
+            "8px": 1,
+            "16px": 1,
+            "12px": 1
+          },
+          "12px": {
+            "16px": 2,
+            "12px": 1
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 58.59375,
+        "mean_err": 6.625,
+        "p90_err": 12.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 46.354166666666664,
+        "mean_err": 9.055555555555555,
+        "p90_err": 16.500000000000004,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 16.796875,
+        "mean_err": 18.6875,
+        "p90_err": 33.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "gemini-3.8-flash": {
+      "flow": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375
+      },
+      "distribute": {
+        "correct": 20,
+        "count": 20,
+        "accuracy": 1.0
+      },
+      "align": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "gap": {
+        "correct": 12,
+        "count": 16,
+        "accuracy": 0.75,
+        "value_confusion": {
+          "8px": {
+            "8px": 2,
+            "12px": 1
+          },
+          "0px": {
+            "0px": 1,
+            "4px": 1
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "8px": 2
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 14,
+        "count": 16,
+        "accuracy": 0.875,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "16px": 2,
+            "8px": 1
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375
+      },
+      "headerpad": {
+        "correct": 16,
+        "count": 18,
+        "accuracy": 0.8888888888888888
+      },
+      "regionpad": {
+        "correct": 9,
+        "count": 16,
+        "accuracy": 0.5625,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "16px": 1,
+            "32px": 1
+          },
+          "32px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "8px": 2,
+            "24px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 6,
+        "count": 12,
+        "accuracy": 0.5,
+        "value_confusion": {
+          "4px": {
+            "8px": 3
+          },
+          "8px": {
+            "12px": 2,
+            "8px": 1
+          },
+          "12px": {
+            "16px": 1,
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 96.09375,
+        "mean_err": 0.625,
+        "p90_err": 3.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 94.44444444444444,
+        "mean_err": 1.1666666666666667,
+        "p90_err": 0.0,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 59.375,
+        "mean_err": 7.5,
+        "p90_err": 20.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "gpt-5.6-luna": {
+      "flow": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375
+      },
+      "distribute": {
+        "correct": 18,
+        "count": 20,
+        "accuracy": 0.9
+      },
+      "align": {
+        "correct": 12,
+        "count": 16,
+        "accuracy": 0.75
+      },
+      "gap": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375,
+        "value_confusion": {
+          "8px": {
+            "8px": 3
+          },
+          "0px": {
+            "0px": 2
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "4px": 1,
+            "8px": 1
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 8,
+        "count": 16,
+        "accuracy": 0.5
+      },
+      "headerpad": {
+        "correct": 11,
+        "count": 18,
+        "accuracy": 0.6111111111111112
+      },
+      "regionpad": {
+        "correct": 2,
+        "count": 16,
+        "accuracy": 0.125,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "32px": 2
+          },
+          "32px": {
+            "48px": 2,
+            "32px": 1
+          },
+          "24px": {
+            "32px": 2,
+            "48px": 1
+          },
+          "8px": {
+            "24px": 2,
+            "32px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "4px": {
+            "4px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "12px": {
+            "12px": 3
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 99.609375,
+        "mean_err": 0.0625,
+        "p90_err": 0.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 99.30555555555556,
+        "mean_err": 0.1111111111111111,
+        "p90_err": 0.5,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 34.375,
+        "mean_err": 14.0,
+        "p90_err": 24.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "gpt-5.6-sol": {
+      "flow": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "distribute": {
+        "correct": 19,
+        "count": 20,
+        "accuracy": 0.95
+      },
+      "align": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "gap": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "8px": {
+            "8px": 3
+          },
+          "0px": {
+            "0px": 2
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "4px": 2
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 12,
+        "count": 16,
+        "accuracy": 0.75
+      },
+      "headerpad": {
+        "correct": 14,
+        "count": 18,
+        "accuracy": 0.7777777777777778
+      },
+      "regionpad": {
+        "correct": 8,
+        "count": 16,
+        "accuracy": 0.5,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "16px": 2
+          },
+          "32px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "32px": 2,
+            "24px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "4px": {
+            "4px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "12px": {
+            "12px": 3
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 100.0,
+        "mean_err": 0.0,
+        "p90_err": 0.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 100.0,
+        "mean_err": 0.0,
+        "p90_err": 0.0,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 46.875,
+        "mean_err": 11.5,
+        "p90_err": 24.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "gpt-5.6-terra": {
+      "flow": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "distribute": {
+        "correct": 18,
+        "count": 20,
+        "accuracy": 0.9
+      },
+      "align": {
+        "correct": 13,
+        "count": 16,
+        "accuracy": 0.8125
+      },
+      "gap": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "8px": {
+            "8px": 3
+          },
+          "0px": {
+            "0px": 2
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "4px": 2
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 15,
+        "count": 16,
+        "accuracy": 0.9375,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "24px": 1,
+            "48px": 2
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 10,
+        "count": 16,
+        "accuracy": 0.625
+      },
+      "headerpad": {
+        "correct": 18,
+        "count": 18,
+        "accuracy": 1.0
+      },
+      "regionpad": {
+        "correct": 7,
+        "count": 16,
+        "accuracy": 0.4375,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 3,
+            "16px": 1
+          },
+          "32px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "32px": 2,
+            "24px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 11,
+        "count": 12,
+        "accuracy": 0.9166666666666666,
+        "value_confusion": {
+          "4px": {
+            "4px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "12px": {
+            "12px": 3
+          },
+          "16px": {
+            "8px": 1,
+            "16px": 2
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 99.609375,
+        "mean_err": 0.0625,
+        "p90_err": 0.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 99.82638888888889,
+        "mean_err": 0.027777777777777776,
+        "p90_err": 0.0,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 40.625,
+        "mean_err": 12.5,
+        "p90_err": 24.0,
+        "constant16_mean_score": 43.75
+      }
+    },
+    "gpt-6-astra": {
+      "flow": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "distribute": {
+        "correct": 20,
+        "count": 20,
+        "accuracy": 1.0
+      },
+      "align": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "gap": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "8px": {
+            "8px": 3
+          },
+          "0px": {
+            "0px": 2
+          },
+          "12px": {
+            "12px": 2
+          },
+          "16px": {
+            "16px": 3
+          },
+          "32px": {
+            "32px": 2
+          },
+          "4px": {
+            "4px": 2
+          },
+          "24px": {
+            "24px": 2
+          }
+        }
+      },
+      "pad": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "32px": {
+            "32px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "16px": {
+            "16px": 4
+          },
+          "24px": {
+            "24px": 3
+          },
+          "48px": {
+            "48px": 3
+          }
+        }
+      },
+      "columns": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0
+      },
+      "textjustify": {
+        "correct": 16,
+        "count": 16,
+        "accuracy": 1.0
+      },
+      "headerpad": {
+        "correct": 18,
+        "count": 18,
+        "accuracy": 1.0
+      },
+      "regionpad": {
+        "correct": 8,
+        "count": 16,
+        "accuracy": 0.5,
+        "value_confusion": {
+          "48px": {
+            "48px": 1,
+            "24px": 2
+          },
+          "16px": {
+            "24px": 2,
+            "16px": 2
+          },
+          "32px": {
+            "32px": 2,
+            "24px": 1
+          },
+          "24px": {
+            "24px": 3
+          },
+          "8px": {
+            "32px": 2,
+            "24px": 1
+          }
+        }
+      },
+      "tablepad": {
+        "correct": 12,
+        "count": 12,
+        "accuracy": 1.0,
+        "value_confusion": {
+          "4px": {
+            "4px": 3
+          },
+          "8px": {
+            "8px": 3
+          },
+          "12px": {
+            "12px": 3
+          },
+          "16px": {
+            "16px": 3
+          }
+        }
+      },
+      "gapnum": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 100.0,
+        "mean_err": 0.0,
+        "p90_err": 0.0,
+        "constant16_mean_score": 46.875
+      },
+      "headerpx": {
+        "count": 18,
+        "valid_count": 18,
+        "mean_score": 100.0,
+        "mean_err": 0.0,
+        "p90_err": 0.0,
+        "constant16_mean_score": 38.888888888888886
+      },
+      "regionpx": {
+        "count": 16,
+        "valid_count": 16,
+        "mean_score": 59.375,
+        "mean_err": 8.0,
+        "p90_err": 24.0,
+        "constant16_mean_score": 43.75
+      }
+    }
+  }
+}

@@ -117,3 +117,7 @@ found an answer shortcut in option ordering and invisible header measurement
 edges. The old dataset and run remain archived. See
 [the September 14 review](docs/reviews/2026-09-14-publication-review.md) for
 regressions, validation evidence, the fresh campaign, and limitations.
+
+## Results: reviewed 0.2.0 pilot
+
+The September 14 campaign completed **2,288 responses: 208 questions for each of 11 model configurations**. All responses, provenance and per-family metrics are available in the [sealed results](results/runs/0.2.0/review-20260914/final_results.json). [The review](docs/reviews/2026-09-14-publication-review.md) reports the observed ranges and limitations; [the independent audit export](docs/reviews/0.2.0-independent-summary.json) includes token-value confusion tables and numeric baselines. No overall score or statistically established model ranking is claimed.
