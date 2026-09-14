@@ -10,7 +10,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-DATASET_DIR = ROOT / "dataset" / "layoutbench-v0.1"
+DATASET_DIR = ROOT / "dataset" / "layoutbench-v0.2"
 MANIFEST_PATH = DATASET_DIR / "manifest.json"
 PROMPTS_PATH = Path(__file__).with_name("prompts.json")
 
@@ -202,8 +202,7 @@ def check_choice_ground_truth(tasks: list[dict]) -> None:
 
 
 def check_full_options(family: str, members: list[dict]) -> None:
-    # Every task offers the whole token set, so the option set is identical
-    # across tasks and cannot leak the truth. Only the truth slot varies.
+    # The set is fixed; distractor order is shuffled rather than sorted.
     tokens = TOKEN_SETS[family]
     key = TOKEN_KEYS[family]
     letters = LABELS[family]
@@ -221,9 +220,6 @@ def check_full_options(family: str, members: list[dict]) -> None:
             raise ValueError(f"Options are not the full token set: {task['taskId']}")
         truth_px = task["design"][key]
         truth_index = values.index(truth_px)
-        others = [value for i, value in enumerate(values) if i != truth_index]
-        if others != sorted(others):
-            raise ValueError(f"Distractor order differs: {task['taskId']}")
         if task["groundTruth"]["choice"] != letters[truth_index]:
             raise ValueError(f"Choice letter mislabels truth: {task['taskId']}")
 
@@ -290,8 +286,13 @@ def check_crossing(tasks: list[dict]) -> None:
 
 
 def check_flow_counts(members: list[dict]) -> None:
-    # Item count must neither identify the direction nor collapse within one:
-    # every count value occurs with at least two directions and vice versa.
+    from collections import Counter
+
+    distributions = [Counter(task["design"]["item_count"] for task in members
+                             if task["design"]["direction"] == direction)
+                     for direction in ("row", "column", "grid-2col", "grid-3col")]
+    if any(distribution != distributions[0] for distribution in distributions[1:]):
+        raise ValueError("Item count distribution differs across flow directions")
     by_count: dict[int, set] = {}
     by_direction: dict[str, set] = {}
     for task in members:
@@ -786,6 +787,11 @@ def check_pixels(tasks: list[dict], images: dict[str, Image.Image]) -> None:
             for rect in (above, below):
                 if px(image, rect["x"] + rect["width"] / 2, rect["y"] + rect["height"] / 2) != palette["card"]:
                     raise ValueError(f"Header spacer not background: {task['taskId']}")
+            for role in ("header", "tbody"):
+                rect = regions[(role, role)]
+                for y in (rect["y"] + 1, rect["y"] + rect["height"] - 1):
+                    if px(image, rect["x"] + rect["width"] - 2, y) != palette["tint"]:
+                        raise ValueError(f"Header block edge not visible: {task['taskId']} {role}")
         elif design["archetype"] == "region":
             content = regions[("content", "content")]
             outside = palette["card"] if design["bordered"] else palette["canvas"]
@@ -863,4 +869,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

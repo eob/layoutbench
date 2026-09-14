@@ -1,5 +1,20 @@
 import pytest
 
+
+def test_header_spacing_has_visible_box_edges():
+    from PIL import Image
+    from baseline.validate_dataset import DATASET_DIR, PALETTE, load_manifest
+
+    for task in load_manifest():
+        if task["family"] != "headerpad":
+            continue
+        image = Image.open(DATASET_DIR / task["imageFilename"]).convert("RGB")
+        for rect in task["rendered"]["regions"]:
+            if rect["role"] in ("header", "tbody"):
+                point = (round((rect["x"] + rect["width"] - 2) * 2),
+                         round((rect["y"] + 1) * 2))
+                assert image.getpixel(point) == PALETTE[task["design"]["theme"]]["tint"]
+
 from baseline.validate_dataset import (
     adjacent_pairs,
     derive_align,

@@ -15,7 +15,7 @@ from baseline.providers import PredictionClient, PredictionResponse
 GRADING_VERSION = "1"
 
 PROTOCOL_FILES = ("prompts.json", "protocol.py", "evaluator.py", "statistics.py",
-                  "reporting.py", "validate_dataset.py", "finalize.py")
+                  "reporting.py", "validate_dataset.py", "finalize.py", "providers.py")
 
 
 def evaluation_protocol_fingerprint() -> str:

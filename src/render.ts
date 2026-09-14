@@ -14,7 +14,7 @@ import type {
 } from "./types.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const OUTPUT_DIR = path.join(ROOT, "dataset", "layoutbench-v0.1");
+const OUTPUT_DIR = path.join(ROOT, "dataset", "layoutbench-v0.2");
 const FONT_PATH = path.join(ROOT, "src", "assets", "DejaVuSans.ttf");
 const FONT_SHA256 = createHash("sha256").update(fs.readFileSync(FONT_PATH)).digest("hex");
 const FONT_BYTES = fs.readFileSync(FONT_PATH).toString("base64");
@@ -68,7 +68,8 @@ function abstractItemsHtml(design: AbstractDesign): string {
       if (design.direction === "row") {
         if (design.align_items !== "stretch")
           heightStyle = `height: ${ROW_VARIABLE.heights[i % ROW_VARIABLE.heights.length]}px;`;
-        widthStyle = `min-width: ${ROW_VARIABLE.widths[i % ROW_VARIABLE.widths.length]}px;`;
+        const scale = design.item_count > 4 ? 0.75 : 1;
+        widthStyle = `min-width: ${ROW_VARIABLE.widths[i % ROW_VARIABLE.widths.length]! * scale}px;`;
       } else if (design.direction === "column") {
         widthStyle =
           design.align_items === "stretch"
@@ -211,7 +212,8 @@ function documentHtml(design: DocumentDesign): string {
   .tcol { flex: 1 1 0; min-width: 0; }
   .tcol p, .tbody p { margin: 0 0 0.9em 0; }
   .tcol p:last-child, .tbody p:last-child { margin-bottom: 0; }
-  .header-line { font-size: 28px; font-weight: 700; line-height: 1.25; }
+  .header-line { font-size: 28px; font-weight: 700; line-height: 1.25; background: ${c.blockTint}; }
+  .tbody { background: ${c.blockTint}; }
   .content-block { background: ${c.blockTint}; border-radius: 6px; color: ${c.textColor}; font-size: 16px; line-height: 1.55; }
   table.grid { border-collapse: separate; border-spacing: 0; table-layout: fixed; }
   table.grid td { border: 1px solid ${c.cardBorder}; background: ${c.blockTint}; color: ${c.textColor}; font-size: 15px; line-height: normal; vertical-align: top; }`;
@@ -527,4 +529,3 @@ main().catch((err) => {
   console.error("Render failed:", err);
   process.exit(1);
 });
-

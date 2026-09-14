@@ -1,4 +1,4 @@
-# LayoutBench V0.1.0 methodology
+# LayoutBench V0.2.0 methodology
 
 ## Intended inference
 
@@ -31,8 +31,10 @@ background, points just inside each content edge must be item ink, gap
 midlines must be background, and borders/tint must sample correctly.
 Numeric truth is the rounded decode, not the stylesheet value.
 
-Box-to-box is the operational definition of spacing: header pads run
-box edge to box edge, not glyph ink to glyph ink. Absolute px
+Box-to-box is the operational definition of spacing. Header and body
+blocks are tinted so the measured edges are visible; prompts explicitly
+name those edges. Container padding asks for the smallest item-to-border
+distance, and table padding asks for the left text inset. Absolute px
 estimates test proportional judgment (providers rescale inputs), so
 numeric prompts state the 800x600 design canvas; scores normalize
 error against a 16px ceiling (4px tight).
@@ -43,18 +45,21 @@ Thirteen families, 208 tasks, 150 images. Ten choice families use
 exact-letter scoring against 3-7 lettered options (chance 14.3-33.3%
 depending on family). Token-choice tasks offer the full token set on
 every trial — the option set is identical across tasks, so it cannot
-leak the truth; only the truth's slot varies, assigned independently
-of the token value with balanced letters. Three numeric families share
+leak the truth; truth slots are balanced, and all remaining options are independently
+shuffled using a task seed. Version 0.1 used sorted distractors, which
+leaked the truth through option order; that version is superseded. Three numeric families share
 images with choice siblings and score absolute px error; the 8
 intersecting columns/justification cells share one render each and are
 disclosed as correlated observations.
 
-Every swept token value is crossed against theme (light/dark) plus its
+Every swept token value occurs with both themes and each level of its
 structural nuisances (flow direction, bordered vs bare canvas, table
-size): each token occurs with every nuisance level, verified on token
-value rather than answer letter. Fixed-option families cross answers
-against nuisances; flow item counts overlap across directions so no
-count identifies a direction. Abstract fixed values are disjoint
+size), verified on token value rather than answer letter. This is
+marginal coverage, not a complete factorial: sparse token families
+have only two to four observations per value, leaving interactions
+confounded. Fixed-option families use the stated full crossings. Fixed-option families cross answers
+against nuisances; flow item counts have identical distributions across directions, so
+count alone provides no advantage over chance. Abstract fixed values are disjoint
 across families (gap tasks pad 40, pad tasks gap 20) so no two
 families can render identical stimuli. No answer-adjacent word,
 digit, or px value appears in any pixel; a frozen word list enforces

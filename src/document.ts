@@ -8,6 +8,7 @@ import {
   assignCrossed,
   balancedLetters,
   fnv1a,
+  fullCross,
   mulberry32,
   shuffled,
   stratifiedLetters,
@@ -36,13 +37,6 @@ export const TABLE_WORDS = [
   "cloud",
   "rain",
 ];
-
-function fullCross<T>(...axes: T[][]): T[][] {
-  return axes.reduce<T[][]>(
-    (acc, axis) => acc.flatMap((combo) => axis.map((value) => [...combo, value])),
-    [[]],
-  );
-}
 
 interface DocumentArgs {
   family: LayoutFamily;
@@ -185,8 +179,8 @@ const REGION_TOKENS = [8, 16, 24, 32, 48];
       letter: assigned[i]!["letter"] as string,
     });
   }
-  plan.forEach((item) => {
-    const sampled = tokenOptions(item.token, REGION_TOKENS, item.letter);
+  plan.forEach((item, index) => {
+    const sampled = tokenOptions(item.token, REGION_TOKENS, item.letter, `regionpad:${index}`);
     documentTasks.push({
       family: "regionpad",
       design: {
@@ -217,7 +211,7 @@ const REGION_TOKENS = [8, 16, 24, 32, 48];
     [{ key: "theme", levels: [...Array<Theme>(6).fill("light"), ...Array<Theme>(6).fill("dark")] }],
     [
       { group: (slot) => `token:${combos[slot]![0]}`, axisKey: "theme" },
-      { group: (slot) => `size:${(combos[slot]![1] as number[]).join("x")}`, axisKey: "theme" },
+      { group: (slot) => `size:${combos[slot]![1].join("x")}`, axisKey: "theme" },
     ],
     [],
     [],
@@ -226,14 +220,14 @@ const REGION_TOKENS = [8, 16, 24, 32, 48];
   combos.forEach(([token, size], i) => {
     plan.push({
       token: token as number,
-      rows: (size as number[])[0]!,
-      cols: (size as number[])[1]!,
+      rows: size[0],
+      cols: size[1],
       theme: assigned[i]!["theme"] as Theme,
     });
   });
   const letters = stratifiedLetters(plan.map((t) => `${t.rows}x${t.cols}`), "tablepad", ["A", "B", "C", "D"]);
   plan.forEach((item, index) => {
-    const sampled = tokenOptions(item.token, [4, 8, 12, 16], letters[index]!);
+    const sampled = tokenOptions(item.token, [4, 8, 12, 16], letters[index]!, `tablepad:${index}`);
     documentTasks.push({
       family: "tablepad",
       design: {

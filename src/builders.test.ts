@@ -20,6 +20,32 @@ const EXPECTED: Record<LayoutFamily, number> = {
 };
 
 describe("LayoutBench builders", () => {
+  it("randomizes distractors independently of the truth slot", () => {
+    const orders = new Set<string>();
+    for (let seed = 0; seed < 256; seed++) {
+      const sampled = tokenOptions(16, [8, 16, 24, 32, 48], "C", `audit:${seed}`);
+      expect(sampled.options[2]).toBe("16px");
+      orders.add(sampled.options.filter((_, i) => i !== 2).join(","));
+    }
+    expect(orders.size).toBe(24);
+  });
+
+  it("balances item counts across flow answers", () => {
+    const counts = new Map<number, Record<string, number>>();
+    for (const task of buildAbstractSpecimens().filter((task) => task.family === "flow")) {
+      if (task.design.kind !== "abstract") throw new Error("Flow requires abstract items");
+      const count = task.design.item_count!;
+      const answers = counts.get(count) ?? {};
+      const choice = (task.groundTruth as { choice: string }).choice;
+      answers[choice] = (answers[choice] ?? 0) + 1;
+      counts.set(count, answers);
+    }
+    for (const answers of counts.values()) {
+      expect(Object.keys(answers).sort()).toEqual(["A", "B", "C", "D"]);
+      expect(new Set(Object.values(answers)).size).toBe(1);
+    }
+  });
+
   it("builds 208 specimens with planned per-family counts", () => {
     const all = [...buildAbstractSpecimens(), ...buildDocumentSpecimens()];
     expect(all.length).toBe(208);
@@ -62,7 +88,7 @@ describe("LayoutBench builders", () => {
   });
 
   it("offers the full token set with the truth at the letter slot", () => {
-    const sampled = tokenOptions(16, [0, 4, 8, 12, 16, 24, 32], "C");
+    const sampled = tokenOptions(16, [0, 4, 8, 12, 16, 24, 32], "C", "example");
     expect(sampled.options).toHaveLength(7);
     expect(new Set(sampled.options).size).toBe(7);
     expect(sampled.options).toContain("16px");

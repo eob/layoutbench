@@ -1,6 +1,6 @@
 # Frozen releases
 
-`0.1.0` is a 208-question perception pilot in 13 families: abstract flow
+`0.2.0` is a 208-question perception pilot in 13 families: abstract flow
 (16), axis distribution (20), cross-axis alignment (16), gap tokens
 (16), and container padding (16); document column counting (12), text
 justification (16), header above/below comparison (18), content-region
@@ -11,8 +11,8 @@ siblings. The 8 intersecting columns/justification cells also share one
 render each. There are 150 distinct images. Human agreement has not
 been measured. Scores never transfer across releases.
 
-Cost basis: a full 0.1.0 campaign is 2,288 responses (208 × 11 models)
-at catalog prices, estimated ≈$15 under the $25 budget cap. The runner
+Cost basis: a full 0.2.0 campaign is 2,288 responses (208 × 11 models)
+at catalog prices, budgeted at $50; the previous full campaign cost $27.87. The runner
 reserves worst-case output cost per request before sending.
 
 A descriptor records `schema_version`, `benchmark_version`,
@@ -27,13 +27,13 @@ decodes from line rects, repeated-group identity, bundled font
 evidence, and background/border pixel probes.
 
 The protocol fingerprint includes the family schemas, numeric score
-definition, prompts, parser, evaluator, statistics, reporting, and
+definition, prompts, parser, evaluator, statistics, reporting, provider request/schema code, and
 dataset validation. Any change requires a new protocol release.
 
 ```sh
 .venv/bin/python -m baseline.validate_dataset
-.venv/bin/python -m baseline.releases --release 0.1.0
-.venv/bin/python -m baseline.runner --release 0.1.0 --run-id pilot-20260913 --max-tasks 208 --concurrency 6 --budget-usd 25
+.venv/bin/python -m baseline.releases --release 0.2.0
+.venv/bin/python -m baseline.runner --release 0.2.0 --run-id review-20260914 --max-tasks 208 --concurrency 6 --budget-usd 50
 ```
 
 The catalog contains 11 enabled configurations: four Anthropic, four
@@ -57,3 +57,9 @@ printed answers into pixels) remain historical. They are not eligible
 for pilot comparisons. Publication accepts an explicitly named,
 verified sealed run rather than selecting scorecards by file
 modification time. See [FINALIZATION.md](FINALIZATION.md).
+
+Version 0.1.0 and its sealed observations remain unchanged as historical
+artifacts. Its token-choice options leak answers through sorted distractors;
+its untinted header spacing also relies on invisible line-box edges. Do not
+use it as the current perception result. Verify it at Git commit `62a557c`.
+Version 0.2.0 requires fresh responses and is not score-comparable to 0.1.0.

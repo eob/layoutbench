@@ -17,7 +17,7 @@ Every stimulus renders on a frozen 800x600 CSS px canvas at 2x DPR with a pinned
 **Abstract side** (neutral cards, no text in pixels):
 
 1. **Flow** (`flow`, 16): row, column, 2-col grid, or 3-col grid.
-2. **Distribution** (`distribute`, 20): packed at start, centered, packed at end, edge-to-edge, or half-space at edges; rows and columns.
+2. **Distribution** (`distribute`, 20): packed at start, centered, packed at end, edge-to-edge, or smaller equal outer spaces; rows and columns.
 3. **Alignment** (`align`, 16): cross-axis start, center, end, or stretch; variable-size items.
 4. **Gap tokens** (`gap`, 16): spacing between items from {0, 4, 8, 12, 16, 24, 32}px, full token set offered every task.
 5. **Container padding** (`pad`, 16): edge-to-item spacing from {8, 16, 24, 32, 48}px.
@@ -34,7 +34,7 @@ Every stimulus renders on a frozen 800x600 CSS px canvas at 2x DPR with a pinned
 
 11. **Gap estimate** (`gapnum`, 16), **header estimate** (`headerpx`, 18, above + below), **region estimate** (`regionpx`, 16).
 
-Every swept value is crossed against theme plus structural nuisances; spacing truth is decoded from rendered geometry. See [docs/methodology.md](docs/methodology.md).
+Every swept value covers every theme and structural nuisance level; sparse families are not fully factorial. Spacing truth is decoded from rendered geometry. See [docs/methodology.md](docs/methodology.md).
 
 ---
 
@@ -50,7 +50,7 @@ python3 -m venv .venv
 
 ### 2. Render the dataset
 
-Renders 150 high-DPI screenshots with Playwright Chromium and generates `dataset/layoutbench-v0.1/manifest.json` with decoded rects:
+Renders 150 high-DPI screenshots with Playwright Chromium and generates `dataset/layoutbench-v0.2/manifest.json` with decoded rects:
 
 ```bash
 bun run render
@@ -64,14 +64,14 @@ bun run validate
 bun run benchmark:mock
 
 # Frozen release run against configured models
-.venv/bin/python -m baseline.runner --release 0.1.0 --run-id pilot-20260913 --max-tasks 208 --concurrency 6 --budget-usd 25
+.venv/bin/python -m baseline.runner --release 0.2.0 --run-id review-20260914 --max-tasks 208 --concurrency 6 --budget-usd 50
 ```
 
 ### 4. Seal a run
 
 ```bash
-.venv/bin/python -m baseline.finalize --run-dir results/runs/0.1.0/pilot-20260913 --scope full
-.venv/bin/python -m baseline.finalize --run-dir results/runs/0.1.0/pilot-20260913 --verify
+.venv/bin/python -m baseline.finalize --run-dir results/runs/0.2.0/review-20260914 --scope full
+.venv/bin/python -m baseline.finalize --run-dir results/runs/0.2.0/review-20260914 --verify
 ```
 
 See [releases/README.md](releases/README.md) and [releases/FINALIZATION.md](releases/FINALIZATION.md).
@@ -80,7 +80,7 @@ See [releases/README.md](releases/README.md) and [releases/FINALIZATION.md](rele
 
 ## Manifest task format
 
-Each task in `dataset/layoutbench-v0.1/manifest.json` provides:
+Each task in `dataset/layoutbench-v0.2/manifest.json` provides:
 
 ```json
 {
@@ -108,3 +108,11 @@ bun test
 # Protocol, grading, statistics, dataset gate, and state store tests
 .venv/bin/pytest tests
 ```
+
+## Publication review
+
+Version 0.2.0 supersedes the September 13 pilot after an adversarial review
+found an answer shortcut in option ordering and invisible header measurement
+edges. The old dataset and run remain archived. See
+[the September 14 review](docs/reviews/2026-09-14-publication-review.md) for
+regressions, validation evidence, the fresh campaign, and limitations.

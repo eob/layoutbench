@@ -43,20 +43,20 @@ export interface TokenOptions {
   choice: string;
 }
 
-// Full token set on every task: the option SET is identical across tasks, so
-// it cannot leak the truth (a nearest-neighbor subset would). Only the truth's
-// slot varies, assigned independently of the token value.
+// Balanced truth slots and independently shuffled distractors avoid both
+// option-subset clues and the sorted-distractor shortcut in version 0.1.
 export function tokenOptions(
   truthPx: number,
   tokens: number[],
   truthLetter: string,
+  seed: string,
 ): TokenOptions {
   const letters = ["A", "B", "C", "D", "E", "F", "G"];
   if (!tokens.includes(truthPx)) throw new Error(`Truth ${truthPx} outside token set`);
   const truthIndex = letters.indexOf(truthLetter);
   if (truthIndex < 0 || truthIndex >= tokens.length)
     throw new Error(`Truth letter ${truthLetter} outside option range`);
-  const others = [...tokens].sort((a, b) => a - b).filter((v) => v !== truthPx);
+  const others = shuffled(tokens.filter((v) => v !== truthPx), mulberry32(fnv1a(`options:${seed}`)));
   const placed: number[] = [];
   for (let i = 0; i < tokens.length; i++) {
     placed.push(i === truthIndex ? truthPx : others.shift()!);
@@ -194,24 +194,21 @@ interface AbstractArgs {
 
 const abstractTasks: AbstractArgs[] = [];
 
-function fullCross<T>(...axes: T[][]): T[][] {
-  return axes.reduce<T[][]>(
-    (acc, axis) => acc.flatMap((combo) => axis.map((value) => [...combo, value])),
-    [[]],
-  );
+export function fullCross<const T extends readonly (readonly unknown[])[]>(...axes: T): { [K in keyof T]: T[K][number] }[] {
+  let product: unknown[][] = [[]];
+  for (const axis of axes) product = product.flatMap((combo) => axis.map((value) => [...combo, value]));
+  return product as { [K in keyof T]: T[K][number] }[];
 }
 
-// flow: 4 dirs x 2 themes x 2 variants = 16. Item counts overlap across
-// directions (3: row/column/grid-2col; 4: all four; 6: both grids) so no count
-// value identifies a direction. Grid-3col never takes 3: a single row of three
-// would be indistinguishable from a row.
+// Counts have the same distribution for every direction, and both counts
+// produce multiple grid rows so grids remain distinct from a single row.
 const FLOW_COUNTS: Record<FlowDirection, number[]> = {
-  row: [3, 3, 4, 4],
-  column: [3, 3, 4, 4],
-  "grid-2col": [3, 3, 4, 6],
+  row: [4, 4, 6, 6],
+  column: [4, 4, 6, 6],
+  "grid-2col": [4, 4, 6, 6],
   "grid-3col": [4, 4, 6, 6],
 };
-for (const [direction, theme, variant] of fullCross<FlowDirection | Theme | ContentVariant>(
+for (const [direction, theme, variant] of fullCross(
   ["row", "column", "grid-2col", "grid-3col"],
   ["light", "dark"],
   ["uniform", "variable"],
@@ -331,8 +328,8 @@ const gapPlan: { token: number; direction: FlowDirection; theme: Theme; letter: 
   }
 }
 {
-  gapPlan.forEach((plan) => {
-    const sampled = tokenOptions(plan.token, GAP_TOKENS, plan.letter);
+  gapPlan.forEach((plan, index) => {
+    const sampled = tokenOptions(plan.token, GAP_TOKENS, plan.letter, `gap:${index}`);
     abstractTasks.push({
       family: "gap",
       direction: plan.direction,
@@ -381,8 +378,8 @@ const padPlan: { token: number; direction: FlowDirection; theme: Theme; letter: 
   }
 }
 {
-  padPlan.forEach((plan) => {
-    const sampled = tokenOptions(plan.token, PAD_TOKENS, plan.letter);
+  padPlan.forEach((plan, index) => {
+    const sampled = tokenOptions(plan.token, PAD_TOKENS, plan.letter, `pad:${index}`);
     abstractTasks.push({
       family: "pad",
       direction: plan.direction,

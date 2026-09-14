@@ -14,7 +14,7 @@ from baseline.providers import PROVIDERS
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_RELEASE = "0.1.0"
+DEFAULT_RELEASE = "0.2.0"
 _VERSION = r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)"
 
 
