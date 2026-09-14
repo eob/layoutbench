@@ -50,7 +50,7 @@ Base commit: `62a557c`.
 | New targeted regressions | All three failed before repair for the stated cause |
 | Revised builder, Python, static checks | 9 TS tests / 884 assertions; 71 Python tests; `bunx tsc --noEmit` and `git diff --check` pass |
 | Revised render repeat / image inspection | All 153 artifact hashes identical across repeat render; header blocks and six-item variable row inspected |
-| Full 0.2.0 campaign and independent recomputation | Pending |
+| Full 0.2.0 campaign and independent recomputation | 2,288/2,288 final observations; source seal and separate raw-answer/geometry audit passed |
 
 ## Decisions and limitations
 
@@ -70,3 +70,57 @@ directory rebuild and failed on its temporarily absent manifest; the
 ordered post-render run passed all 71 tests. No implementation change was
 made for that execution-order error. A pre-publication scan of all 422
 historical Git objects found none of the 14 configured secret values.
+
+## Scope of the source and corpus audit
+
+- Builders: traced all thirteen families, every answer mapping, option permutation, token distribution, theme/geometry level coverage, neutral copy, and sibling render reuse. The revised old remove-one-sort attacker has its true answer among candidates in 0/16 gap, 0/16 padding, 0/16 region, and 0/12 table tasks. This directly breaks the demonstrated rule; it is not proof against every possible finite-bank shortcut.
+- Renderer and pixels: verified fixed canvas/DPR and font bytes, DOM overflow gates, actual PNG hashes, geometry-derived flow/distribution/alignment, line-box text justification, all table cells, visible header edges, outer region bands, gap midlines and item-ink probes. Inspected revised light header, dark variable six-item row, dark six-item grid, three-column justified document, and small-padding table. Grid boxes stretch horizontally; vertical tracks also determine spacing. The documentation now makes that distinction.
+- Protocol: read strict JSON parsing, duplicate-key rejection, exact schemas, integer bounds, case normalization, invalid handling, choice grades, numeric ceilings, max-error bands for two-key headers, quantiles, confusion denominators, and constant-16 baselines. Native request paths contain image bytes and the family prompt only; they expose no manifest answer, task ID, filename, or design metadata to a model. No previous response is included in a later request.
+- Runner/state: reviewed frozen gates before paid calls, deterministic task order, per-provider key scopes, explicit model catalog, request/token ceilings, conservative budget reservations, SQLite result/attempt separation, retry classification, valid-versus-infrastructure completion, checkpoint resume identity, model configuration persistence, and sealed-run refusal. Costs reflect stored catalog prices, not a provider invoice; the $50 budget is separate from score accuracy.
+- Finalization: read the committed-source byte check, closed-WAL requirement, SQLite integrity and ledger reconciliation, attempt chronology, exact model/scorecard census, raw answer replay, cohort intersection/full-scope requirements, metering completeness, hash seal, immutable roster, and repeat verification. The independent audit script imports none of these scoring modules, recomputes each grade directly from raw text, and checks all family accuracy, confusion, numeric score/error/quantile/band/baseline, cost, latency, and group-count metrics. It first passed all 2,288 historical responses. Corrupting either a saved grade or an aggregate accuracy is rejected in dedicated tests.
+
+The run records `runner_git_dirty: true`: the sole untracked file when the
+2a8e9aa invocation began was generated TypeScript incremental build metadata
+(`tsconfig.tsbuildinfo`). Dataset, protocol, catalog and implementation were
+committed. The metadata flag is preserved honestly. The file pattern is now
+ignored; the separately pinned dataset/protocol and final source evidence
+remain fully verifiable.
+
+The independent publication audit also remeasures every one of the 128
+spacing-family task answers from saved bounding rectangles, without using
+saved decoded spacing or CSS values. This supplements the frozen gate's
+construct derivations and pixel probes. All 128 agree in both releases;
+mutating numeric truth and its saved decode together is rejected. The
+rerender used Chromium 153.0.8010.12, paired with the locked Playwright
+installation. Python tests now total 75 after the independent audit checks.
+
+## Completed publication campaign
+
+`review-20260914` completed all 208 questions for all 11 configurations in 18.5 minutes, with 8 concurrent requests. The source checkpoint is commit `4b13617`. All 2,288 responses are final observations; there were no separate infrastructure-failure attempts. 0 responses were invalid and remain scored zero. Recorded campaign spending was $25.697663 against the $50 cap. Two attempts include conservative unmetered reserves, so this spending total is not an invoice and affected response-cost means are null. The finalizer independently reconciled the SQLite checkpoint, attempts, scorecards, chronology and committed bytes, then reparsed every raw answer. A second verification pass and the separate audit script both passed.
+
+The table reports the range across configurations, not uncertainty intervals or a model ranking. Small denominators make close scores inconclusive.
+
+| Family | Questions per model | Observed range |
+| --- | ---: | --- |
+| flow | 16 | 87.5–100.0% accuracy |
+| distribute | 20 | 65.0–100.0% accuracy |
+| align | 16 | 56.2–100.0% accuracy |
+| gap | 16 | 6.2–100.0% accuracy |
+| pad | 16 | 18.8–100.0% accuracy |
+| columns | 12 | 91.7–100.0% accuracy |
+| textjustify | 16 | 43.8–100.0% accuracy |
+| headerpad | 18 | 33.3–100.0% accuracy |
+| regionpad | 16 | 6.2–62.5% accuracy |
+| tablepad | 12 | 16.7–100.0% accuracy |
+| gapnum | 16 | 0.00–21.12px mean absolute error |
+| headerpx | 18 | 0.00–18.42px mean absolute error |
+| regionpx | 16 | 7.50–27.94px mean absolute error |
+
+Full per-model metrics, numeric constant baselines and token-value confusion tables appear in [the independent audit export](0.2.0-independent-summary.json). The [sealed result](../../results/runs/0.2.0/review-20260914/final_results.json) contains every raw answer and source identity. Reproduce the audit with:
+
+```sh
+.venv/bin/python -m baseline.finalize --run-dir results/runs/0.2.0/review-20260914 --verify
+.venv/bin/python scripts/audit_results.py results/runs/0.2.0/review-20260914/final_results.json
+```
+
+Final validation on implementation commit `3027924`: 76 Python tests, 9 TypeScript tests / 884 assertions, TypeScript typechecking, exact render replay, release validation, and diff hygiene passed. Temporarily omitting `providers.py` from the fingerprint reproduces the new wire-contract regression failure; the frozen provider-inclusive protocol passes. The simplification pass consolidated only the duplicated Cartesian-product helper; the independent auditor intentionally duplicates formulas to keep verification independent. The review ticket and public PR are complete once the verified source artifacts are merged.

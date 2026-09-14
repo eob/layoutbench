@@ -48,3 +48,17 @@ def test_score_results_reports_per_family_metrics():
 def test_grade_replay_matches_protocol():
     flags = grade_prediction("headerpad", {"choice": "C"}, {"choice": "C"})
     assert flags["correct"] is True and flags["score"] == 100
+
+
+def test_protocol_identity_changes_when_provider_wire_contract_changes(tmp_path, monkeypatch):
+    from pathlib import Path
+    import baseline.evaluator as evaluator
+
+    source = Path(evaluator.__file__).parent
+    for name in set(evaluator.PROTOCOL_FILES) | {'providers.py'}:
+        (tmp_path / name).write_bytes((source / name).read_bytes())
+    monkeypatch.setattr(evaluator, 'Path', lambda _: tmp_path / 'evaluator.py')
+    original = evaluator.evaluation_protocol_fingerprint()
+    with (tmp_path / 'providers.py').open('a') as file:
+        file.write('\n# Changed wire contract\n')
+    assert evaluator.evaluation_protocol_fingerprint() != original

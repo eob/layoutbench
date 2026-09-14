@@ -19,17 +19,17 @@ before every screenshot) fixes text metrics. Abstract cards and
 document pages share one centered 640x440 card; region-bare tasks
 center a tinted block on the bare canvas instead.
 
-Spacing ground truth is decoded from rendered geometry, never trusted
-from stylesheets: Playwright bounding rects for containers, items,
-spacers, text line boxes, and table cells are recorded per task, and a
-frozen validator re-derives every swept value within sub-pixel
-tolerance: gap, padding, above/below, all-cell table padding, column
-count, text alignment from line-box edges, and — from item boxes —
-flow direction, main-axis distribution, and cross-axis alignment. It
-then anchors the boxes to paint: content-band midpoints must be
-background, points just inside each content edge must be item ink, gap
-midlines must be background, and borders/tint must sample correctly.
-Numeric truth is the rounded decode, not the stylesheet value.
+Spacing ground truth is decoded from rendered geometry. Playwright
+bounding rects for containers, items, spacers, text lines and table cells
+are recorded per task. The renderer derives spacing from these boxes;
+the frozen validator checks decoded values against the design, checks
+all table cells, and independently derives text alignment, flow direction,
+main-axis distribution and cross-axis alignment. Pixel probes anchor the
+boxes to paint: content-band and gap midpoints must be background, points
+inside content edges must be item ink, and borders/tint must match.
+Numeric truth is the rounded decode. The separate publication audit
+independently recomputes all 128 spacing-task answers from the stored
+rectangles, without consulting the saved decode or scoring modules.
 
 Box-to-box is the operational definition of spacing. Header and body
 blocks are tinted so the measured edges are visible; prompts explicitly
@@ -44,10 +44,10 @@ error against a 16px ceiling (4px tight).
 Thirteen families, 208 tasks, 150 images. Ten choice families use
 exact-letter scoring against 3-7 lettered options (chance 14.3-33.3%
 depending on family). Token-choice tasks offer the full token set on
-every trial — the option set is identical across tasks, so it cannot
-leak the truth; truth slots are balanced, and all remaining options are independently
-shuffled using a task seed. Version 0.1 used sorted distractors, which
-leaked the truth through option order; that version is superseded. Three numeric families share
+every trial. The option set cannot distinguish answers; truth slots
+are balanced and remaining options independently shuffled using a task
+seed. Version 0.1 used sorted distractors, which leaked the truth through
+option order; that version is superseded. Three numeric families share
 images with choice siblings and score absolute px error; the 8
 intersecting columns/justification cells share one render each and are
 disclosed as correlated observations.
@@ -57,20 +57,21 @@ structural nuisances (flow direction, bordered vs bare canvas, table
 size), verified on token value rather than answer letter. This is
 marginal coverage, not a complete factorial: sparse token families
 have only two to four observations per value, leaving interactions
-confounded. Fixed-option families use the stated full crossings. Fixed-option families cross answers
-against nuisances; flow item counts have identical distributions across directions, so
-count alone provides no advantage over chance. Abstract fixed values are disjoint
+confounded. Fixed-option families cross answers against the specified
+nuisances; flow item counts have identical distributions across directions,
+so count alone provides no advantage over chance. Abstract fixed values are disjoint
 across families (gap tasks pad 40, pad tasks gap 20) so no two
 families can render identical stimuli. No answer-adjacent word,
 digit, or px value appears in any pixel; a frozen word list enforces
-this on rendered DOM text. Grid tasks always stretch items to fill
-cells so box gaps equal the gutter; `justify_content`/`align_items`
+this on rendered DOM text. Grid tasks stretch items across each column,
+so horizontal box gaps equal the gutter; vertical placement also depends
+on row tracks and item heights. `justify_content`/`align_items`
 are not swept for grids. Prompts use visual language and are frozen
 per family.
 
 Fairness limitation: the finest token step is 4 CSS px (8 device px
 before model-side rescaling), with no human-agreement calibration in
-this pilot. Per-token-pair accuracy in the pilot report shows which
+this pilot. Token-value confusion tables in the independent audit export show which
 discriminations models actually resolve; steps that prove
 unresolvable would be widened or dropped in a revision.
 
