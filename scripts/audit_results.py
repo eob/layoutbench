@@ -41,10 +41,61 @@ def same(actual, expected):
         assert actual == expected, (actual, expected)
 
 
+def check_geometry(manifest):
+    checked = 0
+    for task in manifest.values():
+        family, design = task['family'], task['design']
+        boxes = {r['role']: r for r in task['rendered']['regions']}
+        measured = None
+        if family in ('gap', 'gapnum', 'pad'):
+            items = [r for r in task['rendered']['regions'] if r['role'] == 'item']
+            if family == 'pad':
+                stage = boxes['stage']
+                measured = min(min(r['x']-stage['x'], r['y']-stage['y'],
+                                   stage['x']+stage['width']-r['x']-r['width'],
+                                   stage['y']+stage['height']-r['y']-r['height']) for r in items)
+            else:
+                axis, size = ('x', 'width') if design['direction'] == 'row' else ('y', 'height')
+                items.sort(key=lambda r: r[axis])
+                gaps = [b[axis]-a[axis]-a[size] for a,b in zip(items,items[1:])]
+                assert max(gaps)-min(gaps) < 0.2
+                measured = min(gaps)
+        elif family in ('headerpad', 'headerpx'):
+            above = boxes['header']['y']-boxes['card']['y']-1
+            below = boxes['tbody']['y']-boxes['header']['y']-boxes['header']['height']
+            if family == 'headerpx':
+                assert task['groundTruth'] == dict(above_px=round(above), below_px=round(below))
+            else:
+                assert task['groundTruth']['choice'] == ('A' if above>below else 'B' if below>above else 'C')
+            checked += 1
+            continue
+        elif family in ('regionpad', 'regionpx'):
+            c = boxes['content']
+            frame = boxes['card'] if design['bordered'] else dict(x=0,y=0,width=800,height=600)
+            border = 1 if design['bordered'] else 0
+            pads = [c['x']-frame['x']-border, c['y']-frame['y']-border,
+                    frame['x']+frame['width']-border-c['x']-c['width'],
+                    frame['y']+frame['height']-border-c['y']-c['height']]
+            assert max(pads)-min(pads) < 0.2
+            measured = min(pads)
+        elif family == 'tablepad':
+            texts = {r['id']: r for r in task['rendered']['regions'] if r['role']=='celltext'}
+            pads = [texts[r['id']]['x']-r['x']-1 for r in task['rendered']['regions'] if r['role']=='cell']
+            assert max(pads)-min(pads) < 0.2
+            measured = min(pads)
+        if measured is not None:
+            expected = (next(iter(task['groundTruth'].values())) if family in KEYS else
+                        int(design['options'][ord(task['groundTruth']['choice'])-65][:-2]))
+            assert abs(measured-expected) < 0.2, (task['taskId'], measured, expected)
+            checked += 1
+    return checked
+
+
 def audit(path):
     report = json.loads(path.read_text())
     manifest = {x['taskId']: x for x in json.loads((ROOT / report['dataset_manifest']).read_text())}
     assert len(manifest) == report['expected_task_count'] == 208
+    assert check_geometry(manifest) == 128
     groups = defaultdict(list)
     for observation in report['results']:
         row = observation['result']

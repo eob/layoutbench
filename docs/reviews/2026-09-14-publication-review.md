@@ -85,3 +85,11 @@ The run records `runner_git_dirty: true`: the sole untracked file when the
 committed. The metadata flag is preserved honestly. The file pattern is now
 ignored; the separately pinned dataset/protocol and final source evidence
 remain fully verifiable.
+
+The independent publication audit also remeasures every one of the 128
+spacing-family task answers from saved bounding rectangles, without using
+saved decoded spacing or CSS values. This supplements the frozen gate's
+construct derivations and pixel probes. All 128 agree in both releases;
+mutating numeric truth and its saved decode together is rejected. The
+rerender used Chromium 153.0.8010.12, paired with the locked Playwright
+installation. Python tests now total 75 after the independent audit checks.

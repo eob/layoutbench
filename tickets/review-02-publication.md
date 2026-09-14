@@ -4,6 +4,7 @@
 - Date: 2026-09-14
 - Assignee: Edward Benson
 - Branch: review-02-publication
+- PR: https://github.com/eob/layoutbench/pull/1
 - Harness: codex
 - Machine: shared benchmark workspace
 - Session: /root/review_layoutbench
