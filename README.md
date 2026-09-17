@@ -67,4 +67,10 @@ Choice accuracy includes invalid responses as incorrect. Scores and API response
 
 Human agreement has not been measured. Clear boundaries, coarse differences and qualitative answer sets are design controls, not evidence of agreement. Success here measures these rendered tasks; transfer to high-level design understanding remains a hypothesis.
 
+## Results
+
+The complete comparison covers nine configurations on all 292 questions. Four Claude configurations each answered 221 questions before account credits ran out; those responses remain in the raw record outside the complete comparison.
+
+All nine complete configurations answered every outlined hierarchy question correctly. Equal spacing and right-aligned text exposed recurring errors. [Task-level findings and exact examples](tickets/evidence/feat-03-analysis/findings.md) include the denominators, model contrasts and reproduction commands. [Sealed results and raw responses](results/runs/0.3.0/qualitative-20260917) preserve all 3,512 final answers and the complete attempt ledger.
+
 [Methodology](docs/methodology.md) · [Release format](releases/README.md) · [Finalization](releases/FINALIZATION.md) · [Review and delivery record](tickets/feat-03-qualitative-layout.md)
