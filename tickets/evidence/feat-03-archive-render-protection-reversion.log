@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError: Legacy renderer has no frozen-output guard; OUTPUT_DIR is hardcoded to dataset/layoutbench-v0.2

@@ -24,3 +24,11 @@ No renderer was allowed to regenerate images and no dataset, configuration,
 baseline implementation, or active run record was modified. The guard is
 outside the evaluation protocol fingerprint. The simplification pass retained
 one small path guard and focused boundary tests.
+
+The exposed legacy renderer subsequently adopted the same guard and a separate
+`dataset/candidate-archive` default. Its previous hardcoded frozen path was
+captured as red evidence and reproduced with a temporary source reversion;
+the unsafe renderer itself was never executed. Both real CLI entrypoints now
+refuse their respective released directories without changing manifest bytes:
+seven focused tests and eighteen assertions pass. TypeScript and unchanged
+active-protocol checks also pass.

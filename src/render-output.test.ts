@@ -45,11 +45,14 @@ test("symlink aliases cannot route output into a frozen directory", () => {
   expect(() => resolveRenderOutput(path.join(repository, "parent-alias"), repository)).toThrow("Frozen render output");
 });
 
-test("qualitative CLI refuses released output before touching the manifest", () => {
+test.each([
+  ["render-qualitative.ts", "layoutbench-v0.3"],
+  ["render.ts", "layoutbench-v0.2"],
+])("%s CLI refuses released output before touching the manifest", (script, dataset) => {
   const root = path.resolve(import.meta.dir, "..");
-  const manifest = path.join(root, "dataset/layoutbench-v0.3/manifest.json");
+  const manifest = path.join(root, "dataset", dataset, "manifest.json");
   const before = fs.readFileSync(manifest);
-  const process = Bun.spawnSync(["bun", path.join(root, "src/render-qualitative.ts"), path.dirname(manifest)], { cwd: root });
+  const process = Bun.spawnSync(["bun", path.join(root, "src", script), path.dirname(manifest)], { cwd: root });
   expect(process.exitCode).not.toBe(0);
   expect(process.stderr.toString()).toContain("Frozen render output");
   expect(fs.readFileSync(manifest).equals(before)).toBe(true);

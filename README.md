@@ -51,6 +51,8 @@ API credentials are read from environment variables named in the model catalog. 
 To reproduce the images, render into a separate candidate directory and validate
 it explicitly. Rendering refuses registered release inputs and archived dataset
 paths, including parent directories and symlink aliases.
+The legacy `bun run render:archive` command uses its own `dataset/candidate-archive`
+directory and the same frozen-input guard.
 
 ```sh
 bun run render

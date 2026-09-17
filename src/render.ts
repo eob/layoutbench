@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { buildAbstractSpecimens } from "./abstract.ts";
 import { HEADER_TEXT, SENTENCES, TABLE_WORDS, buildDocumentSpecimens } from "./document.ts";
+import { resolveRenderOutput } from "./render-output.ts";
 import type {
   AbstractDesign,
   DecodedRect,
@@ -14,7 +15,7 @@ import type {
 } from "./types.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const OUTPUT_DIR = path.join(ROOT, "dataset", "layoutbench-v0.2");
+const OUTPUT_DIR = resolveRenderOutput(process.argv[2] ?? path.join(ROOT, "dataset", "candidate-archive"));
 const FONT_PATH = path.join(ROOT, "src", "assets", "DejaVuSans.ttf");
 const FONT_SHA256 = createHash("sha256").update(fs.readFileSync(FONT_PATH)).digest("hex");
 const FONT_BYTES = fs.readFileSync(FONT_PATH).toString("base64");
