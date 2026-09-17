@@ -1,6 +1,6 @@
 # feat-03-qualitative-layout: Atomic spatial perception and publication
 
-- Status: In Progress
+- Status: In Review
 - Branch: feat-03-qualitative-layout
 - Harness: codex
 - Session: 01a0ad34-d16c-7a82-b973-d59084daaf32
@@ -21,7 +21,7 @@ Sibling review: ColorBench uses controlled paired interventions to reject shortc
 - [x] Build text-bearing stimuli with crossed themes/content variants and balanced shuffled answers; derive answers independently from rendered geometry and inspect images.
 - [x] Pin missing coverage, ambiguity/overflow, answer-label integrity, nuisance crossing and parser failures with meaningful tests.
 - [x] Run Python/TypeScript gates, deterministic render and mock; commit and freeze release identity before paid calls.
-- [ ] Execute every enabled sibling-model configuration, keep unavailable/credit failures explicit, seal and independently audit raw results.
+- [x] Execute every enabled sibling-model configuration, keep unavailable/credit failures explicit, seal and independently audit raw results.
 - [ ] Publish graph, table, explanation and data-grounded task observations; activate benchmarks/tinkering links; inspect desktop/mobile.
 - [ ] Merge scoped website PR to edwardbenson-prod and verify live deployment, links and published evidence.
 
@@ -62,10 +62,20 @@ At checkpoint a32035f plus working changes, the Python suite passed103 tests and
 - Independent rerender: all253 artifacts, including manifest and font assets, byte-identical.
 - `git diff --check`: clean.
 - Final simplifyfu and adversarial pass found no remaining substantive blocker. Cross-axis descriptions explicitly exclude the fill case from start/center/end.
-- Full13-configuration mock gate is running before release freeze; paid inference has not started.
+- Full 13-configuration mock gate completed before release freeze and paid inference.
 
 
 Final target-isolation control: the complete row in nestedwrap initially had spare width (12CSSpx for horizontal parent;76CSSpx for vertical parent), so it moved with the shorter row. A browser regression failed `Expected: <1 / Received:12`. Wrapped child widths now fill the complete row exactly; only the incomplete row responds to alignment. The independent validator rejects an altered complete row even with the target row unchanged. This correction was made before any paid inference; the draft release descriptor will be rebound to the validated dataset and protocol.
 
 
 Final corrected gates:109 Python tests pass(14.80s);13 TypeScript/browser tests pass(2252 assertions after the full-row control); TypeScript typecheck clean; all253 render artifacts byte-identical. Final frozen-shape mock completes292/292 questions; the13-model harness matrix completes3796/3796 mock responses. Mock artifacts stay outside publication. Source differences preserve the original third-party font license and verbatim red logs, whose trailing whitespace is intentionally retained; source-only diff check is clean.
+
+## Sealed campaign and final source gates
+
+Campaign `qualitative-20260917` finished on 2026-09-17 at 03:28:03 UTC. Nine configurations completed all 292 questions. All four Claude configurations completed 221 questions before Anthropic credit exhaustion; their 884 answers and explicit availability reasons remain in the raw artifacts. The full comparison contains 2,628 answers from the nine complete configurations. The campaign retains 3,512 final answers and 3,515 attempt records, including three credit failures. No invalid answers occurred. The recorded $30.7923777 ledger includes six estimated-cost attempt records and is not an invoice total.
+
+Raw checkpoint commit: `cb46d35`; sealed artifact commit: `ac17659d69c5c8fbd60abfade2b14edb06826b86`. The finalizer ran on a clean checkout, reconciled committed SQLite/export/scorecard evidence, and its offline verification passed. The separate publication auditor independently replayed all 3,512 raw predictions and verified the 292-question cohort, family metrics, costs, and paired hierarchy counts.
+
+Final source validation: 117 Python tests passed in 13.47s; 20 TypeScript/browser tests passed with 2,270 assertions; TypeScript typechecking passed. Renderer guards now reject frozen release paths, their ancestors/descendants and symlink aliases; both current and archived rendering default to separate candidate directories. Renderer and documentation changes made after inference began do not alter the frozen dataset, catalog or evaluation protocol. Count-family content/repetition shortcuts and unmeasured human agreement remain explicit methodological limits.
+
+The website import, data-grounded findings, browser checks and production deployment remain pending.
