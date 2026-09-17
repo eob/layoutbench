@@ -5,8 +5,8 @@
   "human_validation": "not_performed",
   "dataset_manifest": "dataset/layoutbench-v0.3/manifest.json",
   "dataset_path": "dataset/layoutbench-v0.3",
-  "dataset_git_commit": "ba2bde8ec1f16ea54bb293f9a45d38be12371cbd",
-  "dataset_fingerprint": "18d889fd399e5b17fde618c69c80768389883e647f79f86c72c91b67c1fef97a",
-  "evaluation_protocol_fingerprint": "38b4a4128c26e2e3384fa527add46ceb607766cfaf07aa79814e641ba23f121e",
+  "dataset_git_commit": "70a514f06f9e156be480e2a0b28a1d3380467ace",
+  "dataset_fingerprint": "fc531bdb2e7c9d10e2074519bd3e0d0f66bc8ec970d20f25cdb628054784c6de",
+  "evaluation_protocol_fingerprint": "deed0698dca65b5e24f3b06766d2d5344bbf0964e871167cebfc5e4aaba554fa",
   "expected_task_count": 292
 }
