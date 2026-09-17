@@ -1,0 +1,86 @@
+{
+  "audited_at": "2026-09-17T03:36:31.064186+00:00",
+  "sealed_artifact_commit": "ac17659d69c5c8fbd60abfade2b14edb06826b86",
+  "dataset_fingerprint": "fc531bdb2e7c9d10e2074519bd3e0d0f66bc8ec970d20f25cdb628054784c6de",
+  "protocol_fingerprint": "deed0698dca65b5e24f3b06766d2d5344bbf0964e871167cebfc5e4aaba554fa",
+  "question_count": 292,
+  "unique_images": 250,
+  "requested_models": 13,
+  "complete_models": [
+    "gemini-3.1-pro-preview",
+    "gemini-3.5-flash-lite",
+    "gemini-3.8-flash",
+    "gpt-5.6-luna",
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
+    "gpt-6-astra",
+    "muse-spark-1.2",
+    "muse-spark-1.3"
+  ],
+  "full_comparison_responses": 2628,
+  "retained_partial_claude_responses": 884,
+  "final_responses": 3512,
+  "runner_attempts": 3515,
+  "http_requests": 3518,
+  "infrastructure_error_kinds": {
+    "credits": 3
+  },
+  "invalid_final_responses": 0,
+  "recorded_metered_subtotal_usd": "30.22180370",
+  "unmetered_reserve_allowance_usd": "0.5705740",
+  "ledger_total_decimal_usd": "30.79237770000000001286",
+  "unmetered_http_requests": 6,
+  "uncertain_attempts": [
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "task_id": "layoutbench-padcompare-004",
+      "http_requests": 2,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.059152",
+      "final_error_kind": null
+    },
+    {
+      "model_id": "gemini-3.8-flash",
+      "task_id": "layoutbench-crossalign-010",
+      "http_requests": 2,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.01911",
+      "final_error_kind": null
+    },
+    {
+      "model_id": "claude-fable-5-1",
+      "task_id": "layoutbench-groupgap-009",
+      "http_requests": 1,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.2548",
+      "final_error_kind": "credits"
+    },
+    {
+      "model_id": "claude-opus-5",
+      "task_id": "layoutbench-groupgap-009",
+      "http_requests": 1,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.1274",
+      "final_error_kind": "credits"
+    },
+    {
+      "model_id": "claude-sonnet-5",
+      "task_id": "layoutbench-groupgap-009",
+      "http_requests": 1,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.05096",
+      "final_error_kind": "credits"
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "task_id": "layoutbench-groupgap-008",
+      "http_requests": 2,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.059152",
+      "final_error_kind": null
+    }
+  ],
+  "seal_checked": true,
+  "discrepancies": [],
+  "limits": "Independent replay uses retained raw answer text, reported usage, and frozen inputs. Recorded token-rate estimates and conservative reserves are not provider invoices. No inference requests were made; provider identity/envelopes and individual internal retry errors are not independently recoverable."
+}
