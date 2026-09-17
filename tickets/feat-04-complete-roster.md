@@ -5,7 +5,7 @@
 - **Machine**: eob-dev2
 - **Harness**: codex
 - **Session ID**: `01a0ad34-d16c-7a82-b973-d59084daaf32`
-- **PR**: Pending
+- **PR**: https://github.com/eob/layoutbench/pull/4
 - **Assignee**: Edward Benson
 
 ## Goal
@@ -26,7 +26,7 @@ claude-sonnet-5 221 paused
 
 ## Plan and validation
 
-- [ ] Preserve the original seal; verify a separate continuation checkpoint has identical historical answers and attempts.
+- [x] Preserve the original seal; verify a separate continuation checkpoint has identical historical answers and attempts.
 - [ ] Execute only the 284 missing Claude answers using unchanged release, protocol, model settings, and cumulative budget.
 - [ ] Commit raw evidence, finalize all thirteen models, independently replay answers and audit lineage and costs.
 - [ ] Recompute public findings and import the sealed source commit into the website.
@@ -39,3 +39,5 @@ The original sealed directory remains immutable. The continuation keeps the same
 ## Handoff & Takeover Log
 
 - 2026-09-17: Started by codex on eob-dev2 at the user's request after Anthropic credits were replenished. Website work delegated to `website_survey`; independent continuation review delegated to `layout_audit`.
+
+Continuation path: `results/runs/full-roster/0.3.0/qualitative-20260917`. All 17 copied raw artifacts matched the original sealed hashes before adding explicit lineage to `run.json`; original seal verification passed. Independent review by `layout_audit` confirmed runner/finalizer invariants.
