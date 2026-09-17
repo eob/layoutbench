@@ -1,0 +1,44 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+_________ test_combined_catalog_contains_every_requested_configuration _________
+
+    def test_combined_catalog_contains_every_requested_configuration():
+        path = ROOT / "config/models.all.json"
+>       assert path.is_file(), "The thirteen-model campaign catalog is missing"
+E       AssertionError: The thirteen-model campaign catalog is missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/disks/data/layoutbench/config/models.all.json').is_file
+
+tests/test_model_inventory.py:24: AssertionError
+_________ test_native_openai_and_meta_have_independent_endpoint_limits _________
+
+tmp_path = PosixPath('/tmp/pytest-of-ted/pytest-319/test_native_openai_and_meta_ha0')
+
+    def test_native_openai_and_meta_have_independent_endpoint_limits(tmp_path):
+        native = [{**MODEL, "id": f"native-{index}"} for index in range(4)]
+        meta = [{**MODEL, "id": f"meta-{index}", "base_url": "https://api.meta.ai/v1"} for index in range(2)]
+>       assert len(load_model_config(catalog(tmp_path, native + meta))) == 6
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_model_inventory.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/tmp/pytest-of-ted/pytest-319/test_native_openai_and_meta_ha0/models.json')
+
+    def load_model_config(path: str | Path = "config/models.json") -> list[dict]:
+        """Validate the catalog and return enabled models in their configured order."""
+        catalog = _Catalog.model_validate_json(Path(path).read_text(encoding="utf-8"))
+        ids = [model.id for model in catalog.models]
+        if len(ids) != len(set(ids)):
+            raise ValueError("Duplicate model configuration IDs")
+        enabled = [model for model in catalog.models if model.enabled]
+        if any(count > 5 for count in Counter(model.provider for model in enabled).values()):
+>           raise ValueError("Configure at most five enabled models per provider")
+E           ValueError: Configure at most five enabled models per provider
+
+baseline/model_config.py:58: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_model_inventory.py::test_combined_catalog_contains_every_requested_configuration
+FAILED tests/test_model_inventory.py::test_native_openai_and_meta_have_independent_endpoint_limits
+2 failed, 1 passed in 0.12s

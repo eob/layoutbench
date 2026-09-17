@@ -71,7 +71,7 @@ def _run_lock(directory: Path):
 
 def run_benchmark(
     manifest_path: str | Path | None = None,
-    config_path: str | Path = "config/models.json",
+    config_path: str | Path = "config/models.all.json",
     output_dir: str | Path = "results/runs",
     run_id: str | None = None,
     release: str | None = None,
@@ -491,7 +491,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", default=None, help="Unversioned custom manifest (excluded from release comparisons)")
     parser.add_argument("--release", default=None, help=f"Frozen benchmark version (default: {DEFAULT_RELEASE})")
-    parser.add_argument("--config", default="config/models.json")
+    parser.add_argument("--config", default="config/models.all.json")
     parser.add_argument("--output-dir", default="results/runs")
     parser.add_argument("--run-id", default=None, help="Run name; a unique one is generated when omitted")
     parser.add_argument("--models", nargs="+")

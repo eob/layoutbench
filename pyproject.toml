@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "layoutbench"
-version = "0.2.0"
+version = "0.3.0"
 description = "Visual layout direction, alignment, justification, gap spacing, and padding identification benchmark for multimodal models"
 authors = [{ name = "Edward Benson" }]
 readme = "README.md"

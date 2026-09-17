@@ -1,0 +1,15 @@
+bun test v1.3.14 (0d9b296a)
+
+src/render-output.test.ts:
+(pass) default rendering uses a separate candidate without creating files [2.54ms]
+(pass) registered inputs reject exact, parent, and child output paths [0.74ms]
+(pass) both archived input directories remain protected without descriptors [0.74ms]
+(pass) a similar filename prefix is not a frozen directory [0.34ms]
+(pass) symlink aliases cannot route output into a frozen directory [0.48ms]
+(pass) render-qualitative.ts CLI refuses released output before touching the manifest [746.20ms]
+(pass) render.ts CLI refuses released output before touching the manifest [820.47ms]
+
+ 7 pass
+ 0 fail
+ 18 expect() calls
+Ran 7 tests across 1 file. [1127.00ms]

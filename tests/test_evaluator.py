@@ -56,6 +56,7 @@ def test_protocol_identity_changes_when_provider_wire_contract_changes(tmp_path,
 
     source = Path(evaluator.__file__).parent
     for name in set(evaluator.PROTOCOL_FILES) | {'providers.py'}:
+        (tmp_path / name).parent.mkdir(parents=True, exist_ok=True)
         (tmp_path / name).write_bytes((source / name).read_bytes())
     monkeypatch.setattr(evaluator, 'Path', lambda _: tmp_path / 'evaluator.py')
     original = evaluator.evaluation_protocol_fingerprint()

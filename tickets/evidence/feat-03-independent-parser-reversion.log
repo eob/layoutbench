@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/tmp/layoutbench-independent-parser-reversion.py", line 51, in <module>
+    identical(parse(raw, option_count), expected, f'Independent parser control {raw}')
+  File "/tmp/layoutbench-independent-parser-reversion.py", line 24, in identical
+    require(actual == expected, f'{label}: {actual!r} != {expected!r}')
+  File "/tmp/layoutbench-independent-parser-reversion.py", line 22, in require
+    if not condition: raise AssertionError(message)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Independent parser control {"choice":""}: {'choice': ''} != None

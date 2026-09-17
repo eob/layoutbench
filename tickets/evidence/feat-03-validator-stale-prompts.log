@@ -1,0 +1,181 @@
+.....F.........F..FF                                                     [100%]
+=================================== FAILURES ===================================
+____________ test_frozen_qualitative_corpus_passes_independent_gate ____________
+
+    def test_frozen_qualitative_corpus_passes_independent_gate():
+>       tasks = require_valid_qualitative(MANIFEST)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_qualitative_validation.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+baseline/qualitative_validation.py:245: in require_valid_qualitative
+    require(task["prompt"] == prompt, "Prompt differs from canonical catalog")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Prompt differs from canonical catalog'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Prompt differs from canonical catalog
+
+baseline/qualitative_validation.py:20: ValueError
+______________ test_corpus_tampering_fails_closed[crossing-cross] ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-ted/pytest-335/test_corpus_tampering_fails_cl8')
+mutation = 'crossing', match = 'cross'
+
+    @pytest.mark.parametrize("mutation,match", [
+        ("answer", "ground truth"), ("prompt", "Prompt"), ("hash", "hash"),
+        ("escape", "canvas"), ("font", "font"), ("leak", "leak"),
+        ("overflow", "overflow"), ("missing", "counts"), ("crossing", "cross"),
+        ("pixels", "Decoded border"), ("rectpixels", "Decoded border"),
+        ("linepixels", "Decoded text"), ("copy", "Visible copy"),
+    ])
+    def test_corpus_tampering_fails_closed(tmp_path, mutation, match):
+        tasks = deepcopy(json.loads(MANIFEST.read_text()))
+        if mutation == "answer":
+            task = tasks[0]
+            task["groundTruth"]["choice"] = "B" if task["groundTruth"]["choice"] == "A" else "A"
+            task["design"]["answer"] = task["design"]["options"][ord(task["groundTruth"]["choice"]) - 65]
+        elif mutation == "prompt": tasks[0]["prompt"] += " The answer is A."
+        elif mutation == "hash": tasks[0]["imageSha256"] = "0" * 64
+        elif mutation == "escape": tasks[0]["rendered"]["regions"][0]["x"] = -1
+        elif mutation == "font": tasks[0]["rendered"]["font"]["sha256"] = "0" * 64
+        elif mutation == "leak": tasks[0]["domText"] += " centered"
+        elif mutation == "copy": tasks[0]["domText"] += " Breeze"
+        elif mutation == "overflow": tasks[0]["rendered"]["overflow"] = ["frame"]
+        elif mutation == "missing": tasks.pop()
+        elif mutation == "crossing": tasks[0]["design"]["variant"] = 1 - tasks[0]["design"]["variant"]
+        elif mutation == "rectpixels": tasks[0]["rendered"]["regions"][1]["x"] += 5
+        elif mutation == "linepixels":
+            task = next(t for t in tasks if t["family"] == "textalign" and t["design"]["answer"] == "left")
+            region = next(r for r in task["rendered"]["regions"] if r["id"] == "text-0")
+            for line in task["design"]["lines"]["text-0"]:
+                line["x"] = region["x"] + region["width"] - line["width"]
+            task["design"]["answer"] = "right"
+            task["groundTruth"]["choice"] = chr(65 + task["design"]["options"].index("right"))
+        shutil.copytree(MANIFEST.parent, tmp_path, dirs_exist_ok=True)
+        if mutation == "pixels":
+            path = tmp_path / tasks[0]["imageFilename"]
+            Image.new("RGB", (1600, 1200), "white").save(path)
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            for task in tasks:
+                if task["imageFilename"] == path.name:
+                    task["imageSha256"] = digest
+        manifest = tmp_path / "manifest.json"
+        manifest.write_text(json.dumps(tasks))
+>       with pytest.raises(ValueError, match=match):
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'cross'
+E         Actual message: 'Prompt differs from canonical catalog'
+
+tests/test_qualitative_validation.py:112: AssertionError
+_________ test_corpus_tampering_fails_closed[linepixels-Decoded text] __________
+
+tmp_path = PosixPath('/tmp/pytest-of-ted/pytest-335/test_corpus_tampering_fails_cl11')
+mutation = 'linepixels', match = 'Decoded text'
+
+    @pytest.mark.parametrize("mutation,match", [
+        ("answer", "ground truth"), ("prompt", "Prompt"), ("hash", "hash"),
+        ("escape", "canvas"), ("font", "font"), ("leak", "leak"),
+        ("overflow", "overflow"), ("missing", "counts"), ("crossing", "cross"),
+        ("pixels", "Decoded border"), ("rectpixels", "Decoded border"),
+        ("linepixels", "Decoded text"), ("copy", "Visible copy"),
+    ])
+    def test_corpus_tampering_fails_closed(tmp_path, mutation, match):
+        tasks = deepcopy(json.loads(MANIFEST.read_text()))
+        if mutation == "answer":
+            task = tasks[0]
+            task["groundTruth"]["choice"] = "B" if task["groundTruth"]["choice"] == "A" else "A"
+            task["design"]["answer"] = task["design"]["options"][ord(task["groundTruth"]["choice"]) - 65]
+        elif mutation == "prompt": tasks[0]["prompt"] += " The answer is A."
+        elif mutation == "hash": tasks[0]["imageSha256"] = "0" * 64
+        elif mutation == "escape": tasks[0]["rendered"]["regions"][0]["x"] = -1
+        elif mutation == "font": tasks[0]["rendered"]["font"]["sha256"] = "0" * 64
+        elif mutation == "leak": tasks[0]["domText"] += " centered"
+        elif mutation == "copy": tasks[0]["domText"] += " Breeze"
+        elif mutation == "overflow": tasks[0]["rendered"]["overflow"] = ["frame"]
+        elif mutation == "missing": tasks.pop()
+        elif mutation == "crossing": tasks[0]["design"]["variant"] = 1 - tasks[0]["design"]["variant"]
+        elif mutation == "rectpixels": tasks[0]["rendered"]["regions"][1]["x"] += 5
+        elif mutation == "linepixels":
+            task = next(t for t in tasks if t["family"] == "textalign" and t["design"]["answer"] == "left")
+            region = next(r for r in task["rendered"]["regions"] if r["id"] == "text-0")
+            for line in task["design"]["lines"]["text-0"]:
+                line["x"] = region["x"] + region["width"] - line["width"]
+            task["design"]["answer"] = "right"
+            task["groundTruth"]["choice"] = chr(65 + task["design"]["options"].index("right"))
+        shutil.copytree(MANIFEST.parent, tmp_path, dirs_exist_ok=True)
+        if mutation == "pixels":
+            path = tmp_path / tasks[0]["imageFilename"]
+            Image.new("RGB", (1600, 1200), "white").save(path)
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            for task in tasks:
+                if task["imageFilename"] == path.name:
+                    task["imageSha256"] = digest
+        manifest = tmp_path / "manifest.json"
+        manifest.write_text(json.dumps(tasks))
+>       with pytest.raises(ValueError, match=match):
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Decoded text'
+E         Actual message: 'Prompt differs from canonical catalog'
+
+tests/test_qualitative_validation.py:112: AssertionError
+____________ test_corpus_tampering_fails_closed[copy-Visible copy] _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-ted/pytest-335/test_corpus_tampering_fails_cl12')
+mutation = 'copy', match = 'Visible copy'
+
+    @pytest.mark.parametrize("mutation,match", [
+        ("answer", "ground truth"), ("prompt", "Prompt"), ("hash", "hash"),
+        ("escape", "canvas"), ("font", "font"), ("leak", "leak"),
+        ("overflow", "overflow"), ("missing", "counts"), ("crossing", "cross"),
+        ("pixels", "Decoded border"), ("rectpixels", "Decoded border"),
+        ("linepixels", "Decoded text"), ("copy", "Visible copy"),
+    ])
+    def test_corpus_tampering_fails_closed(tmp_path, mutation, match):
+        tasks = deepcopy(json.loads(MANIFEST.read_text()))
+        if mutation == "answer":
+            task = tasks[0]
+            task["groundTruth"]["choice"] = "B" if task["groundTruth"]["choice"] == "A" else "A"
+            task["design"]["answer"] = task["design"]["options"][ord(task["groundTruth"]["choice"]) - 65]
+        elif mutation == "prompt": tasks[0]["prompt"] += " The answer is A."
+        elif mutation == "hash": tasks[0]["imageSha256"] = "0" * 64
+        elif mutation == "escape": tasks[0]["rendered"]["regions"][0]["x"] = -1
+        elif mutation == "font": tasks[0]["rendered"]["font"]["sha256"] = "0" * 64
+        elif mutation == "leak": tasks[0]["domText"] += " centered"
+        elif mutation == "copy": tasks[0]["domText"] += " Breeze"
+        elif mutation == "overflow": tasks[0]["rendered"]["overflow"] = ["frame"]
+        elif mutation == "missing": tasks.pop()
+        elif mutation == "crossing": tasks[0]["design"]["variant"] = 1 - tasks[0]["design"]["variant"]
+        elif mutation == "rectpixels": tasks[0]["rendered"]["regions"][1]["x"] += 5
+        elif mutation == "linepixels":
+            task = next(t for t in tasks if t["family"] == "textalign" and t["design"]["answer"] == "left")
+            region = next(r for r in task["rendered"]["regions"] if r["id"] == "text-0")
+            for line in task["design"]["lines"]["text-0"]:
+                line["x"] = region["x"] + region["width"] - line["width"]
+            task["design"]["answer"] = "right"
+            task["groundTruth"]["choice"] = chr(65 + task["design"]["options"].index("right"))
+        shutil.copytree(MANIFEST.parent, tmp_path, dirs_exist_ok=True)
+        if mutation == "pixels":
+            path = tmp_path / tasks[0]["imageFilename"]
+            Image.new("RGB", (1600, 1200), "white").save(path)
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            for task in tasks:
+                if task["imageFilename"] == path.name:
+                    task["imageSha256"] = digest
+        manifest = tmp_path / "manifest.json"
+        manifest.write_text(json.dumps(tasks))
+>       with pytest.raises(ValueError, match=match):
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Visible copy'
+E         Actual message: 'Prompt differs from canonical catalog'
+
+tests/test_qualitative_validation.py:112: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_qualitative_validation.py::test_frozen_qualitative_corpus_passes_independent_gate
+FAILED tests/test_qualitative_validation.py::test_corpus_tampering_fails_closed[crossing-cross]
+FAILED tests/test_qualitative_validation.py::test_corpus_tampering_fails_closed[linepixels-Decoded text]
+FAILED tests/test_qualitative_validation.py::test_corpus_tampering_fails_closed[copy-Visible copy]
+4 failed, 16 passed in 2.32s

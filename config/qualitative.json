@@ -1,0 +1,185 @@
+{
+  "direction": {
+    "label": "Immediate flow",
+    "question": "How are the cards inside the outlined frame arranged?",
+    "options": {
+      "row": "Side by side in one horizontal row",
+      "column": "Stacked in one vertical column"
+    }
+  },
+  "distribution": {
+    "label": "Main-axis distribution",
+    "question": "Consider the sequence of cards along its long direction inside the outlined frame. Start means left for a row and top for a column. Which description fits the empty spaces measured from card edges to the INSIDE of the frame border?",
+    "options": {
+      "start": "Packed at the start, touching that inner edge",
+      "center": "Packed together in the middle, with much larger equal outer spaces",
+      "end": "Packed at the end, touching that inner edge",
+      "between": "First and last cards touch opposite inner edges; equal gaps between cards",
+      "around": "Equal outer spaces, each half the size of an interior gap",
+      "evenly": "All interior gaps and both outer spaces are equal"
+    }
+  },
+  "crossalign": {
+    "label": "Cross-axis alignment",
+    "question": "Across the direction perpendicular to the sequence of cards, how do their visible boxes align inside the outlined frame? For a horizontal sequence compare vertical positions; for a vertical sequence compare horizontal positions.",
+    "options": {
+      "start": "Every box touches the top (horizontal sequence) or left (vertical sequence) inner edge, leaving space before the opposite edge",
+      "center": "Every box is centered on that cross axis, with empty space on both sides of the box",
+      "end": "Every box touches the bottom (horizontal sequence) or right (vertical sequence) inner edge, leaving space before the opposite edge",
+      "stretch": "Every box fills the frame along that cross axis"
+    }
+  },
+  "textalign": {
+    "label": "Text justification",
+    "question": "How are the lines of body text aligned within the outlined text region? For both-edge justification, disregard the short final line.",
+    "options": {
+      "left": "Left edges line up; right edges are ragged",
+      "center": "Line centers line up; both edges are ragged",
+      "right": "Right edges line up; left edges are ragged",
+      "justify": "Both left and right edges line up on the nonfinal lines"
+    }
+  },
+  "textcolumns": {
+    "label": "Text columns",
+    "question": "How many side-by-side columns of body text are visible inside the frame?",
+    "options": {
+      "1": "One",
+      "2": "Two",
+      "3": "Three"
+    }
+  },
+  "gridcols": {
+    "label": "Grid columns",
+    "question": "How many columns of cards are in the rectangular grid? Count the cards across one complete row.",
+    "options": {
+      "2": "Two",
+      "3": "Three",
+      "4": "Four"
+    }
+  },
+  "gridrows": {
+    "label": "Grid rows",
+    "question": "How many rows of cards are in the rectangular grid? Count the cards down one complete column.",
+    "options": {
+      "2": "Two",
+      "3": "Three",
+      "4": "Four"
+    }
+  },
+  "gridgaps": {
+    "label": "Grid gutter comparison",
+    "question": "Compare the horizontal empty gutters between columns with the vertical empty gutters between rows. Measure between the visible card boxes.",
+    "options": {
+      "horizontal": "Horizontal gutters are larger",
+      "vertical": "Vertical gutters are larger",
+      "equal": "The two gutter sizes are equal"
+    }
+  },
+  "gridtracks": {
+    "label": "Grid track proportions",
+    "question": "Compare the widths of the three card columns in this grid.",
+    "options": {
+      "equal": "All three columns have equal widths",
+      "left": "The left column is wider; the other two have equal widths",
+      "right": "The right column is wider; the other two have equal widths"
+    }
+  },
+  "gridspan": {
+    "label": "Column span",
+    "question": "Use the three equal-width cards in the lower row as column guides. How many of those column positions does the single card in the upper row cover, including any intervening gutters?",
+    "options": {
+      "1": "One column position",
+      "2": "Two column positions",
+      "3": "Three column positions"
+    }
+  },
+  "wrapcount": {
+    "label": "Wrapped row count",
+    "question": "How many horizontal rows of small cards are visible inside the frame?",
+    "options": {
+      "1": "One row",
+      "2": "Two rows",
+      "3": "Three rows"
+    }
+  },
+  "wrapalign": {
+    "label": "Incomplete row alignment",
+    "question": "Look only at the shorter final row of cards. How is that row placed horizontally inside the outlined frame?",
+    "options": {
+      "left": "Against the left inner edge",
+      "center": "Centered, with equal empty space on either side",
+      "right": "Against the right inner edge"
+    }
+  },
+  "gapcompare": {
+    "label": "Neighboring gap comparison",
+    "question": "Compare the two empty gaps between the three card boxes, reading left to right for a row or top to bottom for a column.",
+    "options": {
+      "first": "The first gap is larger",
+      "last": "The second gap is larger",
+      "equal": "The gaps are equal"
+    }
+  },
+  "padcompare": {
+    "label": "Horizontal versus vertical inset",
+    "question": "The tinted rectangle is centered inside the outlined frame. Compare the horizontal inset (frame to rectangle on either side) with the vertical inset (frame to rectangle above or below). Measure to the rectangle's visible outer edge, not to its text.",
+    "options": {
+      "horizontal": "The horizontal inset is larger",
+      "vertical": "The vertical inset is larger",
+      "equal": "The horizontal and vertical insets are equal"
+    }
+  },
+  "blockalign": {
+    "label": "Text block placement",
+    "question": "Where is the tinted text block placed horizontally within the outer frame? Judge the block's outer edges, independently of how its text lines align.",
+    "options": {
+      "left": "Against the left inner edge",
+      "center": "Centered, with equal empty space on either side",
+      "right": "Against the right inner edge"
+    }
+  },
+  "widthcompare": {
+    "label": "Relative panel width",
+    "question": "Compare the widths of the two tinted panels, from their visible left edge to right edge.",
+    "options": {
+      "first": "The left panel is wider",
+      "last": "The right panel is wider",
+      "equal": "Their widths are equal"
+    }
+  },
+  "groupgap": {
+    "label": "Spacing within and between groups",
+    "question": "The cards form two groups marked Harbor and Meadow. Compare the gap between the groups' nearest card boxes with the gaps between cards within each group. Ignore the small group captions.",
+    "options": {
+      "between": "The between-group gap is larger",
+      "within": "The within-group gaps are larger",
+      "equal": "The between-group and within-group gaps are equal"
+    }
+  },
+  "topflow": {
+    "label": "Top-level hierarchy",
+    "question": "Look at the two large outlined sections headed Field notes and Harbor log. At the top level, how are these two sections arranged? Ignore the arrangement of cards inside either section.",
+    "options": {
+      "row": "Side by side horizontally",
+      "column": "Stacked vertically"
+    }
+  },
+  "nestedflow": {
+    "label": "Nested section flow",
+    "question": "Look inside the large section headed Field notes. How are its small cards arranged? Ignore how Field notes is placed relative to Harbor log.",
+    "options": {
+      "row": "One horizontal row",
+      "column": "One vertical column",
+      "wrapped": "Multiple horizontal rows, with a shorter final row"
+    }
+  },
+  "nestedwrap": {
+    "label": "Nested incomplete row alignment",
+    "question": "Inside Field notes, look only at the shorter final row of cards. How is it placed horizontally inside its own outlined inner frame? Ignore the surrounding page's arrangement.",
+    "options": {
+      "left": "Against that frame's left inner edge",
+      "center": "Centered in that frame",
+      "right": "Against that frame's right inner edge"
+    }
+  }
+}

@@ -15,7 +15,7 @@ import subprocess
 
 from baseline.evaluator import GRADING_VERSION
 from baseline.statistics import family_metrics
-from baseline.protocol import FAMILIES, NUMERIC_SCORING
+from baseline.protocol import NUMERIC_SCORING
 from baseline.model_config import _ModelConfig
 from baseline.releases import REPO_ROOT, git_code_identity, load_release, model_config_fingerprint, validate_release
 from baseline.reporting import _code_identity, _ledger_time, finite_nonnegative, scorecard_tasks, validate_task_result
@@ -69,6 +69,8 @@ def _source(directory: Path, release: dict, items: list[dict]) -> dict:
                 raise ValueError('Checkpoint integrity check failed')
             runs = connection.execute('SELECT run_id,fingerprint,metadata_json FROM runs').fetchall()
             configs = {model: json.loads(raw) for model, raw in connection.execute('SELECT model_id,config_json FROM models WHERE run_id=?', (directory.name,))}
+            model_states = {model: dict(status=status, reason=reason) for model, status, reason in connection.execute(
+                'SELECT model_id,status,reason FROM models WHERE run_id=?', (directory.name,))}
             results = {(model, task): json.loads(raw) for model, task, raw in connection.execute('SELECT model_id,task_id,result_json FROM results WHERE run_id=?', (directory.name,))}
             attempts = [dict(sequence=sequence, attempt_id=attempt, run_id=run, model_id=model, task_id=task,
                              result=json.loads(raw), cost_usd=cost, created_at=at)
@@ -112,8 +114,6 @@ def _source(directory: Path, release: dict, items: list[dict]) -> dict:
             final_attempts[key] = attempt['attempt_id']
     if latest != results:
         raise ValueError('Checkpoint results differ from their final attempt records')
-    if set(results) != set(final_attempts):
-        raise ValueError('Unresolved infrastructure failures cannot be finalized; retry them first')
     cards = {}
     expected_cards = {f'scorecard_{model}.json' for model in configs}
     if {path.name for path in directory.glob('scorecard_*.json')} != expected_cards:
@@ -125,7 +125,12 @@ def _source(directory: Path, release: dict, items: list[dict]) -> dict:
         card = _read_json(directory / f'scorecard_{model_id}.json')
         tasks = scorecard_tasks(card, dataset_fingerprint=release['dataset_fingerprint'])
         state = summary['models'][model_id]
-        if (not isinstance(state, dict) or any(card.get(key) != value for key, value in identity.items())
+        checkpoint_state = model_states[model_id]
+        if (not isinstance(state, dict) or state.get('status') != checkpoint_state['status']
+                or state.get('reason') != checkpoint_state['reason']
+                or state.get('attempted_tasks') != sum(model == model_id for model, _ in results)):
+            raise ValueError('Model availability status or reason differs from the checkpoint')
+        if (any(card.get(key) != value for key, value in identity.items())
                 or card.get('model_config') != config or state.get('model_config') != config
                 or card.get('model_config_fingerprint') != model_config_fingerprint(config)
                 or state.get('model_config_fingerprint') != model_config_fingerprint(config)
@@ -133,7 +138,9 @@ def _source(directory: Path, release: dict, items: list[dict]) -> dict:
                 or card.get('provider') != config['provider'] or type(state.get('completed')) is not int
                 or state.get('completed') != len(tasks) or card.get('max_output_tokens') != config['max_output_tokens']
                 or state.get('max_output_tokens') != config['max_output_tokens']
-                or {task['task_id']: task for task in tasks} != {task: result for (model,task),result in results.items() if model == model_id}):
+                or {task['task_id']: task for task in tasks} != {
+                    task: result for (model, task), result in results.items()
+                    if model == model_id and (model, task) in final_attempts}):
             raise ValueError('Scorecard or summary differs from checkpoint final responses')
         model_costs = [attempt['result'].get('cost_usd') for attempt in attempts if attempt['model_id'] == model_id]
         if any(cost is None for cost in model_costs):
@@ -162,7 +169,7 @@ def _source(directory: Path, release: dict, items: list[dict]) -> dict:
     if type(summary.get('cost_incomplete')) is not bool or summary['cost_incomplete'] != incomplete:
         raise ValueError('Summary cost completeness differs from attempt ledger')
     return dict(identity=identity, release_descriptor=release, metadata=metadata, summary=summary, configs=configs, cards=cards,
-                results=results, final_attempts=final_attempts, attempts=attempts, updated=updated)
+                results=results, final_attempts=final_attempts, attempts=attempts, model_states=model_states, updated=updated)
 
 
 def _measures(tasks: list[dict], config: dict) -> dict:
@@ -196,13 +203,27 @@ def _report(source: dict, items: list[dict], scope: str, roster: list[str], prov
     for model_id, config in sorted(source['configs'].items()):
         observed = source['cards'][model_id]
         selected = [task for task in observed if model_id in roster and task['task_id'] in cohort]
+        state = source['model_states'][model_id]
+        attempted = {key for key in source['results'] if key[0] == model_id}
+        unresolved = attempted - source['final_attempts'].keys()
+        if len(observed) == len(items):
+            availability = 'complete'
+        elif observed:
+            availability = 'partial'
+        elif unresolved or state['reason']:
+            availability = 'unavailable'
+        else:
+            availability = 'not_run'
         families = {}
-        for family in FAMILIES:
+        for family in sorted({item['family'] for item in items}):
             subset = [task for task in selected if task['family'] == family]
             families[family] = {**family_metrics(subset, family), **_measures(subset, config),
                                 'group_count': len({task['group_id'] for task in subset})}
         models.append(dict(model_id=model_id, model_config=config, model_config_fingerprint=model_config_fingerprint(config),
                            status='finalized', coverage_status='complete' if len(observed)==len(items) else 'partial',
+                           included_in_comparison=model_id in roster, availability_status=availability,
+                           run_status=state['status'], run_reason=state['reason'], attempted_task_count=len(attempted),
+                           unresolved_infrastructure_task_count=len(unresolved),
                            observed_task_count=len(observed), expected_task_count=len(items), comparison_task_count=len(selected),
                            families=families, **_measures(selected, config)))
     error_kinds = Counter(attempt['result'].get('error_kind') or 'unclassified' for attempt in source['attempts']
@@ -216,18 +237,20 @@ def _report(source: dict, items: list[dict], scope: str, roster: list[str], prov
                                cohort_fingerprint=hashlib.sha256(json.dumps(sorted(cohort)).encode()).hexdigest(), model_ids=sorted(roster)),
             'cost_basis': 'Recorded metered token usage multiplied by recorded model pricing per scored input; excludes unmetered reserves and separate infrastructure attempts.',
             'statistical_scope': 'Descriptive finite pilot. Related images share groups; no independent-sample confidence intervals or combined cross-family score.',
-            'campaign': dict(final_response_count=len(source['results']), attempt_count=len(source['attempts']),
+            'campaign': dict(final_response_count=len(source['final_attempts']), attempt_count=len(source['attempts']),
                              infrastructure_attempt_count=sum(error_kinds.values()), infrastructure_error_kinds=dict(sorted(error_kinds.items())),
+                             unresolved_infrastructure_task_count=len(source['results']) - len(source['final_attempts']),
                              spent_cost_usd=source['summary']['spent_cost_usd'], budget_usd=source['summary'].get('budget_usd'),
                              cost_incomplete=source['summary'].get('cost_incomplete', True),
                              estimated_cost_attempt_count=sum(bool(attempt['result'].get('cost_estimated')) for attempt in source['attempts'])),
             'models': models,
+            'attempts': source['attempts'],
             'specimens': [dict(task_id=item['taskId'], family=item['family'], group_id=item['groupId'],
                                image_filename=item['imageFilename'], image_sha256=item['imageSha256'],
                                ground_truth=item['groundTruth'], prompt=item['prompt'], design=item['design']) for item in items],
             'results': [dict(model_id=model, status='final', included_in_comparison=model in roster and task in cohort,
                              source_attempt_id=source['final_attempts'][(model,task)], result_sha256=_json_hash(result), result=result)
-                        for (model,task),result in sorted(source['results'].items())]}
+                        for (model,task),result in sorted(source['results'].items()) if (model, task) in source['final_attempts']]}
 
 
 def _artifact_names(directory: Path) -> set[str]:

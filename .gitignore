@@ -6,6 +6,8 @@ __pycache__/
 .runner.lock
 results/runs/
 test_output/
+dataset/candidate-rendered/
+dataset/candidate-archive/
 *.tmp
 .DS_Store
 *.egg-info/

@@ -1,0 +1,4555 @@
+{
+  "audited_at": "2026-09-17T03:36:31.064186+00:00",
+  "sealed_artifact_commit": "ac17659d69c5c8fbd60abfade2b14edb06826b86",
+  "dataset_fingerprint": "fc531bdb2e7c9d10e2074519bd3e0d0f66bc8ec970d20f25cdb628054784c6de",
+  "protocol_fingerprint": "deed0698dca65b5e24f3b06766d2d5344bbf0964e871167cebfc5e4aaba554fa",
+  "question_count": 292,
+  "unique_images": 250,
+  "requested_models": 13,
+  "complete_models": [
+    "gemini-3.1-pro-preview",
+    "gemini-3.5-flash-lite",
+    "gemini-3.8-flash",
+    "gpt-5.6-luna",
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
+    "gpt-6-astra",
+    "muse-spark-1.2",
+    "muse-spark-1.3"
+  ],
+  "full_comparison_responses": 2628,
+  "retained_partial_claude_responses": 884,
+  "final_responses": 3512,
+  "runner_attempts": 3515,
+  "http_requests": 3518,
+  "infrastructure_error_kinds": {
+    "credits": 3
+  },
+  "invalid_final_responses": 0,
+  "recorded_metered_subtotal_usd": "30.22180370",
+  "unmetered_reserve_allowance_usd": "0.5705740",
+  "ledger_total_decimal_usd": "30.79237770000000001286",
+  "unmetered_http_requests": 6,
+  "uncertain_attempts": [
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "task_id": "layoutbench-padcompare-004",
+      "http_requests": 2,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.059152",
+      "final_error_kind": null
+    },
+    {
+      "model_id": "gemini-3.8-flash",
+      "task_id": "layoutbench-crossalign-010",
+      "http_requests": 2,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.01911",
+      "final_error_kind": null
+    },
+    {
+      "model_id": "claude-fable-5-1",
+      "task_id": "layoutbench-groupgap-009",
+      "http_requests": 1,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.2548",
+      "final_error_kind": "credits"
+    },
+    {
+      "model_id": "claude-opus-5",
+      "task_id": "layoutbench-groupgap-009",
+      "http_requests": 1,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.1274",
+      "final_error_kind": "credits"
+    },
+    {
+      "model_id": "claude-sonnet-5",
+      "task_id": "layoutbench-groupgap-009",
+      "http_requests": 1,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.05096",
+      "final_error_kind": "credits"
+    },
+    {
+      "model_id": "gemini-3.1-pro-preview",
+      "task_id": "layoutbench-groupgap-008",
+      "http_requests": 2,
+      "unmetered_requests": 1,
+      "reserve_usd": "0.059152",
+      "final_error_kind": null
+    }
+  ],
+  "seal_checked": true,
+  "discrepancies": [],
+  "family_metrics_all_retained_models": {
+    "claude-fable-5-1": {
+      "direction": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 3
+          }
+        }
+      },
+      "distribution": {
+        "correct": 15,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 1,
+            "around": 1,
+            "center": 1
+          },
+          "end": {
+            "end": 3
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 2
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 1
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 3
+          },
+          "center": {
+            "center": 3
+          },
+          "end": {
+            "end": 2
+          }
+        }
+      },
+      "textalign": {
+        "correct": 11,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "right": {
+            "right": 3
+          },
+          "left": {
+            "left": 1
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "center": 3
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "2": {
+            "2": 2
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "4": {
+            "4": 2
+          },
+          "2": {
+            "2": 2
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 11,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 3
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 8,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 3
+          },
+          "equal": {
+            "equal": 1,
+            "vertical": 3
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "right": {
+            "right": 2
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 2
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "1": {
+            "1": 3
+          },
+          "2": {
+            "2": 3
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 3
+          },
+          "right": {
+            "right": 2
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "first": 2
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 8,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 3
+          },
+          "equal": {
+            "vertical": 3,
+            "equal": 1
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "left": {
+            "left": 3
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 3
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "last": {
+            "last": 3
+          },
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "first": 2
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 2
+          },
+          "between": {
+            "between": 2
+          },
+          "within": {
+            "within": 3
+          }
+        }
+      },
+      "topflow": {
+        "correct": 17,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "row": {
+            "row": 9
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 18,
+        "count": 18,
+        "valid": 18,
+        "semantic_confusion": {
+          "row": {
+            "row": 4
+          },
+          "wrapped": {
+            "wrapped": 7
+          },
+          "column": {
+            "column": 7
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 19,
+        "count": 19,
+        "valid": 19,
+        "semantic_confusion": {
+          "left": {
+            "left": 7
+          },
+          "center": {
+            "center": 7
+          },
+          "right": {
+            "right": 5
+          }
+        }
+      }
+    },
+    "claude-opus-5": {
+      "direction": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 3
+          }
+        }
+      },
+      "distribution": {
+        "correct": 17,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 3
+          },
+          "end": {
+            "end": 3
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 2
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 1
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 3
+          },
+          "center": {
+            "center": 3
+          },
+          "end": {
+            "end": 2
+          }
+        }
+      },
+      "textalign": {
+        "correct": 11,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "right": {
+            "right": 3
+          },
+          "left": {
+            "left": 1
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "center": 3
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "2": {
+            "2": 2
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "4": {
+            "4": 2
+          },
+          "2": {
+            "2": 2
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 11,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 3
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 10,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 3
+          },
+          "equal": {
+            "equal": 3,
+            "horizontal": 1
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "right": {
+            "right": 2
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 2
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "1": {
+            "1": 3
+          },
+          "2": {
+            "2": 3
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 3
+          },
+          "right": {
+            "right": 2
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "first": 2
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 11,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 3
+          },
+          "equal": {
+            "equal": 4
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "left": {
+            "left": 3
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 3
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "last": {
+            "last": 3
+          },
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "first": 2
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 2
+          },
+          "between": {
+            "between": 2
+          },
+          "within": {
+            "within": 3
+          }
+        }
+      },
+      "topflow": {
+        "correct": 17,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "row": {
+            "row": 9
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 18,
+        "count": 18,
+        "valid": 18,
+        "semantic_confusion": {
+          "row": {
+            "row": 4
+          },
+          "wrapped": {
+            "wrapped": 7
+          },
+          "column": {
+            "column": 7
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 19,
+        "count": 19,
+        "valid": 19,
+        "semantic_confusion": {
+          "left": {
+            "left": 7
+          },
+          "center": {
+            "center": 7
+          },
+          "right": {
+            "right": 5
+          }
+        }
+      }
+    },
+    "claude-sonnet-5": {
+      "direction": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 3
+          }
+        }
+      },
+      "distribution": {
+        "correct": 16,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 3
+          },
+          "end": {
+            "end": 3
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "around": 1,
+            "start": 1
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 1
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 3
+          },
+          "center": {
+            "center": 3
+          },
+          "end": {
+            "end": 2
+          }
+        }
+      },
+      "textalign": {
+        "correct": 10,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "right": {
+            "right": 2,
+            "center": 1
+          },
+          "left": {
+            "left": 1
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "center": 3
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "2": {
+            "2": 2
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "4": {
+            "4": 2
+          },
+          "2": {
+            "2": 2
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 11,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 3
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 10,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 3
+          },
+          "equal": {
+            "equal": 3,
+            "vertical": 1
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "right": {
+            "right": 2
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 2
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "1": {
+            "1": 3
+          },
+          "2": {
+            "2": 3
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 3
+          },
+          "right": {
+            "right": 2
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "first": 2
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 10,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 3
+          },
+          "equal": {
+            "vertical": 1,
+            "equal": 3
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "left": {
+            "left": 3
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 3
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "last": {
+            "last": 3
+          },
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "first": 2
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 6,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 2
+          },
+          "between": {
+            "between": 2
+          },
+          "within": {
+            "between": 1,
+            "within": 2
+          }
+        }
+      },
+      "topflow": {
+        "correct": 17,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "row": {
+            "row": 9
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 18,
+        "count": 18,
+        "valid": 18,
+        "semantic_confusion": {
+          "row": {
+            "row": 4
+          },
+          "wrapped": {
+            "wrapped": 7
+          },
+          "column": {
+            "column": 7
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 19,
+        "count": 19,
+        "valid": 19,
+        "semantic_confusion": {
+          "left": {
+            "left": 7
+          },
+          "center": {
+            "center": 7
+          },
+          "right": {
+            "right": 5
+          }
+        }
+      }
+    },
+    "claude-haiku-4-5-20251001": {
+      "direction": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 3
+          }
+        }
+      },
+      "distribution": {
+        "correct": 4,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 1,
+            "around": 1,
+            "center": 1
+          },
+          "end": {
+            "around": 1,
+            "end": 2
+          },
+          "center": {
+            "evenly": 1,
+            "around": 3
+          },
+          "start": {
+            "center": 1,
+            "around": 1
+          },
+          "around": {
+            "around": 1,
+            "between": 1,
+            "center": 1,
+            "evenly": 1
+          },
+          "between": {
+            "evenly": 1
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 10,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "end": 1,
+            "stretch": 2
+          },
+          "center": {
+            "center": 2,
+            "end": 1
+          },
+          "end": {
+            "end": 2
+          }
+        }
+      },
+      "textalign": {
+        "correct": 4,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "right": {
+            "justify": 3
+          },
+          "left": {
+            "justify": 1
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "justify": 3
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 9,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "2": {
+            "2": 2
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 7,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "4": {
+            "4": 2
+          },
+          "2": {
+            "2": 2
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 11,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 3
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 3,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "vertical": {
+            "equal": 3,
+            "horizontal": 1
+          },
+          "horizontal": {
+            "equal": 3
+          },
+          "equal": {
+            "equal": 3,
+            "horizontal": 1
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 7,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "right": {
+            "right": 2
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 1,
+            "equal": 1
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 5,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "1": {
+            "2": 1,
+            "3": 1,
+            "1": 1
+          },
+          "2": {
+            "3": 3
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "3": {
+            "3": 3
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 3
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 6,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "left": {
+            "left": 3,
+            "center": 1
+          },
+          "center": {
+            "center": 3
+          },
+          "right": {
+            "center": 2
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 4,
+        "count": 9,
+        "valid": 9,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "equal": 2
+          },
+          "last": {
+            "equal": 3,
+            "last": 1
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 1,
+        "count": 11,
+        "valid": 11,
+        "semantic_confusion": {
+          "horizontal": {
+            "vertical": 3,
+            "horizontal": 1
+          },
+          "vertical": {
+            "horizontal": 3
+          },
+          "equal": {
+            "horizontal": 2,
+            "vertical": 2
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 10,
+        "count": 10,
+        "valid": 10,
+        "semantic_confusion": {
+          "left": {
+            "left": 3
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 3
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "last": {
+            "last": 3
+          },
+          "equal": {
+            "equal": 3
+          },
+          "first": {
+            "first": 2
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 2,
+        "count": 7,
+        "valid": 7,
+        "semantic_confusion": {
+          "equal": {
+            "between": 2
+          },
+          "between": {
+            "between": 2
+          },
+          "within": {
+            "between": 3
+          }
+        }
+      },
+      "topflow": {
+        "correct": 17,
+        "count": 17,
+        "valid": 17,
+        "semantic_confusion": {
+          "row": {
+            "row": 9
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 18,
+        "count": 18,
+        "valid": 18,
+        "semantic_confusion": {
+          "row": {
+            "row": 4
+          },
+          "wrapped": {
+            "wrapped": 7
+          },
+          "column": {
+            "column": 7
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 14,
+        "count": 19,
+        "valid": 19,
+        "semantic_confusion": {
+          "left": {
+            "left": 6,
+            "center": 1
+          },
+          "center": {
+            "center": 7
+          },
+          "right": {
+            "center": 3,
+            "left": 1,
+            "right": 1
+          }
+        }
+      }
+    },
+    "gpt-6-astra": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "left": {
+            "left": 4
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "equal": 4
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "equal": 4
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 4
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "gpt-5.6-sol": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 14,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "right": 2,
+            "center": 2
+          },
+          "left": {
+            "left": 4
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "equal": 4
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "equal": 4
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 4
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "gpt-5.6-terra": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 10,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "right": 1,
+            "center": 3
+          },
+          "left": {
+            "justify": 1,
+            "left": 3
+          },
+          "justify": {
+            "left": 1,
+            "justify": 3
+          },
+          "center": {
+            "left": 1,
+            "center": 3
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 11,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "equal": 3,
+            "vertical": 1
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 11,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "horizontal": 1,
+            "equal": 3
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 4
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "gpt-5.6-luna": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 11,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "justify": 1,
+            "right": 1,
+            "center": 2
+          },
+          "left": {
+            "left": 4
+          },
+          "justify": {
+            "justify": 3,
+            "left": 1
+          },
+          "center": {
+            "center": 3,
+            "justify": 1
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 11,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "horizontal": 1,
+            "vertical": 3
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "equal": 4
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 8,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 3,
+            "2": 1
+          },
+          "2": {
+            "2": 1,
+            "3": 3
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 11,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "last": 1,
+            "first": 3
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 11,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "equal": 3,
+            "vertical": 1
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 8,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "between": 3,
+            "equal": 1
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 3,
+            "between": 1
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "gemini-3.1-pro-preview": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 13,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "right": 3,
+            "center": 1
+          },
+          "left": {
+            "left": 4
+          },
+          "justify": {
+            "justify": 2,
+            "left": 2
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 8,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "vertical": 4
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 9,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "vertical": 3,
+            "equal": 1
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 4
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "gemini-3.8-flash": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "left": {
+            "left": 4
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 8,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "vertical": 4
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 9,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "vertical": 3,
+            "equal": 1
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 4
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "gemini-3.5-flash-lite": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 14,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "center": 1,
+            "around": 2,
+            "evenly": 1
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "center": 1,
+            "start": 3
+          },
+          "around": {
+            "center": 2,
+            "evenly": 1,
+            "around": 1
+          },
+          "between": {
+            "around": 1,
+            "evenly": 2,
+            "between": 1
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 4,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "left": 3,
+            "justify": 1
+          },
+          "left": {
+            "left": 2,
+            "justify": 2
+          },
+          "justify": {
+            "left": 2,
+            "justify": 2
+          },
+          "center": {
+            "justify": 3,
+            "left": 1
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 4,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "horizontal": 3,
+            "equal": 1
+          },
+          "horizontal": {
+            "vertical": 2,
+            "horizontal": 2
+          },
+          "equal": {
+            "vertical": 2,
+            "equal": 2
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 6,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "2": 4
+          },
+          "2": {
+            "2": 2,
+            "3": 2
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 8,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 1,
+            "equal": 3
+          },
+          "last": {
+            "last": 3,
+            "equal": 1
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 6,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 3,
+            "vertical": 1
+          },
+          "vertical": {
+            "vertical": 3,
+            "horizontal": 1
+          },
+          "equal": {
+            "vertical": 3,
+            "horizontal": 1
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 5,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "between": 4
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 1,
+            "between": 3
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "muse-spark-1.3": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 12,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "right": 2,
+            "center": 2
+          },
+          "justify": {
+            "justify": 4
+          },
+          "left": {
+            "left": 2,
+            "justify": 2
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 10,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "equal": 2,
+            "vertical": 2
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 9,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "horizontal": 1,
+            "equal": 1,
+            "vertical": 2
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 4
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    },
+    "muse-spark-1.2": {
+      "direction": {
+        "correct": 8,
+        "count": 8,
+        "valid": 8,
+        "semantic_confusion": {
+          "column": {
+            "column": 4
+          },
+          "row": {
+            "row": 4
+          }
+        }
+      },
+      "distribution": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "evenly": {
+            "evenly": 4
+          },
+          "end": {
+            "end": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "start": {
+            "start": 4
+          },
+          "around": {
+            "around": 4
+          },
+          "between": {
+            "between": 4
+          }
+        }
+      },
+      "crossalign": {
+        "correct": 16,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "start": {
+            "start": 4
+          },
+          "stretch": {
+            "stretch": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "end": {
+            "end": 4
+          }
+        }
+      },
+      "textalign": {
+        "correct": 13,
+        "count": 16,
+        "valid": 16,
+        "semantic_confusion": {
+          "right": {
+            "center": 3,
+            "right": 1
+          },
+          "left": {
+            "left": 4
+          },
+          "justify": {
+            "justify": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "textcolumns": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "gridcols": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "4": {
+            "4": 4
+          },
+          "2": {
+            "2": 4
+          }
+        }
+      },
+      "gridrows": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "4": {
+            "4": 4
+          }
+        }
+      },
+      "gridgaps": {
+        "correct": 9,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "vertical": {
+            "vertical": 4
+          },
+          "horizontal": {
+            "horizontal": 4
+          },
+          "equal": {
+            "vertical": 3,
+            "equal": 1
+          }
+        }
+      },
+      "gridtracks": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "right": {
+            "right": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "left": {
+            "left": 4
+          }
+        }
+      },
+      "gridspan": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "1": {
+            "1": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "3": {
+            "3": 4
+          }
+        }
+      },
+      "wrapcount": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "3": {
+            "3": 4
+          },
+          "2": {
+            "2": 4
+          },
+          "1": {
+            "1": 4
+          }
+        }
+      },
+      "wrapalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "center": {
+            "center": 4
+          },
+          "right": {
+            "right": 4
+          }
+        }
+      },
+      "gapcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          },
+          "last": {
+            "last": 4
+          }
+        }
+      },
+      "padcompare": {
+        "correct": 8,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "horizontal": {
+            "horizontal": 4
+          },
+          "vertical": {
+            "vertical": 4
+          },
+          "equal": {
+            "vertical": 2,
+            "horizontal": 2
+          }
+        }
+      },
+      "blockalign": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "left": {
+            "left": 4
+          },
+          "right": {
+            "right": 4
+          },
+          "center": {
+            "center": 4
+          }
+        }
+      },
+      "widthcompare": {
+        "correct": 12,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "last": {
+            "last": 4
+          },
+          "equal": {
+            "equal": 4
+          },
+          "first": {
+            "first": 4
+          }
+        }
+      },
+      "groupgap": {
+        "correct": 11,
+        "count": 12,
+        "valid": 12,
+        "semantic_confusion": {
+          "equal": {
+            "equal": 3,
+            "between": 1
+          },
+          "between": {
+            "between": 4
+          },
+          "within": {
+            "within": 4
+          }
+        }
+      },
+      "topflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 12
+          },
+          "column": {
+            "column": 12
+          }
+        }
+      },
+      "nestedflow": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "row": {
+            "row": 8
+          },
+          "wrapped": {
+            "wrapped": 8
+          },
+          "column": {
+            "column": 8
+          }
+        }
+      },
+      "nestedwrap": {
+        "correct": 24,
+        "count": 24,
+        "valid": 24,
+        "semantic_confusion": {
+          "left": {
+            "left": 8
+          },
+          "center": {
+            "center": 8
+          },
+          "right": {
+            "right": 8
+          }
+        }
+      }
+    }
+  },
+  "hierarchy_pairs_all_retained_models": {
+    "claude-fable-5-1": {
+      "both": 13,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "claude-opus-5": {
+      "both": 13,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "claude-sonnet-5": {
+      "both": 13,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "claude-haiku-4-5-20251001": {
+      "both": 13,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "gpt-6-astra": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "gpt-5.6-sol": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "gpt-5.6-terra": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "gpt-5.6-luna": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "gemini-3.1-pro-preview": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "gemini-3.8-flash": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "gemini-3.5-flash-lite": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "muse-spark-1.3": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    },
+    "muse-spark-1.2": {
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0
+    }
+  },
+  "limits": "Independent replay uses retained raw answer text, reported usage, and frozen inputs. Recorded token-rate estimates and conservative reserves are not provider invoices. No inference requests were made; provider identity/envelopes and individual internal retry errors are not independently recoverable."
+}

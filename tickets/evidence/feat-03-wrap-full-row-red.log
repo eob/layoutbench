@@ -1,0 +1,21 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+____________ test_nested_wrap_full_rows_cannot_reveal_alignment[90] ____________
+
+width = 90
+
+    @pytest.mark.parametrize("width", [90, 100])
+    def test_nested_wrap_full_rows_cannot_reveal_alignment(width):
+        task = {"family": "nestedwrap", "rendered": {"regions": [
+            rectangle("frame", 0, 0, 328, 140), rectangle("target", 0, 0, 328, 140),
+            *[rectangle(f"child-{i}", 2 + (i % 3) * (width + 12), 2 + (i // 3) * 50, width, 38)
+              for i in range(5)],
+        ]}}
+        if width == 90:
+>           with pytest.raises(ValueError, match="Full wrapped rows"):
+E           Failed: DID NOT RAISE ValueError
+
+tests/test_qualitative_validation.py:58: Failed
+=========================== short test summary info ============================
+FAILED tests/test_qualitative_validation.py::test_nested_wrap_full_rows_cannot_reveal_alignment[90]
+1 failed, 1 passed, 20 deselected in 0.03s
