@@ -6,9 +6,10 @@ import catalog from "../config/qualitative.json";
 import { balancedLetters, fnv1a, mulberry32, shuffled } from "./abstract.ts";
 import { buildQualitativeScenes } from "./qualitative.ts";
 import { buildHierarchyScenes } from "./hierarchy.ts";
+import { resolveRenderOutput } from "./render-output.ts";
 
 const root = path.resolve(import.meta.dir, "..");
-const out = path.resolve(process.argv[2] ?? path.join(root, "dataset/layoutbench-v0.3"));
+const out = resolveRenderOutput(process.argv[2]);
 const font = fs.readFileSync(path.join(root, "src/assets/DejaVuSans.ttf"));
 const sha = (data: Buffer | string) => createHash("sha256").update(data).digest("hex");
 

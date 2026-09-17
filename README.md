@@ -38,7 +38,6 @@ bun install
 bunx playwright install chromium
 python3 -m venv .venv
 .venv/bin/pip install -e .
-bun run render
 bun run validate
 bun test src
 .venv/bin/python -m pytest tests
@@ -48,6 +47,15 @@ bun test src
 ```
 
 API credentials are read from environment variables named in the model catalog. Requests contain only the image and question, without the manifest, HTML, CSS, task IDs, filenames, or answer keys. Model/account failures are recorded separately from incorrect answers.
+
+To reproduce the images, render into a separate candidate directory and validate
+it explicitly. Rendering refuses registered release inputs and archived dataset
+paths, including parent directories and symlink aliases.
+
+```sh
+bun run render
+.venv/bin/python -m baseline.validate_dataset --manifest dataset/candidate-rendered/manifest.json
+```
 
 ## Evidence and interpretation
 
