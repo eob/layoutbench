@@ -30556,7 +30556,7 @@
     "family": "topflow",
     "groupId": "h-09",
     "imageFilename": "h-09.png",
-    "imageSha256": "c39ffd5654c2e9f2f72d2f9de67fc348d901fcef12753a72a5120b0672c99289",
+    "imageSha256": "882f6b21e43601e586930da4bae5ac5ceb3173a0854b23000f9184b87a6a71df",
     "groundTruth": {
       "choice": "A"
     },
@@ -30686,23 +30686,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 320,
+          "x": 327.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -30710,15 +30710,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -30738,7 +30738,7 @@
     "family": "nestedflow",
     "groupId": "h-09",
     "imageFilename": "h-09.png",
-    "imageSha256": "c39ffd5654c2e9f2f72d2f9de67fc348d901fcef12753a72a5120b0672c99289",
+    "imageSha256": "882f6b21e43601e586930da4bae5ac5ceb3173a0854b23000f9184b87a6a71df",
     "groundTruth": {
       "choice": "B"
     },
@@ -30869,23 +30869,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 320,
+          "x": 327.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -30893,15 +30893,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -30921,7 +30921,7 @@
     "family": "nestedwrap",
     "groupId": "h-09",
     "imageFilename": "h-09.png",
-    "imageSha256": "c39ffd5654c2e9f2f72d2f9de67fc348d901fcef12753a72a5120b0672c99289",
+    "imageSha256": "882f6b21e43601e586930da4bae5ac5ceb3173a0854b23000f9184b87a6a71df",
     "groundTruth": {
       "choice": "B"
     },
@@ -31052,23 +31052,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 320,
+          "x": 327.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31076,15 +31076,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31104,7 +31104,7 @@
     "family": "topflow",
     "groupId": "h-10",
     "imageFilename": "h-10.png",
-    "imageSha256": "831c7d7b50838ba97eb8dfe613708f800bbe022436be0aa1dd7b4dd01e0a012d",
+    "imageSha256": "38331671e2ad6b023b8c85ebfed1a00bfcf4e065af92fc235e80bce6eae12ec6",
     "groundTruth": {
       "choice": "A"
     },
@@ -31242,23 +31242,23 @@
           "role": "box",
           "x": 360,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 600,
+          "x": 607.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31266,15 +31266,15 @@
           "role": "box",
           "x": 360,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -31286,7 +31286,7 @@
     "family": "nestedflow",
     "groupId": "h-10",
     "imageFilename": "h-10.png",
-    "imageSha256": "831c7d7b50838ba97eb8dfe613708f800bbe022436be0aa1dd7b4dd01e0a012d",
+    "imageSha256": "38331671e2ad6b023b8c85ebfed1a00bfcf4e065af92fc235e80bce6eae12ec6",
     "groundTruth": {
       "choice": "B"
     },
@@ -31425,23 +31425,23 @@
           "role": "box",
           "x": 360,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 600,
+          "x": 607.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31449,15 +31449,15 @@
           "role": "box",
           "x": 360,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -31469,7 +31469,7 @@
     "family": "nestedwrap",
     "groupId": "h-10",
     "imageFilename": "h-10.png",
-    "imageSha256": "831c7d7b50838ba97eb8dfe613708f800bbe022436be0aa1dd7b4dd01e0a012d",
+    "imageSha256": "38331671e2ad6b023b8c85ebfed1a00bfcf4e065af92fc235e80bce6eae12ec6",
     "groundTruth": {
       "choice": "B"
     },
@@ -31608,23 +31608,23 @@
           "role": "box",
           "x": 360,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 600,
+          "x": 607.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31632,15 +31632,15 @@
           "role": "box",
           "x": 360,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -31652,7 +31652,7 @@
     "family": "topflow",
     "groupId": "h-11",
     "imageFilename": "h-11.png",
-    "imageSha256": "6c5a45ad0aa20b1fb4763af5b22da4efb7883725985f303c9db17ab2574eec27",
+    "imageSha256": "11fab0be75f11a84e4ce883389ccfd4ad1de5a331d43fe5f2125483fb75c0414",
     "groundTruth": {
       "choice": "B"
     },
@@ -31782,23 +31782,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 320,
+          "x": 327.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31806,15 +31806,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31834,7 +31834,7 @@
     "family": "nestedflow",
     "groupId": "h-11",
     "imageFilename": "h-11.png",
-    "imageSha256": "6c5a45ad0aa20b1fb4763af5b22da4efb7883725985f303c9db17ab2574eec27",
+    "imageSha256": "11fab0be75f11a84e4ce883389ccfd4ad1de5a331d43fe5f2125483fb75c0414",
     "groundTruth": {
       "choice": "C"
     },
@@ -31965,23 +31965,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 320,
+          "x": 327.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -31989,15 +31989,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -32017,7 +32017,7 @@
     "family": "nestedwrap",
     "groupId": "h-11",
     "imageFilename": "h-11.png",
-    "imageSha256": "6c5a45ad0aa20b1fb4763af5b22da4efb7883725985f303c9db17ab2574eec27",
+    "imageSha256": "11fab0be75f11a84e4ce883389ccfd4ad1de5a331d43fe5f2125483fb75c0414",
     "groundTruth": {
       "choice": "C"
     },
@@ -32148,23 +32148,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 320,
+          "x": 327.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -32172,15 +32172,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 200,
+          "x": 203.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -32200,7 +32200,7 @@
     "family": "topflow",
     "groupId": "h-12",
     "imageFilename": "h-12.png",
-    "imageSha256": "e3fec227046fc4fa192d2010ccb24f90dbc60019ad54144cf712d47bd0cda783",
+    "imageSha256": "ce42e30c0bffa72ca47a923d41027233a6c7d1f57dd0e861e7e55d5c45b37e7c",
     "groundTruth": {
       "choice": "A"
     },
@@ -32338,23 +32338,23 @@
           "role": "box",
           "x": 360,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 600,
+          "x": 607.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -32362,15 +32362,15 @@
           "role": "box",
           "x": 360,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -32382,7 +32382,7 @@
     "family": "nestedflow",
     "groupId": "h-12",
     "imageFilename": "h-12.png",
-    "imageSha256": "e3fec227046fc4fa192d2010ccb24f90dbc60019ad54144cf712d47bd0cda783",
+    "imageSha256": "ce42e30c0bffa72ca47a923d41027233a6c7d1f57dd0e861e7e55d5c45b37e7c",
     "groundTruth": {
       "choice": "A"
     },
@@ -32521,23 +32521,23 @@
           "role": "box",
           "x": 360,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 600,
+          "x": 607.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -32545,15 +32545,15 @@
           "role": "box",
           "x": 360,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -32565,7 +32565,7 @@
     "family": "nestedwrap",
     "groupId": "h-12",
     "imageFilename": "h-12.png",
-    "imageSha256": "e3fec227046fc4fa192d2010ccb24f90dbc60019ad54144cf712d47bd0cda783",
+    "imageSha256": "ce42e30c0bffa72ca47a923d41027233a6c7d1f57dd0e861e7e55d5c45b37e7c",
     "groundTruth": {
       "choice": "A"
     },
@@ -32704,23 +32704,23 @@
           "role": "box",
           "x": 360,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 600,
+          "x": 607.96875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -32728,15 +32728,15 @@
           "role": "box",
           "x": 360,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 480,
+          "x": 483.984375,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -35652,7 +35652,7 @@
     "family": "topflow",
     "groupId": "h-21",
     "imageFilename": "h-21.png",
-    "imageSha256": "e6abd1512b91c6b3991632ce8a537d35c50cb140f96b6f48ee2d99642a5a3d03",
+    "imageSha256": "1d4800c3ed8fc4fed51234e11ff9e69e776daf5d7e63e0dd8973bdcffd70fb26",
     "groundTruth": {
       "choice": "A"
     },
@@ -35782,23 +35782,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -35806,15 +35806,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -35834,7 +35834,7 @@
     "family": "nestedflow",
     "groupId": "h-21",
     "imageFilename": "h-21.png",
-    "imageSha256": "e6abd1512b91c6b3991632ce8a537d35c50cb140f96b6f48ee2d99642a5a3d03",
+    "imageSha256": "1d4800c3ed8fc4fed51234e11ff9e69e776daf5d7e63e0dd8973bdcffd70fb26",
     "groundTruth": {
       "choice": "B"
     },
@@ -35965,23 +35965,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -35989,15 +35989,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36017,7 +36017,7 @@
     "family": "nestedwrap",
     "groupId": "h-21",
     "imageFilename": "h-21.png",
-    "imageSha256": "e6abd1512b91c6b3991632ce8a537d35c50cb140f96b6f48ee2d99642a5a3d03",
+    "imageSha256": "1d4800c3ed8fc4fed51234e11ff9e69e776daf5d7e63e0dd8973bdcffd70fb26",
     "groundTruth": {
       "choice": "A"
     },
@@ -36148,23 +36148,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36172,15 +36172,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36200,7 +36200,7 @@
     "family": "topflow",
     "groupId": "h-22",
     "imageFilename": "h-22.png",
-    "imageSha256": "0d1b6727fb6843524e14e876cdc0f7330f0d5655833d2862fa48e91916791cd1",
+    "imageSha256": "a7b0cd9eb4f906fa4967205ed5db6e0c7e71282dd1312c6b47690b8aa501cfa9",
     "groundTruth": {
       "choice": "B"
     },
@@ -36338,23 +36338,23 @@
           "role": "box",
           "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36362,15 +36362,15 @@
           "role": "box",
           "x": 80,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -36382,7 +36382,7 @@
     "family": "nestedflow",
     "groupId": "h-22",
     "imageFilename": "h-22.png",
-    "imageSha256": "0d1b6727fb6843524e14e876cdc0f7330f0d5655833d2862fa48e91916791cd1",
+    "imageSha256": "a7b0cd9eb4f906fa4967205ed5db6e0c7e71282dd1312c6b47690b8aa501cfa9",
     "groundTruth": {
       "choice": "A"
     },
@@ -36521,23 +36521,23 @@
           "role": "box",
           "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36545,15 +36545,15 @@
           "role": "box",
           "x": 80,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -36565,7 +36565,7 @@
     "family": "nestedwrap",
     "groupId": "h-22",
     "imageFilename": "h-22.png",
-    "imageSha256": "0d1b6727fb6843524e14e876cdc0f7330f0d5655833d2862fa48e91916791cd1",
+    "imageSha256": "a7b0cd9eb4f906fa4967205ed5db6e0c7e71282dd1312c6b47690b8aa501cfa9",
     "groundTruth": {
       "choice": "B"
     },
@@ -36704,23 +36704,23 @@
           "role": "box",
           "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36728,15 +36728,15 @@
           "role": "box",
           "x": 80,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -36748,7 +36748,7 @@
     "family": "topflow",
     "groupId": "h-23",
     "imageFilename": "h-23.png",
-    "imageSha256": "0f4868f924e193bc63e64e7dedef73a7f164f5fcf4f54332f30d0e24bd83c5a3",
+    "imageSha256": "6047742c65fc42dcbf3ff66b9a3f2d8c60e28fdb3910e0ff99529f204c2de7ff",
     "groundTruth": {
       "choice": "A"
     },
@@ -36878,23 +36878,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36902,15 +36902,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -36930,7 +36930,7 @@
     "family": "nestedflow",
     "groupId": "h-23",
     "imageFilename": "h-23.png",
-    "imageSha256": "0f4868f924e193bc63e64e7dedef73a7f164f5fcf4f54332f30d0e24bd83c5a3",
+    "imageSha256": "6047742c65fc42dcbf3ff66b9a3f2d8c60e28fdb3910e0ff99529f204c2de7ff",
     "groundTruth": {
       "choice": "A"
     },
@@ -37061,23 +37061,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -37085,15 +37085,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -37113,7 +37113,7 @@
     "family": "nestedwrap",
     "groupId": "h-23",
     "imageFilename": "h-23.png",
-    "imageSha256": "0f4868f924e193bc63e64e7dedef73a7f164f5fcf4f54332f30d0e24bd83c5a3",
+    "imageSha256": "6047742c65fc42dcbf3ff66b9a3f2d8c60e28fdb3910e0ff99529f204c2de7ff",
     "groundTruth": {
       "choice": "A"
     },
@@ -37244,23 +37244,23 @@
           "role": "box",
           "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -37268,15 +37268,15 @@
           "role": "box",
           "x": 80,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -37296,7 +37296,7 @@
     "family": "topflow",
     "groupId": "h-24",
     "imageFilename": "h-24.png",
-    "imageSha256": "1f4cf5557b0b0a6700cd94654208816095559e6e567ddbaac0ad29d290918078",
+    "imageSha256": "78b83f2cb2d0ed8ba47fc3705d2d914b8daabf05c5775d59531abcff06fce754",
     "groundTruth": {
       "choice": "B"
     },
@@ -37434,23 +37434,23 @@
           "role": "box",
           "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -37458,15 +37458,15 @@
           "role": "box",
           "x": 80,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -37478,7 +37478,7 @@
     "family": "nestedflow",
     "groupId": "h-24",
     "imageFilename": "h-24.png",
-    "imageSha256": "1f4cf5557b0b0a6700cd94654208816095559e6e567ddbaac0ad29d290918078",
+    "imageSha256": "78b83f2cb2d0ed8ba47fc3705d2d914b8daabf05c5775d59531abcff06fce754",
     "groundTruth": {
       "choice": "B"
     },
@@ -37617,23 +37617,23 @@
           "role": "box",
           "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -37641,15 +37641,15 @@
           "role": "box",
           "x": 80,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -37661,7 +37661,7 @@
     "family": "nestedwrap",
     "groupId": "h-24",
     "imageFilename": "h-24.png",
-    "imageSha256": "1f4cf5557b0b0a6700cd94654208816095559e6e567ddbaac0ad29d290918078",
+    "imageSha256": "78b83f2cb2d0ed8ba47fc3705d2d914b8daabf05c5775d59531abcff06fce754",
     "groundTruth": {
       "choice": "C"
     },
@@ -37800,23 +37800,23 @@
           "role": "box",
           "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 464,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -37824,15 +37824,15 @@
           "role": "box",
           "x": 80,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 272,
+          "x": 297.328125,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -37844,7 +37844,7 @@
     "family": "nestedwrap",
     "groupId": "h-25",
     "imageFilename": "h-25.png",
-    "imageSha256": "55145fc4fb04b034e7ec8fad657973d9e2fd6e5dfa3894e11e62ebd6c65208d9",
+    "imageSha256": "27855b2e6fced92816b6fb010b410ab15744b572d561dd18cb2a672e49939fbe",
     "groundTruth": {
       "choice": "C"
     },
@@ -37973,33 +37973,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 86,
+          "x": 80.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 206,
+          "x": 204,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 326,
+          "x": 327.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 146,
+          "x": 142.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -38007,7 +38007,7 @@
           "role": "box",
           "x": 266,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -38027,7 +38027,7 @@
     "family": "nestedwrap",
     "groupId": "h-26",
     "imageFilename": "h-26.png",
-    "imageSha256": "b2f4738fbfbe9dcfcc9270fb2756ae1ccee5f976d76295bdc685b36e36707982",
+    "imageSha256": "0286d84e3f7b26d0056ade80f04cea37c03f43c2806c0972e3f58fd7d010635b",
     "groundTruth": {
       "choice": "A"
     },
@@ -38164,33 +38164,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 366,
+          "x": 360.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 486,
+          "x": 484,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 606,
+          "x": 607.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 426,
+          "x": 422.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -38198,7 +38198,7 @@
           "role": "box",
           "x": 546,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -38210,7 +38210,7 @@
     "family": "nestedwrap",
     "groupId": "h-27",
     "imageFilename": "h-27.png",
-    "imageSha256": "80b186d8d6726774524f9153547c05f02b5b50ffe4aa4454dca29bbd9060fdf8",
+    "imageSha256": "d6307216da29e0a4f2bf1f2c84210ded0dba685ea928332720cf5ab92cf79e31",
     "groundTruth": {
       "choice": "A"
     },
@@ -38339,33 +38339,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 86,
+          "x": 80.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 206,
+          "x": 204,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 326,
+          "x": 327.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 146,
+          "x": 142.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -38373,7 +38373,7 @@
           "role": "box",
           "x": 266,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -38393,7 +38393,7 @@
     "family": "nestedwrap",
     "groupId": "h-28",
     "imageFilename": "h-28.png",
-    "imageSha256": "0a31ebda0e6d4fe9397df3aa81f1a2f0e68920617f5f2bc186f407dfaa88d8e0",
+    "imageSha256": "544e484f4d9c02418e4406dd6c79ad4ab511897f3d55f9848531250a717c6755",
     "groundTruth": {
       "choice": "C"
     },
@@ -38530,33 +38530,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 366,
+          "x": 360.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 486,
+          "x": 484,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 606,
+          "x": 607.984375,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 426,
+          "x": 422.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -38564,7 +38564,7 @@
           "role": "box",
           "x": 546,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -38576,7 +38576,7 @@
     "family": "nestedwrap",
     "groupId": "h-29",
     "imageFilename": "h-29.png",
-    "imageSha256": "54e39fec12b05972afa9a8be5b8aa5d7bd63cda3707e0168cc08763c0a89c4fc",
+    "imageSha256": "bf9a6f99ad42c19b670a7394e559760fd81c6052e8717afdd345a0b1a1e79202",
     "groundTruth": {
       "choice": "B"
     },
@@ -38705,41 +38705,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 92,
+          "x": 80.046875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 212,
+          "x": 204.03125,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 332,
+          "x": 328.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 212,
+          "x": 204.03125,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 332,
+          "x": 328.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -38759,7 +38759,7 @@
     "family": "nestedwrap",
     "groupId": "h-30",
     "imageFilename": "h-30.png",
-    "imageSha256": "e76d3ec531df97b2eec7be44ed6cdceb6114275c2deba0f87b3f88359475c77e",
+    "imageSha256": "5efdb664d144ae4df5c7dc476be71682041956693b29cb6c9d303f35bbaf20f9",
     "groundTruth": {
       "choice": "C"
     },
@@ -38896,41 +38896,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 372,
+          "x": 360.046875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 492,
+          "x": 484.03125,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 612,
+          "x": 608.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 492,
+          "x": 484.03125,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 612,
+          "x": 608.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -38942,7 +38942,7 @@
     "family": "nestedwrap",
     "groupId": "h-31",
     "imageFilename": "h-31.png",
-    "imageSha256": "f8b353282b5a7887c852ce315c29b7c5deda04d12e56c6f94df585e456870f5d",
+    "imageSha256": "7d477ca9e59a35587d4499445de2aec0a1ee19fb7a3bee4cb7c398271db3bb5e",
     "groundTruth": {
       "choice": "B"
     },
@@ -39071,41 +39071,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 92,
+          "x": 80.046875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 212,
+          "x": 204.03125,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 332,
+          "x": 328.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 212,
+          "x": 204.03125,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 332,
+          "x": 328.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
@@ -39125,7 +39125,7 @@
     "family": "nestedwrap",
     "groupId": "h-32",
     "imageFilename": "h-32.png",
-    "imageSha256": "ba20f2b8f2e04c67271a01b3e1ebe60ed50dea81996cc12b9142e14240ac671d",
+    "imageSha256": "eae65c052f264b8402769a5300480339f38fab9bcddc4b88f221d157a2680e1a",
     "groundTruth": {
       "choice": "B"
     },
@@ -39262,41 +39262,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 372,
+          "x": 360.046875,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 492,
+          "x": 484.03125,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 612,
+          "x": 608.015625,
           "y": 136,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 492,
+          "x": 484.03125,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 612,
+          "x": 608.015625,
           "y": 186,
-          "width": 108,
+          "width": 111.984375,
           "height": 38
         }
       ],
@@ -39308,7 +39308,7 @@
     "family": "nestedwrap",
     "groupId": "h-33",
     "imageFilename": "h-33.png",
-    "imageSha256": "118ac9009ce5e0f7882f9fc85fb29d1c0cbcf83cb137581ae19d635df0be0e20",
+    "imageSha256": "a0fdde798f6344c8ff03337e534ae7467ea10432fabc306bcf4b3040fe978b28",
     "groundTruth": {
       "choice": "A"
     },
@@ -39437,33 +39437,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 118,
+          "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 310,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 502,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 214,
+          "x": 188.671875,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -39471,7 +39471,7 @@
           "role": "box",
           "x": 406,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -39491,7 +39491,7 @@
     "family": "nestedwrap",
     "groupId": "h-34",
     "imageFilename": "h-34.png",
-    "imageSha256": "bb720868e02092ad9385036284d325209b22a070c66f59b4d7cc3793f0655c5f",
+    "imageSha256": "a7b0142776ab45bd9f68c91aac9951adb73f83d76af73357c62636ba25023da7",
     "groundTruth": {
       "choice": "A"
     },
@@ -39628,33 +39628,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 118,
+          "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 310,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 502,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 214,
+          "x": 188.671875,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -39662,7 +39662,7 @@
           "role": "box",
           "x": 406,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -39674,7 +39674,7 @@
     "family": "nestedwrap",
     "groupId": "h-35",
     "imageFilename": "h-35.png",
-    "imageSha256": "3786f58b3a527cddf9f813a9f4b7e9b6a0bca59cafff806b9637d749fe97d190",
+    "imageSha256": "97dd5a262593af54f5ef693d1ec37feb67bf4900ab404d1828b3e4e94467fb39",
     "groundTruth": {
       "choice": "C"
     },
@@ -39803,33 +39803,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 118,
+          "x": 80,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 310,
+          "x": 297.328125,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 502,
+          "x": 514.65625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 214,
+          "x": 188.671875,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -39837,7 +39837,7 @@
           "role": "box",
           "x": 406,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -39857,7 +39857,7 @@
     "family": "nestedwrap",
     "groupId": "h-36",
     "imageFilename": "h-36.png",
-    "imageSha256": "7388052101cdba04e6bf5fbcd84f501a39bd59e9447b8f25bf7de5b4a954eb4c",
+    "imageSha256": "175d95b20cafef3137e69ede0ef0c8a19d5274444584930d3157cfe571c20a35",
     "groundTruth": {
       "choice": "A"
     },
@@ -39994,33 +39994,33 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 118,
+          "x": 80,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 310,
+          "x": 297.328125,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 502,
+          "x": 514.65625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 214,
+          "x": 188.671875,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -40028,7 +40028,7 @@
           "role": "box",
           "x": 406,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -40040,7 +40040,7 @@
     "family": "nestedwrap",
     "groupId": "h-37",
     "imageFilename": "h-37.png",
-    "imageSha256": "7e6d8826a93ce522af8611c23a80caad78f57890372a2f8b661982448347bc6f",
+    "imageSha256": "7feb231c6385acf9349d6a1d4ad713c28886b149c9ae395e4bc3c63d6c8bda0b",
     "groundTruth": {
       "choice": "C"
     },
@@ -40169,41 +40169,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 156,
+          "x": 80.015625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -40223,7 +40223,7 @@
     "family": "nestedwrap",
     "groupId": "h-38",
     "imageFilename": "h-38.png",
-    "imageSha256": "1c33026faa7e9fb9bd39d41e403c4e12f9dfb6b7d10bf702159b30733e5ec35e",
+    "imageSha256": "373d52b50a1bb6d35560a59d1f4b2c687bc040177d8d76171ad1ba0ef1f392af",
     "groundTruth": {
       "choice": "B"
     },
@@ -40360,41 +40360,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 156,
+          "x": 80.015625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],
@@ -40406,7 +40406,7 @@
     "family": "nestedwrap",
     "groupId": "h-39",
     "imageFilename": "h-39.png",
-    "imageSha256": "e31da592661caf14158c0baf1e78ad6ad5124d4e19d0d9226be8c5d16e486be2",
+    "imageSha256": "8ba7648a28cac3e204f80cfd1748fad8e60cdf0697e98b688ad73f96d71df193",
     "groundTruth": {
       "choice": "B"
     },
@@ -40535,41 +40535,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 156,
+          "x": 80.015625,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 136,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 186,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
@@ -40589,7 +40589,7 @@
     "family": "nestedwrap",
     "groupId": "h-40",
     "imageFilename": "h-40.png",
-    "imageSha256": "a99b9319face898410c42e5acc9b0faa27d05554cbf52f009f5ce077e4cdd480",
+    "imageSha256": "a4efeff5aef04660008577c6a8bef60f07d4d801cca4eb52a973313e4c936b56",
     "groundTruth": {
       "choice": "C"
     },
@@ -40726,41 +40726,41 @@
         {
           "id": "child-0",
           "role": "box",
-          "x": 156,
+          "x": 80.015625,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-1",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-2",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 292,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-3",
           "role": "box",
-          "x": 348,
+          "x": 297.34375,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         },
         {
           "id": "child-4",
           "role": "box",
-          "x": 540,
+          "x": 514.671875,
           "y": 342,
-          "width": 180,
+          "width": 205.328125,
           "height": 38
         }
       ],

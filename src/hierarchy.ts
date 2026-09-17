@@ -21,7 +21,7 @@ function hierarchyScene(
   variant: number,
   alignment?: Alignment,
 ): QualitativeScene {
-  const width = parent === "row" ? (child === "wrapped" ? 108 : 60) : (child === "wrapped" ? 180 : 112);
+  const width = child === "wrapped" ? "calc((100% - 24px) / 3)" : `${parent === "row" ? 60 : 112}px`;
   const justify = { left: "flex-start", center: "center", right: "flex-end" }[alignment ?? "left"];
   const children = WORDS[variant]!.map((word, i) => `<div class="hierarchy-child" data-box="child-${i}">${word}</div>`).join("");
   const notes = `<section class="hierarchy-section hierarchy-notes" data-box="section-0"><h2 class="hierarchy-title">Field notes</h2><div class="hierarchy-target" data-box="target">${children}</div></section>`;
@@ -43,7 +43,7 @@ function hierarchyScene(
       .hierarchy-title{margin:0 0 12px;font-size:18px;font-weight:600;line-height:24px}
       .hierarchy-copy{margin:0;font-size:15px;line-height:22px;color:var(--muted)}
       .hierarchy-target{flex:1;min-height:0;border:2px solid var(--line);display:flex;flex-direction:${child === "column" ? "column" : "row"};flex-wrap:${child === "wrapped" ? "wrap" : "nowrap"};gap:12px;align-items:flex-start;align-content:flex-start;justify-content:${justify}}
-      .hierarchy-child{flex:0 0 auto;width:${child === "column" ? 180 : width}px;height:${child === "column" ? 30 : 38}px;border:1px solid var(--line);background:var(--tile);padding:4px 6px;font-size:14px;line-height:${child === "column" ? 20 : 28}px;text-align:center}
+      .hierarchy-child{flex:0 0 auto;width:${child === "column" ? "180px" : width};height:${child === "column" ? 30 : 38}px;border:1px solid var(--line);background:var(--tile);padding:4px 6px;font-size:14px;line-height:${child === "column" ? 20 : 28}px;text-align:center}
     `,
   };
 }

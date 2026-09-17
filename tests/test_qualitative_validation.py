@@ -47,6 +47,23 @@ def test_justification_requires_visible_nonfinal_line_edges():
     assert derive_answer(task) == "left"
 
 
+@pytest.mark.parametrize("width", [90, 100])
+def test_nested_wrap_full_rows_cannot_reveal_alignment(width):
+    children = [rectangle(f"child-{i}", 2 + (i % 3) * 112, 2 + (i // 3) * 50, 100, 38)
+                for i in range(5)]
+    for index, child in enumerate(children[:3]):
+        child.update(x=2 + index * (width + 12), width=width)
+    task = {"family": "nestedwrap", "rendered": {"regions": [
+        rectangle("frame", 0, 0, 328, 140), rectangle("target", 0, 0, 328, 140),
+        *children,
+    ]}}
+    if width == 90:
+        with pytest.raises(ValueError, match="Full wrapped rows"):
+            derive_answer(task)
+    else:
+        assert derive_answer(task) == "left"
+
+
 def test_frozen_qualitative_corpus_passes_independent_gate():
     tasks = require_valid_qualitative(MANIFEST)
     assert len({task["family"] for task in tasks}) == 20

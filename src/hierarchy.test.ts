@@ -97,6 +97,10 @@ describe("qualitative layout hierarchy", () => {
         if (scene.factors.child === "column") expect(rows).toHaveLength(5);
         if (scene.factors.child === "wrapped") expect(rows).toHaveLength(2);
         if (scene.questions.some((q) => q.family === "nestedwrap")) {
+          const full = children.filter((child) => Math.round(child.y) === rows[0]);
+          expect(full).toHaveLength(3);
+          expect(Math.abs(full[0]!.x - target.x - 2)).toBeLessThan(1);
+          expect(Math.abs(target.x + target.width - 2 - full.at(-1)!.x - full.at(-1)!.width)).toBeLessThan(1);
           const last = children.filter((child) => Math.round(child.y) === rows.at(-1));
           expect(last).toHaveLength(2);
           const left = last[0]!.x - target.x - 2;

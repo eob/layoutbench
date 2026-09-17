@@ -20,7 +20,7 @@ Sibling review: ColorBench uses controlled paired interventions to reject shortc
 - [x] Freeze a qualitative question catalog covering direction, distribution, cross-axis alignment, text justification/columns, grid parameters, wrapping, relative spacing and nested layout hierarchy.
 - [x] Build text-bearing stimuli with crossed themes/content variants and balanced shuffled answers; derive answers independently from rendered geometry and inspect images.
 - [x] Pin missing coverage, ambiguity/overflow, answer-label integrity, nuisance crossing and parser failures with meaningful tests.
-- [ ] Run Python/TypeScript gates, deterministic render and mock; commit and freeze release identity before paid calls.
+- [x] Run Python/TypeScript gates, deterministic render and mock; commit and freeze release identity before paid calls.
 - [ ] Execute every enabled sibling-model configuration, keep unavailable/credit failures explicit, seal and independently audit raw results.
 - [ ] Publish graph, table, explanation and data-grounded task observations; activate benchmarks/tinkering links; inspect desktop/mobile.
 - [ ] Merge scoped website PR to edwardbenson-prod and verify live deployment, links and published evidence.
@@ -63,3 +63,9 @@ At checkpoint a32035f plus working changes, the Python suite passed103 tests and
 - `git diff --check`: clean.
 - Final simplifyfu and adversarial pass found no remaining substantive blocker. Cross-axis descriptions explicitly exclude the fill case from start/center/end.
 - Full13-configuration mock gate is running before release freeze; paid inference has not started.
+
+
+Final target-isolation control: the complete row in nestedwrap initially had spare width (12CSSpx for horizontal parent;76CSSpx for vertical parent), so it moved with the shorter row. A browser regression failed `Expected: <1 / Received:12`. Wrapped child widths now fill the complete row exactly; only the incomplete row responds to alignment. The independent validator rejects an altered complete row even with the target row unchanged. This correction was made before any paid inference; the draft release descriptor will be rebound to the validated dataset and protocol.
+
+
+Final corrected gates:109 Python tests pass(14.80s);13 TypeScript/browser tests pass(2252 assertions after the full-row control); TypeScript typecheck clean; all253 render artifacts byte-identical. Final frozen-shape mock completes292/292 questions; the13-model harness matrix completes3796/3796 mock responses. Mock artifacts stay outside publication. Source differences preserve the original third-party font license and verbatim red logs, whose trailing whitespace is intentionally retained; source-only diff check is clean.

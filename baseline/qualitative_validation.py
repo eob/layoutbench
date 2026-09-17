@@ -204,7 +204,11 @@ def derive_answer(task):
     if family in {"nestedflow", "nestedwrap"}:
         children = [r for name, r in boxes.items() if name.startswith("child-")]
         if family == "nestedwrap":
-            return placement(wrapped_rows(children)[-1], boxes["target"])
+            rows = wrapped_rows(children)
+            for row in rows[:-1]:
+                left, right, _ = spaces(row, boxes["target"], "row")
+                require(close(left, 0) and close(right, 0), "Full wrapped rows must fill both inner edges")
+            return placement(rows[-1], boxes["target"])
         rows = bands(children, "y")
         if 1 < len(rows) < len(children):
             wrapped_rows(children)
