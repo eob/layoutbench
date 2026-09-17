@@ -1,0 +1,8 @@
+.venv/bin/python tickets/evidence/feat-04-independent-full-audit.py --sealed-commit 811dbd016689132a51ec1ffe80de7225751af095 --out tickets/evidence/feat-04-independent-full-audit.json
+Exit status: 0
+Audited at: 2026-09-17T12:13:27.741354+00:00
+PASS: original seal, new seal, committed bytes, frozen inputs, lineage, raw answers, and published metrics.
+Final responses: 3796; complete models: 13; runner attempts: 3799; HTTP requests: 3802
+Unchanged historical attempts: 3515; unchanged historical final JSON: 3512; appended Claude answers: 284
+Discrepancies: 0; invalid final answers: 0
+Detailed values: feat-04-independent-full-audit.json

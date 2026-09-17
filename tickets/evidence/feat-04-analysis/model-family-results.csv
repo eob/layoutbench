@@ -1,0 +1,261 @@
+model_id,display_name,family,family_label,correct,count,valid,invalid,accuracy
+claude-fable-5-1,Claude Fable 5.1,direction,Immediate flow,8,8,8,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,direction,Immediate flow,8,8,8,0,1.0
+claude-opus-5,Claude Opus 5,direction,Immediate flow,8,8,8,0,1.0
+claude-sonnet-5,Claude Sonnet 5,direction,Immediate flow,8,8,8,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,direction,Immediate flow,8,8,8,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,direction,Immediate flow,8,8,8,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,direction,Immediate flow,8,8,8,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,direction,Immediate flow,8,8,8,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,direction,Immediate flow,8,8,8,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,direction,Immediate flow,8,8,8,0,1.0
+gpt-6-astra,GPT-6 Astra,direction,Immediate flow,8,8,8,0,1.0
+muse-spark-1.2,Muse Spark 1.2,direction,Immediate flow,8,8,8,0,1.0
+muse-spark-1.3,Muse Spark 1.3,direction,Immediate flow,8,8,8,0,1.0
+claude-fable-5-1,Claude Fable 5.1,distribution,Main-axis distribution,21,24,24,0,0.875
+claude-haiku-4-5-20251001,Claude Haiku 4.5,distribution,Main-axis distribution,5,24,24,0,0.20833333333333334
+claude-opus-5,Claude Opus 5,distribution,Main-axis distribution,24,24,24,0,1.0
+claude-sonnet-5,Claude Sonnet 5,distribution,Main-axis distribution,23,24,24,0,0.9583333333333334
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,distribution,Main-axis distribution,24,24,24,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,distribution,Main-axis distribution,14,24,24,0,0.5833333333333334
+gemini-3.8-flash,Gemini 3.8 Flash,distribution,Main-axis distribution,24,24,24,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,distribution,Main-axis distribution,24,24,24,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,distribution,Main-axis distribution,24,24,24,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,distribution,Main-axis distribution,24,24,24,0,1.0
+gpt-6-astra,GPT-6 Astra,distribution,Main-axis distribution,24,24,24,0,1.0
+muse-spark-1.2,Muse Spark 1.2,distribution,Main-axis distribution,24,24,24,0,1.0
+muse-spark-1.3,Muse Spark 1.3,distribution,Main-axis distribution,24,24,24,0,1.0
+claude-fable-5-1,Claude Fable 5.1,crossalign,Cross-axis alignment,16,16,16,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,crossalign,Cross-axis alignment,13,16,16,0,0.8125
+claude-opus-5,Claude Opus 5,crossalign,Cross-axis alignment,16,16,16,0,1.0
+claude-sonnet-5,Claude Sonnet 5,crossalign,Cross-axis alignment,16,16,16,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,crossalign,Cross-axis alignment,16,16,16,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,crossalign,Cross-axis alignment,16,16,16,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,crossalign,Cross-axis alignment,16,16,16,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,crossalign,Cross-axis alignment,16,16,16,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,crossalign,Cross-axis alignment,16,16,16,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,crossalign,Cross-axis alignment,16,16,16,0,1.0
+gpt-6-astra,GPT-6 Astra,crossalign,Cross-axis alignment,16,16,16,0,1.0
+muse-spark-1.2,Muse Spark 1.2,crossalign,Cross-axis alignment,16,16,16,0,1.0
+muse-spark-1.3,Muse Spark 1.3,crossalign,Cross-axis alignment,16,16,16,0,1.0
+claude-fable-5-1,Claude Fable 5.1,textalign,Text justification,16,16,16,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,textalign,Text justification,4,16,16,0,0.25
+claude-opus-5,Claude Opus 5,textalign,Text justification,16,16,16,0,1.0
+claude-sonnet-5,Claude Sonnet 5,textalign,Text justification,14,16,16,0,0.875
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,textalign,Text justification,13,16,16,0,0.8125
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,textalign,Text justification,4,16,16,0,0.25
+gemini-3.8-flash,Gemini 3.8 Flash,textalign,Text justification,16,16,16,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,textalign,Text justification,11,16,16,0,0.6875
+gpt-5.6-sol,GPT-5.6 Sol,textalign,Text justification,14,16,16,0,0.875
+gpt-5.6-terra,GPT-5.6 Terra,textalign,Text justification,10,16,16,0,0.625
+gpt-6-astra,GPT-6 Astra,textalign,Text justification,16,16,16,0,1.0
+muse-spark-1.2,Muse Spark 1.2,textalign,Text justification,13,16,16,0,0.8125
+muse-spark-1.3,Muse Spark 1.3,textalign,Text justification,12,16,16,0,0.75
+claude-fable-5-1,Claude Fable 5.1,textcolumns,Text columns,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,textcolumns,Text columns,12,12,12,0,1.0
+claude-opus-5,Claude Opus 5,textcolumns,Text columns,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,textcolumns,Text columns,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,textcolumns,Text columns,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,textcolumns,Text columns,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,textcolumns,Text columns,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,textcolumns,Text columns,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,textcolumns,Text columns,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,textcolumns,Text columns,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,textcolumns,Text columns,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,textcolumns,Text columns,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,textcolumns,Text columns,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,gridcols,Grid columns,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,gridcols,Grid columns,12,12,12,0,1.0
+claude-opus-5,Claude Opus 5,gridcols,Grid columns,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,gridcols,Grid columns,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,gridcols,Grid columns,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,gridcols,Grid columns,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,gridcols,Grid columns,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,gridcols,Grid columns,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,gridcols,Grid columns,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,gridcols,Grid columns,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,gridcols,Grid columns,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,gridcols,Grid columns,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,gridcols,Grid columns,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,gridrows,Grid rows,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,gridrows,Grid rows,12,12,12,0,1.0
+claude-opus-5,Claude Opus 5,gridrows,Grid rows,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,gridrows,Grid rows,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,gridrows,Grid rows,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,gridrows,Grid rows,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,gridrows,Grid rows,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,gridrows,Grid rows,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,gridrows,Grid rows,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,gridrows,Grid rows,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,gridrows,Grid rows,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,gridrows,Grid rows,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,gridrows,Grid rows,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,gridgaps,Grid gutter comparison,9,12,12,0,0.75
+claude-haiku-4-5-20251001,Claude Haiku 4.5,gridgaps,Grid gutter comparison,3,12,12,0,0.25
+claude-opus-5,Claude Opus 5,gridgaps,Grid gutter comparison,11,12,12,0,0.9166666666666666
+claude-sonnet-5,Claude Sonnet 5,gridgaps,Grid gutter comparison,11,12,12,0,0.9166666666666666
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,gridgaps,Grid gutter comparison,8,12,12,0,0.6666666666666666
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,gridgaps,Grid gutter comparison,4,12,12,0,0.3333333333333333
+gemini-3.8-flash,Gemini 3.8 Flash,gridgaps,Grid gutter comparison,8,12,12,0,0.6666666666666666
+gpt-5.6-luna,GPT-5.6 Luna,gridgaps,Grid gutter comparison,11,12,12,0,0.9166666666666666
+gpt-5.6-sol,GPT-5.6 Sol,gridgaps,Grid gutter comparison,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,gridgaps,Grid gutter comparison,11,12,12,0,0.9166666666666666
+gpt-6-astra,GPT-6 Astra,gridgaps,Grid gutter comparison,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,gridgaps,Grid gutter comparison,9,12,12,0,0.75
+muse-spark-1.3,Muse Spark 1.3,gridgaps,Grid gutter comparison,10,12,12,0,0.8333333333333334
+claude-fable-5-1,Claude Fable 5.1,gridtracks,Grid track proportions,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,gridtracks,Grid track proportions,11,12,12,0,0.9166666666666666
+claude-opus-5,Claude Opus 5,gridtracks,Grid track proportions,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,gridtracks,Grid track proportions,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,gridtracks,Grid track proportions,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,gridtracks,Grid track proportions,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,gridtracks,Grid track proportions,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,gridtracks,Grid track proportions,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,gridtracks,Grid track proportions,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,gridtracks,Grid track proportions,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,gridtracks,Grid track proportions,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,gridtracks,Grid track proportions,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,gridtracks,Grid track proportions,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,gridspan,Column span,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,gridspan,Column span,5,12,12,0,0.4166666666666667
+claude-opus-5,Claude Opus 5,gridspan,Column span,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,gridspan,Column span,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,gridspan,Column span,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,gridspan,Column span,6,12,12,0,0.5
+gemini-3.8-flash,Gemini 3.8 Flash,gridspan,Column span,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,gridspan,Column span,8,12,12,0,0.6666666666666666
+gpt-5.6-sol,GPT-5.6 Sol,gridspan,Column span,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,gridspan,Column span,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,gridspan,Column span,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,gridspan,Column span,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,gridspan,Column span,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,wrapcount,Wrapped row count,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,wrapcount,Wrapped row count,12,12,12,0,1.0
+claude-opus-5,Claude Opus 5,wrapcount,Wrapped row count,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,wrapcount,Wrapped row count,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,wrapcount,Wrapped row count,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,wrapcount,Wrapped row count,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,wrapcount,Wrapped row count,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,wrapcount,Wrapped row count,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,wrapcount,Wrapped row count,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,wrapcount,Wrapped row count,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,wrapcount,Wrapped row count,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,wrapcount,Wrapped row count,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,wrapcount,Wrapped row count,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,wrapalign,Incomplete row alignment,7,12,12,0,0.5833333333333334
+claude-opus-5,Claude Opus 5,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,wrapalign,Incomplete row alignment,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,gapcompare,Neighboring gap comparison,5,12,12,0,0.4166666666666667
+claude-opus-5,Claude Opus 5,gapcompare,Neighboring gap comparison,11,12,12,0,0.9166666666666666
+claude-sonnet-5,Claude Sonnet 5,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,gapcompare,Neighboring gap comparison,8,12,12,0,0.6666666666666666
+gemini-3.8-flash,Gemini 3.8 Flash,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,gapcompare,Neighboring gap comparison,11,12,12,0,0.9166666666666666
+gpt-5.6-sol,GPT-5.6 Sol,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,gapcompare,Neighboring gap comparison,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,padcompare,Horizontal versus vertical inset,9,12,12,0,0.75
+claude-haiku-4-5-20251001,Claude Haiku 4.5,padcompare,Horizontal versus vertical inset,1,12,12,0,0.08333333333333333
+claude-opus-5,Claude Opus 5,padcompare,Horizontal versus vertical inset,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,padcompare,Horizontal versus vertical inset,11,12,12,0,0.9166666666666666
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,padcompare,Horizontal versus vertical inset,9,12,12,0,0.75
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,padcompare,Horizontal versus vertical inset,6,12,12,0,0.5
+gemini-3.8-flash,Gemini 3.8 Flash,padcompare,Horizontal versus vertical inset,9,12,12,0,0.75
+gpt-5.6-luna,GPT-5.6 Luna,padcompare,Horizontal versus vertical inset,11,12,12,0,0.9166666666666666
+gpt-5.6-sol,GPT-5.6 Sol,padcompare,Horizontal versus vertical inset,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,padcompare,Horizontal versus vertical inset,11,12,12,0,0.9166666666666666
+gpt-6-astra,GPT-6 Astra,padcompare,Horizontal versus vertical inset,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,padcompare,Horizontal versus vertical inset,8,12,12,0,0.6666666666666666
+muse-spark-1.3,Muse Spark 1.3,padcompare,Horizontal versus vertical inset,9,12,12,0,0.75
+claude-fable-5-1,Claude Fable 5.1,blockalign,Text block placement,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,blockalign,Text block placement,12,12,12,0,1.0
+claude-opus-5,Claude Opus 5,blockalign,Text block placement,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,blockalign,Text block placement,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,blockalign,Text block placement,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,blockalign,Text block placement,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,blockalign,Text block placement,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,blockalign,Text block placement,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,blockalign,Text block placement,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,blockalign,Text block placement,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,blockalign,Text block placement,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,blockalign,Text block placement,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,blockalign,Text block placement,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,widthcompare,Relative panel width,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,widthcompare,Relative panel width,12,12,12,0,1.0
+claude-opus-5,Claude Opus 5,widthcompare,Relative panel width,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,widthcompare,Relative panel width,12,12,12,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,widthcompare,Relative panel width,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,widthcompare,Relative panel width,12,12,12,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,widthcompare,Relative panel width,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,widthcompare,Relative panel width,12,12,12,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,widthcompare,Relative panel width,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,widthcompare,Relative panel width,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,widthcompare,Relative panel width,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,widthcompare,Relative panel width,12,12,12,0,1.0
+muse-spark-1.3,Muse Spark 1.3,widthcompare,Relative panel width,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,groupgap,Spacing within and between groups,12,12,12,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,groupgap,Spacing within and between groups,4,12,12,0,0.3333333333333333
+claude-opus-5,Claude Opus 5,groupgap,Spacing within and between groups,12,12,12,0,1.0
+claude-sonnet-5,Claude Sonnet 5,groupgap,Spacing within and between groups,10,12,12,0,0.8333333333333334
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,groupgap,Spacing within and between groups,12,12,12,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,groupgap,Spacing within and between groups,5,12,12,0,0.4166666666666667
+gemini-3.8-flash,Gemini 3.8 Flash,groupgap,Spacing within and between groups,12,12,12,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,groupgap,Spacing within and between groups,8,12,12,0,0.6666666666666666
+gpt-5.6-sol,GPT-5.6 Sol,groupgap,Spacing within and between groups,12,12,12,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,groupgap,Spacing within and between groups,12,12,12,0,1.0
+gpt-6-astra,GPT-6 Astra,groupgap,Spacing within and between groups,12,12,12,0,1.0
+muse-spark-1.2,Muse Spark 1.2,groupgap,Spacing within and between groups,11,12,12,0,0.9166666666666666
+muse-spark-1.3,Muse Spark 1.3,groupgap,Spacing within and between groups,12,12,12,0,1.0
+claude-fable-5-1,Claude Fable 5.1,topflow,Top-level hierarchy,24,24,24,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,topflow,Top-level hierarchy,24,24,24,0,1.0
+claude-opus-5,Claude Opus 5,topflow,Top-level hierarchy,24,24,24,0,1.0
+claude-sonnet-5,Claude Sonnet 5,topflow,Top-level hierarchy,24,24,24,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,topflow,Top-level hierarchy,24,24,24,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,topflow,Top-level hierarchy,24,24,24,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,topflow,Top-level hierarchy,24,24,24,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,topflow,Top-level hierarchy,24,24,24,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,topflow,Top-level hierarchy,24,24,24,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,topflow,Top-level hierarchy,24,24,24,0,1.0
+gpt-6-astra,GPT-6 Astra,topflow,Top-level hierarchy,24,24,24,0,1.0
+muse-spark-1.2,Muse Spark 1.2,topflow,Top-level hierarchy,24,24,24,0,1.0
+muse-spark-1.3,Muse Spark 1.3,topflow,Top-level hierarchy,24,24,24,0,1.0
+claude-fable-5-1,Claude Fable 5.1,nestedflow,Nested section flow,24,24,24,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,nestedflow,Nested section flow,24,24,24,0,1.0
+claude-opus-5,Claude Opus 5,nestedflow,Nested section flow,24,24,24,0,1.0
+claude-sonnet-5,Claude Sonnet 5,nestedflow,Nested section flow,24,24,24,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,nestedflow,Nested section flow,24,24,24,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,nestedflow,Nested section flow,24,24,24,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,nestedflow,Nested section flow,24,24,24,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,nestedflow,Nested section flow,24,24,24,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,nestedflow,Nested section flow,24,24,24,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,nestedflow,Nested section flow,24,24,24,0,1.0
+gpt-6-astra,GPT-6 Astra,nestedflow,Nested section flow,24,24,24,0,1.0
+muse-spark-1.2,Muse Spark 1.2,nestedflow,Nested section flow,24,24,24,0,1.0
+muse-spark-1.3,Muse Spark 1.3,nestedflow,Nested section flow,24,24,24,0,1.0
+claude-fable-5-1,Claude Fable 5.1,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+claude-haiku-4-5-20251001,Claude Haiku 4.5,nestedwrap,Nested incomplete row alignment,17,24,24,0,0.7083333333333334
+claude-opus-5,Claude Opus 5,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+claude-sonnet-5,Claude Sonnet 5,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+gemini-3.1-pro-preview,Gemini 3.1 Pro Preview,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+gemini-3.5-flash-lite,Gemini 3.5 Flash-Lite,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+gemini-3.8-flash,Gemini 3.8 Flash,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+gpt-5.6-luna,GPT-5.6 Luna,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+gpt-5.6-sol,GPT-5.6 Sol,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+gpt-5.6-terra,GPT-5.6 Terra,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+gpt-6-astra,GPT-6 Astra,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+muse-spark-1.2,Muse Spark 1.2,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
+muse-spark-1.3,Muse Spark 1.3,nestedwrap,Nested incomplete row alignment,24,24,24,0,1.0
