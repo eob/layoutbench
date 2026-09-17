@@ -1,6 +1,6 @@
 # feat-03-qualitative-layout: Atomic spatial perception and publication
 
-- Status: In Review
+- Status: Completed
 - Branch: feat-03-qualitative-layout
 - Harness: codex
 - Session: 01a0ad34-d16c-7a82-b973-d59084daaf32
@@ -22,8 +22,8 @@ Sibling review: ColorBench uses controlled paired interventions to reject shortc
 - [x] Pin missing coverage, ambiguity/overflow, answer-label integrity, nuisance crossing and parser failures with meaningful tests.
 - [x] Run Python/TypeScript gates, deterministic render and mock; commit and freeze release identity before paid calls.
 - [x] Execute every enabled sibling-model configuration, keep unavailable/credit failures explicit, seal and independently audit raw results.
-- [ ] Publish graph, table, explanation and data-grounded task observations; activate benchmarks/tinkering links; inspect desktop/mobile.
-- [ ] Merge scoped website PR to edwardbenson-prod and verify live deployment, links and published evidence.
+- [x] Publish graph, table, explanation and data-grounded task observations; activate benchmarks/tinkering links; inspect desktop/mobile.
+- [x] Merge scoped website PR to edwardbenson-prod and verify live deployment, links and published evidence.
 
 ## Durable constraints
 
@@ -78,6 +78,13 @@ Raw checkpoint commit: `cb46d35`; sealed artifact commit: `ac17659d69c5c8fbd60ab
 
 Final source validation: 117 Python tests passed in 13.47s; 20 TypeScript/browser tests passed with 2,270 assertions; TypeScript typechecking passed. Renderer guards now reject frozen release paths, their ancestors/descendants and symlink aliases; both current and archived rendering default to separate candidate directories. Renderer and documentation changes made after inference began do not alter the frozen dataset, catalog or evaluation protocol. Count-family content/repetition shortcuts and unmeasured human agreement remain explicit methodological limits.
 
-The website import, data-grounded findings, browser checks and production deployment remain pending.
+The website imported the sealed nine-model comparison, published exact semantic error counts and paired hierarchy findings, and passed production build, typecheck, 54 focused tests and 69 browser tests across mobile, tablet and desktop. All seven mandatory local preflight stages passed. Independent source/data and visual reviews found no remaining blockers.
 
 Final audit-parser review found that Python substring membership accepted empty and multi-letter choices in the independent audit (the frozen grader already uses a list and rejects them). A focused regression failed with `assert {'choice': ''} is None`; requiring one character fixes it, and reverting that condition reproduces the failure. All eight publication-audit tests pass. Replaying the 3,512 real answers after the correction produces byte-identical audit results. This change is outside the frozen evaluation protocol.
+
+## Merge and deployment
+
+- Source PR: https://github.com/eob/layoutbench/pull/2 — merged 2026-09-17 at `c7682acf692cacf65965ad29514449f27b262dec`.
+- Website PR: https://github.com/eob/kaya-web/pull/1636 — merged into `edwardbenson-prod` at `a2ee38f99f7d582375fa5449d13b9e0caca7bb9f`. GitHub Actions could not start because account billing/spending limits blocked the job; the repository-documented local preflight passed all seven equivalent lanes.
+- Vercel deployment `9DPE8XeKDSZPynLm2xWLF3CoBjvi` completed successfully. Public https://edwardbenson.com/benchmarks/layoutbench serves V0.3.0 with the exact frozen dataset/source fingerprints. Both `/benchmarks` and `/tinkering` expose LayoutBench (`/tinkering` redirects to `/tools`). The public pinned publication seal matches the committed bytes.
+- Reproducible analysis: `tickets/evidence/feat-03-analysis/findings.md`; independent complete ledger/seal audit: `tickets/evidence/feat-03-independent-full-audit.md`.
