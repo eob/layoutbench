@@ -7,6 +7,8 @@ from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator
 
+from baseline.providers import PROVIDERS
+
 
 Price = Annotated[float, Field(ge=0, allow_inf_nan=False)]
 
@@ -52,6 +54,8 @@ def load_model_config(path: str | Path = "config/models.json") -> list[dict]:
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate model configuration IDs")
     enabled = [model for model in catalog.models if model.enabled]
-    if any(count > 5 for count in Counter(model.provider for model in enabled).values()):
-        raise ValueError("Configure at most five enabled models per provider")
+    endpoint_counts = Counter((model.provider, str(model.base_url or PROVIDERS[model.provider][0]).rstrip("/"))
+                              for model in enabled)
+    if any(count > 5 for count in endpoint_counts.values()):
+        raise ValueError("Configure at most five enabled models per provider endpoint")
     return [model.model_dump(mode="json") for model in enabled]

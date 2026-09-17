@@ -6,6 +6,7 @@
 - Session: 01a0ad34-d16c-7a82-b973-d59084daaf32
 - Assignee: Edward Benson
 - Base: 80b30a1
+- PR: https://github.com/eob/layoutbench/pull/2
 - Authorization: audit, expand, evaluate all configured models, publish and deploy edwardbenson-prod without further questions.
 
 ## Evidence and decisions
@@ -16,9 +17,9 @@ Sibling review: ColorBench uses controlled paired interventions to reject shortc
 
 ## Plan and acceptance gates
 
-- [ ] Freeze a qualitative question catalog covering direction, distribution, cross-axis alignment, text justification/columns, grid parameters, wrapping, relative spacing and nested layout hierarchy.
-- [ ] Build text-bearing stimuli with crossed themes/content variants and balanced shuffled answers; derive answers independently from rendered geometry and inspect images.
-- [ ] Pin missing coverage, ambiguity/overflow, answer-label integrity, nuisance crossing and parser failures with meaningful tests.
+- [x] Freeze a qualitative question catalog covering direction, distribution, cross-axis alignment, text justification/columns, grid parameters, wrapping, relative spacing and nested layout hierarchy.
+- [x] Build text-bearing stimuli with crossed themes/content variants and balanced shuffled answers; derive answers independently from rendered geometry and inspect images.
+- [x] Pin missing coverage, ambiguity/overflow, answer-label integrity, nuisance crossing and parser failures with meaningful tests.
 - [ ] Run Python/TypeScript gates, deterministic render and mock; commit and freeze release identity before paid calls.
 - [ ] Execute every enabled sibling-model configuration, keep unavailable/credit failures explicit, seal and independently audit raw results.
 - [ ] Publish graph, table, explanation and data-grounded task observations; activate benchmarks/tinkering links; inspect desktop/mobile.
@@ -27,3 +28,38 @@ Sibling review: ColorBench uses controlled paired interventions to reject shortc
 ## Durable constraints
 
 Qualitative categories are defined by visible geometry with large separations; human agreement is a design aim, not a measured claim. Each question has one answer. Related questions/images retain group identity. Dataset, prompts, protocol, provider settings and raw attempts must be traceable. Public framing is self-contained and does not discuss earlier runs.
+
+## Adversarial review findings
+
+Sibling source inspected at BorderBench `70619a4`, FontBench `14b09c3a`, ColorBench `55204df`. BorderBench's coarse visible prototypes, FontBench's font/line/overflow checks, and ColorBench's matched controls informed this release. Combined roster comes byte-for-byte from ColorBench.
+
+| Finding | Evidence | Resolution |
+| --- | --- | --- |
+| Exact pixel tasks do not meet qualitative brief | 110/208 tasks in source family census | Qualitative release, no pixel answers |
+| Distribution options overlap | distribute-13 has outer gaps24/24 and inner gaps172/172: both old D and E descriptions apply | Explicit inner frame, mutually exclusive geometric descriptions |
+| Content edge ambiguous | regionpad-01 has48px to tint,72px to text | Questions name visible tinted rectangle edge |
+| Missing hierarchy and wrap coverage | No builders/families for nested flow, wrapping, spans, track proportions | 20-family catalog, independently crossed parent/child flow and both target positions |
+| Count shortcut in proposed nesting | Different child counts could identify wrapped flow | Five identical-count cards for every nested-flow answer |
+| Option rotation shortcut in initial draft | Formula based on semantic index+theme+variant matches280/280 truth slots | Independent balanced slot shuffle; old rule matches87/280 after fix; regression pinned |
+| Model catalog rejects Muse+OpenAI | Endpoint-agnostic five-model limit rejects combined13-model catalog | Account endpoint limits, aliases normalized; red/reversion evidence under tickets/evidence |
+| Finalizer blocks valid publication during outages | `ValueError: Unresolved infrastructure failures cannot be finalized; retry them first` | Complete selected cohort seals with full unavailable roster and attempt ledger preserved |
+
+Initial coverage red evidence: `ValueError: Unknown family: topflow`; catalog test also reported `FileNotFoundError: config/qualitative.json`. Both turn green after implementation. Geometry validation tests deliberately coordinate forged answer+declared semantic labels, so passing requires independent geometry. Pixel tamper tests update the PNG hash too, proving checks do more than trust hashes.
+
+## Implementation and verification checkpoint
+
+Source builders produce text-bearing scenes with unchanged neutral copy across answers. Exact identical images are deduplicated and grouped; the renderer records actual Chromium font usage and rejects overflow. Independent Python geometry and decoded-pixel gates cover every current question. Browser hierarchy tests cover all scenes, target positions, constant child count and3+2 wrapping.
+
+At checkpoint a32035f plus working changes, the Python suite passed103 tests and the TypeScript suite passed13 tests/1908 assertions. A second render matched all245 artifacts byte-for-byte before the final nestedwrap position expansion. Final release gates will be recorded after that expansion. Use `.venv/bin/python -m pytest`; the environment's standalone pytest entry point omits the root scripts namespace from import resolution.
+
+
+## Final pre-inference gates
+
+- Final census:292 questions,20 qualitative families,250 distinct PNGs;72 hierarchy questions include both target positions for nested wrap alignment.
+- `bunx tsc --noEmit`: passed.
+- `bun test src`:13 passed,2180 assertions; browser hierarchy checks included.
+- `.venv/bin/python -m pytest tests -q`:107 passed in13.92s.
+- Independent rerender: all253 artifacts, including manifest and font assets, byte-identical.
+- `git diff --check`: clean.
+- Final simplifyfu and adversarial pass found no remaining substantive blocker. Cross-axis descriptions explicitly exclude the fill case from start/center/end.
+- Full13-configuration mock gate is running before release freeze; paid inference has not started.

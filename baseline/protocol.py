@@ -6,8 +6,9 @@ import json
 from functools import lru_cache
 from pathlib import Path
 
+QUALITATIVE_CATALOG = json.loads((Path(__file__).resolve().parents[1] / "config/qualitative.json").read_text())
 CHOICE_FAMILIES = ("flow", "distribute", "align", "gap", "pad", "columns",
-                   "textjustify", "headerpad", "regionpad", "tablepad")
+                   "textjustify", "headerpad", "regionpad", "tablepad", *QUALITATIVE_CATALOG)
 NUMERIC_FAMILIES = ("gapnum", "headerpx", "regionpx")
 FAMILIES = CHOICE_FAMILIES + NUMERIC_FAMILIES
 
@@ -29,6 +30,8 @@ PROMPTS_PATH = Path(__file__).with_name("prompts.json")
 
 
 def choice_labels(family: str) -> list[str]:
+    if family in QUALITATIVE_CATALOG:
+        return list("ABCDEF"[:len(QUALITATIVE_CATALOG[family]["options"])])
     if family == "gap":
         return ["A", "B", "C", "D", "E", "F", "G"]
     if family in ("distribute", "pad", "regionpad"):

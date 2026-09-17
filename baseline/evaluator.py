@@ -15,13 +15,14 @@ from baseline.providers import PredictionClient, PredictionResponse
 GRADING_VERSION = "1"
 
 PROTOCOL_FILES = ("prompts.json", "protocol.py", "evaluator.py", "statistics.py",
-                  "reporting.py", "validate_dataset.py", "finalize.py", "providers.py")
+                  "reporting.py", "validate_dataset.py", "qualitative_validation.py",
+                  "../config/qualitative.json", "finalize.py", "providers.py")
 
 
 def evaluation_protocol_fingerprint() -> str:
     digest = hashlib.sha256(b"layoutbench-protocol-1\n")
     for name in PROTOCOL_FILES:
-        digest.update(Path(__file__).with_name(name).read_bytes())
+        digest.update((Path(__file__).parent / name).read_bytes())
     return digest.hexdigest()
 
 
@@ -125,7 +126,7 @@ class BaselineEvaluator:
 
     def predict_image(self, image_path: str, prompt: str, family: str) -> PredictionResponse:
         if self.mock:
-            prediction = MOCK_PREDICTIONS[family]
+            prediction = {"choice": "A"} if family in CHOICE_FAMILIES else MOCK_PREDICTIONS[family]
             return PredictionResponse(json.dumps(prediction), prediction, input_tokens=0, output_tokens=0)
         return self._client.predict(image_path, prompt, family)
 

@@ -1,0 +1,27 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______________ test_nested_wrapping_crosses_both_target_positions ______________
+
+    def test_nested_wrapping_crosses_both_target_positions():
+        tasks = json.loads(MANIFEST.read_text())
+        observed = Counter((derive_answer({**task, "family": "topflow"}), derive_answer(task),
+                            task["design"]["theme"], task["design"]["variant"])
+                           for task in tasks if task["family"] == "nestedwrap")
+        expected = Counter({cell: 1 for cell in product(("row", "column"), ("left", "center", "right"),
+                                                       ("light", "dark"), (0, 1))})
+>       assert observed == expected
+E       AssertionError: assert Counter({('ro...dark', 0): 1}) == Counter({('ro...dark', 1): 1})
+E         
+E         Omitting 12 identical items, use -vv to show
+E         Right contains 12 more items:
+E         {('column', 'center', 'dark', 1): 1,
+E          ('column', 'center', 'light', 1): 1,
+E          ('column', 'left', 'dark', 1): 1,
+E          ('column', 'left', 'light', 1): 1,...
+E         
+E         ...Full output truncated (9 lines hidden), use '-vv' to show
+
+tests/test_qualitative_validation.py:62: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_qualitative_validation.py::test_nested_wrapping_crosses_both_target_positions
+1 failed, 19 deselected in 0.04s

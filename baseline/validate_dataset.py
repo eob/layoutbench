@@ -843,6 +843,11 @@ def check_pixels(tasks: list[dict], images: dict[str, Image.Image]) -> None:
 def require_valid_dataset(manifest_path: str | Path | None = None) -> list[dict]:
     global DATASET_DIR, MANIFEST_PATH
     if manifest_path is not None:
+        candidate = json.loads(Path(manifest_path).read_text())
+        if candidate and candidate[0].get("design", {}).get("kind") == "qualitative":
+            from baseline.qualitative_validation import require_valid_qualitative
+            return require_valid_qualitative(manifest_path)
+    if manifest_path is not None:
         MANIFEST_PATH = Path(manifest_path)
         DATASET_DIR = MANIFEST_PATH.parent
     tasks = load_manifest()
@@ -864,7 +869,11 @@ def require_valid_dataset(manifest_path: str | Path | None = None) -> list[dict]
 
 
 def main() -> None:
-    require_valid_dataset()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, default=ROOT / "dataset/layoutbench-v0.3/manifest.json")
+    args = parser.parse_args()
+    require_valid_dataset(args.manifest)
 
 
 if __name__ == "__main__":

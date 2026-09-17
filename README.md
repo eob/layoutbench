@@ -1,123 +1,60 @@
 # LayoutBench
 
-**LayoutBench** is a vision-language benchmark evaluating multimodal AI models on spatial arrangement in rendered UI: flow direction, axis distribution and alignment, text columns and justification, and spacing around headers, regions, and table cells.
+LayoutBench tests whether vision-language models can answer atomic questions about the visible arrangement of text and interface regions. It covers flow, alignment, grid geometry, wrapping, relative spacing and nested layout hierarchy.
 
-It forms the third foundational benchmark in Ted Benson's design perception suite:
-1. [FontBench](https://github.com/eob/fontbench): Typography (family, category, weight, kerning, line-height)
-2. [BorderBench](https://github.com/eob/borderbench): Surfaces & Edges (stroke width, style, sides, corner radius curvature, elevation/shadow)
-3. **LayoutBench**: Spatial Geometry & Flow (direction, distribution, alignment, columns, justification, spacing)
-4. [ColorBench](https://github.com/eob/colorbench): Color (matching, lightness, chroma, hue, binding, gradients, reconstruction)
+**Version 0.3.0: 292 qualitative questions, 20 families, 250 unique images.** Every image contains sample text. Answers describe visible geometry; they do not require identifying CSS implementation, estimating pixels, or judging aesthetic quality.
 
----
+## Question bank
 
-## Question bank (208 tasks, 13 families, 150 images)
+| Family | Atomic question | Questions |
+| --- | --- | ---: |
+| Immediate flow | Are the cards in one row or one column? | 8 |
+| Main-axis distribution | Packed at an edge, centered, edge-to-edge, half-size outer spaces, or equal spaces? | 24 |
+| Cross-axis alignment | Start, center, end, or fill the cross axis? | 16 |
+| Text justification | Left, centered, right, or both-edge justification? | 16 |
+| Text columns | How many side-by-side text columns? | 12 |
+| Grid columns | How many columns in the card grid? | 12 |
+| Grid rows | How many rows in the card grid? | 12 |
+| Grid gutter comparison | Are horizontal or vertical gutters larger, or equal? | 12 |
+| Grid track proportions | Equal tracks, wider left track, or wider right track? | 12 |
+| Column span | How many visible column positions does a card span? | 12 |
+| Wrapped row count | How many rows does the repeated sequence occupy? | 12 |
+| Incomplete row alignment | Does the shorter final row sit left, center, or right? | 12 |
+| Neighboring gap comparison | Which of two successive gaps is larger, or are they equal? | 12 |
+| Horizontal versus vertical inset | Which inset around the centered content rectangle is larger? | 12 |
+| Text block placement | Where is the whole block, independently of its text alignment? | 12 |
+| Relative panel width | Which panel is wider, or are they equal? | 12 |
+| Spacing within and between groups | Which gap is larger, or are they equal? | 12 |
+| Top-level hierarchy | Are the outlined page sections horizontal-first or vertical-first? | 24 |
+| Nested section flow | Is Field notes a row, column, or wrapped sequence? | 24 |
+| Nested incomplete row alignment | Where does the shorter row sit inside its own nested frame? | 24 |
 
-Every stimulus renders on a frozen 800x600 CSS px canvas at 2x DPR with a pinned body font. One scored question per task; no answer text appears in any pixel.
+Exact question wording and complete answer sets live in [config/qualitative.json](config/qualitative.json). Text alignment and block placement are separate questions. Parent and child flow are independently crossed; Field notes can be the first or second section. The same image can support multiple atomic questions, linked through a shared group ID.
 
-**Abstract side** (neutral cards, no text in pixels):
+## Run
 
-1. **Flow** (`flow`, 16): row, column, 2-col grid, or 3-col grid.
-2. **Distribution** (`distribute`, 20): packed at start, centered, packed at end, edge-to-edge, or smaller equal outer spaces; rows and columns.
-3. **Alignment** (`align`, 16): cross-axis start, center, end, or stretch; variable-size items.
-4. **Gap tokens** (`gap`, 16): spacing between items from {0, 4, 8, 12, 16, 24, 32}px, full token set offered every task.
-5. **Container padding** (`pad`, 16): edge-to-item spacing from {8, 16, 24, 32, 48}px.
-
-**Document side** (fixed neutral copy, pinned font):
-
-6. **Columns** (`columns`, 12): one, two, or three text columns.
-7. **Text justification** (`textjustify`, 16): left, centered, right, or both-edges alignment.
-8. **Header padding** (`headerpad`, 18): more space above the header, below it, or equal.
-9. **Region padding** (`regionpad`, 16): padding around a content region from {8, 16, 24, 32, 48}px, bordered-card vs bare-canvas crossed.
-10. **Table padding** (`tablepad`, 12): cell text-to-border spacing from {4, 8, 12, 16}px.
-
-**Numeric side** (px estimates on shared images):
-
-11. **Gap estimate** (`gapnum`, 16), **header estimate** (`headerpx`, 18, above + below), **region estimate** (`regionpx`, 16).
-
-Every swept value covers every theme and structural nuisance level; sparse families are not fully factorial. Spacing truth is decoded from rendered geometry. See [docs/methodology.md](docs/methodology.md).
-
----
-
-## Quick Start
-
-### 1. Installation
-
-```bash
+```sh
 bun install
 bunx playwright install chromium
 python3 -m venv .venv
 .venv/bin/pip install -e .
-```
-
-### 2. Render the dataset
-
-Renders 150 high-DPI screenshots with Playwright Chromium and generates `dataset/layoutbench-v0.2/manifest.json` with decoded rects:
-
-```bash
 bun run render
 bun run validate
+bun test src
+.venv/bin/python -m pytest tests
+
+# The combined catalog includes 13 configurations across four API accounts.
+.venv/bin/python -m baseline.runner --release 0.3.0 --config config/models.all.json --run-id qualitative-20260917 --concurrency 6 --budget-usd 100
 ```
 
-### 3. Run the baseline
+API credentials are read from environment variables named in the model catalog. Requests contain only the image and question, without the manifest, HTML, CSS, task IDs, filenames, or answer keys. Model/account failures are recorded separately from incorrect answers.
 
-```bash
-# Quick mock test (no API calls)
-bun run benchmark:mock
+## Evidence and interpretation
 
-# Frozen release run against configured models
-.venv/bin/python -m baseline.runner --release 0.2.0 --run-id review-20260914 --max-tasks 208 --concurrency 6 --budget-usd 50
-```
+The renderer pins an 800×600 CSS canvas, 2× image resolution, a bundled font and actual browser font usage. A separate validator derives answers from measured visible geometry, checks image hashes and border pixels, verifies text line edges, and rejects clipping, ambiguous arrangements and mislabeled answers. Option sets are complete; answer slots are balanced and randomized independently of semantic answers.
 
-### 4. Seal a run
+Choice accuracy includes invalid responses as incorrect. Scores and API response costs are reported separately for each family on a frozen shared cohort. There is no overall benchmark score. Images, correlated questions, model settings, raw responses, attempts and source commits remain traceable through the release and finalization records.
 
-```bash
-.venv/bin/python -m baseline.finalize --run-dir results/runs/0.2.0/review-20260914 --scope full
-.venv/bin/python -m baseline.finalize --run-dir results/runs/0.2.0/review-20260914 --verify
-```
+Human agreement has not been measured. Clear boundaries, coarse differences and qualitative answer sets are design controls, not evidence of agreement. Success here measures these rendered tasks; transfer to high-level design understanding remains a hypothesis.
 
-See [releases/README.md](releases/README.md) and [releases/FINALIZATION.md](releases/FINALIZATION.md).
-
----
-
-## Manifest task format
-
-Each task in `dataset/layoutbench-v0.2/manifest.json` provides:
-
-```json
-{
-  "taskId": "layoutbench-gap-01",
-  "family": "gap",
-  "groupId": "gap-01",
-  "imageFilename": "gap-01.png",
-  "imageSha256": "…",
-  "groundTruth": { "choice": "B" },
-  "prompt": "Look at the card in this image. …",
-  "design": { "kind": "abstract", "direction": "row", "gap_px": 16, "decoded": { "gap": 16.0 } },
-  "domText": "",
-  "rendered": { "width": 800, "height": 600, "dpr": 2, "colorSpace": "srgb", "font": { "path": "fonts/DejaVuSans.ttf", "sha256": "…" }, "regions": [ … ] }
-}
-```
-
----
-
-## Testing
-
-```bash
-# Builder, crossing, and determinism tests
-bun test
-
-# Protocol, grading, statistics, dataset gate, and state store tests
-.venv/bin/pytest tests
-```
-
-## Publication review
-
-Version 0.2.0 supersedes the September 13 pilot after an adversarial review
-found an answer shortcut in option ordering and invisible header measurement
-edges. The old dataset and run remain archived. See
-[the September 14 review](docs/reviews/2026-09-14-publication-review.md) for
-regressions, validation evidence, the fresh campaign, and limitations.
-
-## Results: reviewed 0.2.0 pilot
-
-The September 14 campaign completed **2,288 responses: 208 questions for each of 11 model configurations**. All responses, provenance and per-family metrics are available in the [sealed results](results/runs/0.2.0/review-20260914/final_results.json). [The review](docs/reviews/2026-09-14-publication-review.md) reports the observed ranges and limitations; [the independent audit export](docs/reviews/0.2.0-independent-summary.json) includes token-value confusion tables and numeric baselines. No overall score or statistically established model ranking is claimed.
+[Methodology](docs/methodology.md) · [Release format](releases/README.md) · [Finalization](releases/FINALIZATION.md) · [Review and delivery record](tickets/feat-03-qualitative-layout.md)

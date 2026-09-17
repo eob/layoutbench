@@ -64,7 +64,8 @@ def test_metrics_rejects_unknown_family():
 
 
 def test_metrics_covers_all_families():
+    from baseline.protocol import QUALITATIVE_CATALOG
     assert set(metrics([])) == {
         "flow", "distribute", "align", "gap", "pad", "columns", "textjustify",
         "headerpad", "regionpad", "tablepad", "gapnum", "headerpx", "regionpx",
-    }
+    } | set(QUALITATIVE_CATALOG)

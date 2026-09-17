@@ -1,65 +1,19 @@
 # Frozen releases
 
-`0.2.0` is a 208-question perception pilot in 13 families: abstract flow
-(16), axis distribution (20), cross-axis alignment (16), gap tokens
-(16), and container padding (16); document column counting (12), text
-justification (16), header above/below comparison (18), content-region
-padding with bordered-card vs bare-canvas crossing (16), and table cell
-padding (12); plus numeric gap (16), header above/below (18), and
-region padding (16) estimates that share images with their choice
-siblings. The 8 intersecting columns/justification cells also share one
-render each. There are 150 distinct images. Human agreement has not
-been measured. Scores never transfer across releases.
+The current release is **0.3.0**, with 292 qualitative questions in 20 families and 250 unique images. Human agreement has not been measured. See [the methodology](../docs/methodology.md) and [question catalog](../config/qualitative.json).
 
-Cost basis: a full 0.2.0 campaign is 2,288 responses (208 × 11 models)
-at catalog prices, budgeted at $50; the previous full campaign cost $27.87. The runner
-reserves worst-case output cost per request before sending.
+A descriptor records `schema_version`, `benchmark_version`, `dataset_path`, `dataset_manifest`, `dataset_git_commit`, `dataset_fingerprint`, `evaluation_protocol_fingerprint`, and `expected_task_count`. Commit the validated dataset before creating its descriptor. The dataset fingerprint covers manifest content and actual PNG bytes. The release gate verifies committed artifact bytes, exact inventory, prompts, geometry-derived answers, complete options, label balance, nuisance crossings, font usage, image sharing and decoded-image evidence.
 
-A descriptor records `schema_version`, `benchmark_version`,
-`dataset_path`, `dataset_manifest`, `dataset_git_commit`,
-`dataset_fingerprint`, `evaluation_protocol_fingerprint`, and
-`expected_task_count`. Freeze the dataset in Git before creating the
-descriptor. The dataset fingerprint covers every manifest property
-except location fields and hashes actual PNG bytes. The release gate
-checks committed artifact bytes and inventory, canonical prompts,
-decoded spacing targets, option uniqueness and balance, alignment
-decodes from line rects, repeated-group identity, bundled font
-evidence, and background/border pixel probes.
-
-The protocol fingerprint includes the family schemas, numeric score
-definition, prompts, parser, evaluator, statistics, reporting, provider request/schema code, and
-dataset validation. Any change requires a new protocol release.
+The protocol fingerprint covers answer contracts, parsing, grading, prompts, provider request code, statistics, reporting, finalization, and both dataset validators, including `config/qualitative.json`. Protocol changes require freezing a new compatible release before more paid observations.
 
 ```sh
-.venv/bin/python -m baseline.validate_dataset
-.venv/bin/python -m baseline.releases --release 0.2.0
-.venv/bin/python -m baseline.runner --release 0.2.0 --run-id review-20260914 --max-tasks 208 --concurrency 6 --budget-usd 50
+bun run validate
+.venv/bin/python -m baseline.releases --release 0.3.0
+.venv/bin/python -m baseline.runner --release 0.3.0 --config config/models.all.json --run-id qualitative-20260917 --concurrency 6 --budget-usd 100
 ```
 
-The catalog contains 11 enabled configurations: four Anthropic, four
-OpenAI, and three Google models. Pricing dates and official source
-links remain attached to each catalog. Run metadata preserves
-configurations, endpoint timeouts, source commits, invocation
-chronology, and an optional Anthropic workspace ID, without storing
-API keys.
+The combined catalog has 13 enabled configurations across four API accounts. Metadata preserves configuration, recorded rates, endpoint timeouts, source commit and invocation chronology without storing API keys. The budget reserves output costs before dispatch; unknown usage is explicitly estimated and cannot become a reported metered mean.
 
-Partial work can resume with the same run ID and unchanged identity.
-Invalid model answers are final observations and receive zero credit;
-infrastructure failures remain retryable, with prior attempt costs
-retained. The budget uses conservative reservations for unmetered
-attempts, marked `cost_estimated`. Those reserves never become
-reported mean API-response costs. Reports show unknown means as null
-and retain known-value counts. Paid work is refused if frozen
-artifacts or the protocol differ.
+Resume partial work with the same ID and unchanged release/configuration. Invalid answers are final observations scored incorrect; infrastructure failures remain retryable and retain every attempt. Frozen runs cannot resume once sealed. Publication selects an explicit verified seal, never the newest-looking file. See [FINALIZATION.md](FINALIZATION.md).
 
-Historical prototype artifacts (the 100-task corpus whose titles
-printed answers into pixels) remain historical. They are not eligible
-for pilot comparisons. Publication accepts an explicitly named,
-verified sealed run rather than selecting scorecards by file
-modification time. See [FINALIZATION.md](FINALIZATION.md).
-
-Version 0.1.0 and its sealed observations remain unchanged as historical
-artifacts. Its token-choice options leak answers through sorted distractors;
-its untinted header spacing also relies on invisible line-box edges. Do not
-use it as the current perception result. Verify it at Git commit `62a557c`.
-Version 0.2.0 requires fresh responses and is not score-comparable to 0.1.0.
+Archived releases retain their own immutable datasets, descriptors and response evidence. Replay requires the compatible source checkout recorded by their seal; current code deliberately refuses a mismatched protocol.
