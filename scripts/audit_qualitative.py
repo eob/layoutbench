@@ -22,7 +22,7 @@ def parse(raw, labels):
         if not isinstance(result, dict) or set(result) != {"choice"} or not isinstance(result["choice"], str):
             return None
         choice = result["choice"].strip().upper()
-        return {"choice": choice} if choice in labels else None
+        return {"choice": choice} if len(choice) == 1 and choice in labels else None
     except (ValueError, TypeError):
         return None
 

@@ -71,5 +71,6 @@ def test_independent_audit_rejects_tampering(report_file, mutation):
 
 def test_audit_parser_rejects_unknown_letters_and_extra_keys():
     assert parse('{"choice":" c "}', "ABC") == {"choice": "C"}
-    for raw in ('{"choice":"D"}', '{"choice":"A","extra":1}', '{"choice":true}', 'A'):
+    for raw in ('{"choice":"D"}', '{"choice":""}', '{"choice":"  "}', '{"choice":"AB"}',
+                '{"choice":"A","extra":1}', '{"choice":true}', 'A'):
         assert parse(raw, "ABC") is None

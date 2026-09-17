@@ -1,0 +1,16 @@
+.......F                                                                 [100%]
+=================================== FAILURES ===================================
+___________ test_audit_parser_rejects_unknown_letters_and_extra_keys ___________
+
+    def test_audit_parser_rejects_unknown_letters_and_extra_keys():
+        assert parse('{"choice":" c "}', "ABC") == {"choice": "C"}
+        for raw in ('{"choice":"D"}', '{"choice":""}', '{"choice":"  "}', '{"choice":"AB"}',
+                    '{"choice":"A","extra":1}', '{"choice":true}', 'A'):
+>           assert parse(raw, "ABC") is None
+E           assert {'choice': ''} is None
+E            +  where {'choice': ''} = parse('{"choice":""}', 'ABC')
+
+tests/test_qualitative_audit.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_qualitative_audit.py::test_audit_parser_rejects_unknown_letters_and_extra_keys
+1 failed, 7 passed in 0.24s
