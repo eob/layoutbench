@@ -1,0 +1,4711 @@
+{
+  "snapshot_utc": "2026-09-17T03:32:14.519980+00:00",
+  "source_run": "/mnt/disks/data/layoutbench/results/runs/0.3.0/qualitative-20260917",
+  "manifest_sha256": "832a69216d693a8b722441c3f4dfda94666775dfb685454048d2a398ff7897fa",
+  "final_results_sha256": "5a3178a03a80aea435c63301908d577fd8dfb0541e5610f53bceab5361141b6e",
+  "source_git_commit": "cb46d35ccc1f411b2aa23376adfd37b4c3baa8cb",
+  "source_attempt_count": 3515,
+  "expected_tasks_per_model": 292,
+  "model_count": 9,
+  "model_names": {
+    "claude-fable-5-1": "Claude Fable 5.1",
+    "claude-opus-5": "Claude Opus 5",
+    "claude-sonnet-5": "Claude Sonnet 5",
+    "claude-haiku-4-5-20251001": "Claude Haiku 4.5",
+    "gpt-6-astra": "GPT-6 Astra",
+    "gpt-5.6-sol": "GPT-5.6 Sol",
+    "gpt-5.6-terra": "GPT-5.6 Terra",
+    "gpt-5.6-luna": "GPT-5.6 Luna",
+    "gemini-3.1-pro-preview": "Gemini 3.1 Pro Preview",
+    "gemini-3.8-flash": "Gemini 3.8 Flash",
+    "gemini-3.5-flash-lite": "Gemini 3.5 Flash-Lite",
+    "muse-spark-1.3": "Muse Spark 1.3",
+    "muse-spark-1.2": "Muse Spark 1.2"
+  },
+  "comparison_model_ids": [
+    "gemini-3.1-pro-preview",
+    "gemini-3.5-flash-lite",
+    "gemini-3.8-flash",
+    "gpt-5.6-luna",
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
+    "gpt-6-astra",
+    "muse-spark-1.2",
+    "muse-spark-1.3"
+  ],
+  "availability": {
+    "claude-fable-5-1": {
+      "included_in_comparison": false,
+      "observed": 221,
+      "expected": 292,
+      "run_status": "paused",
+      "run_reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."
+    },
+    "claude-opus-5": {
+      "included_in_comparison": false,
+      "observed": 221,
+      "expected": 292,
+      "run_status": "paused",
+      "run_reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."
+    },
+    "claude-sonnet-5": {
+      "included_in_comparison": false,
+      "observed": 221,
+      "expected": 292,
+      "run_status": "paused",
+      "run_reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."
+    },
+    "claude-haiku-4-5-20251001": {
+      "included_in_comparison": false,
+      "observed": 221,
+      "expected": 292,
+      "run_status": "paused",
+      "run_reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."
+    },
+    "gpt-6-astra": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "gpt-5.6-sol": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "gpt-5.6-terra": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "gpt-5.6-luna": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "gemini-3.1-pro-preview": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "gemini-3.8-flash": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "gemini-3.5-flash-lite": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "muse-spark-1.3": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    },
+    "muse-spark-1.2": {
+      "included_in_comparison": true,
+      "observed": 292,
+      "expected": 292,
+      "run_status": "complete",
+      "run_reason": null
+    }
+  },
+  "scope": "Descriptive fixed-corpus counts. One response per model and question; related stimuli are correlated. No causal mechanism, population estimate, or confidence interval is inferred.",
+  "families": {
+    "direction": {
+      "correct": 72,
+      "observed": 72,
+      "expected": 72,
+      "label": "Immediate flow",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "gpt-5.6-sol": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "gpt-5.6-terra": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "gpt-5.6-luna": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "gemini-3.8-flash": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "muse-spark-1.3": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "muse-spark-1.2": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "semantic_confusion": {
+        "row": {
+          "observed": 36,
+          "predictions": {
+            "row": 36
+          }
+        },
+        "column": {
+          "observed": 36,
+          "predictions": {
+            "column": 36
+          }
+        }
+      }
+    },
+    "distribution": {
+      "correct": 206,
+      "observed": 216,
+      "expected": 216,
+      "label": "Main-axis distribution",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-sol": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-terra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-luna": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.8-flash": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 14,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.3": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.2": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        }
+      },
+      "semantic_confusion": {
+        "start": {
+          "observed": 36,
+          "predictions": {
+            "start": 35,
+            "center": 1
+          }
+        },
+        "center": {
+          "observed": 36,
+          "predictions": {
+            "center": 36
+          }
+        },
+        "end": {
+          "observed": 36,
+          "predictions": {
+            "end": 36
+          }
+        },
+        "between": {
+          "observed": 36,
+          "predictions": {
+            "between": 33,
+            "around": 1,
+            "evenly": 2
+          }
+        },
+        "around": {
+          "observed": 36,
+          "predictions": {
+            "around": 33,
+            "center": 2,
+            "evenly": 1
+          }
+        },
+        "evenly": {
+          "observed": 36,
+          "predictions": {
+            "evenly": 33,
+            "center": 1,
+            "around": 2
+          }
+        }
+      }
+    },
+    "crossalign": {
+      "correct": 144,
+      "observed": 144,
+      "expected": 144,
+      "label": "Cross-axis alignment",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gpt-5.6-sol": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gpt-5.6-terra": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gpt-5.6-luna": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gemini-3.8-flash": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "muse-spark-1.3": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "muse-spark-1.2": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        }
+      },
+      "semantic_confusion": {
+        "start": {
+          "observed": 36,
+          "predictions": {
+            "start": 36
+          }
+        },
+        "center": {
+          "observed": 36,
+          "predictions": {
+            "center": 36
+          }
+        },
+        "end": {
+          "observed": 36,
+          "predictions": {
+            "end": 36
+          }
+        },
+        "stretch": {
+          "observed": 36,
+          "predictions": {
+            "stretch": 36
+          }
+        }
+      }
+    },
+    "textalign": {
+      "correct": 109,
+      "observed": 144,
+      "expected": 144,
+      "label": "Text justification",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gpt-5.6-sol": {
+          "correct": 14,
+          "observed": 16,
+          "expected": 16
+        },
+        "gpt-5.6-terra": {
+          "correct": 10,
+          "observed": 16,
+          "expected": 16
+        },
+        "gpt-5.6-luna": {
+          "correct": 11,
+          "observed": 16,
+          "expected": 16
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 13,
+          "observed": 16,
+          "expected": 16
+        },
+        "gemini-3.8-flash": {
+          "correct": 16,
+          "observed": 16,
+          "expected": 16
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 4,
+          "observed": 16,
+          "expected": 16
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 16,
+          "expected": 16
+        },
+        "muse-spark-1.2": {
+          "correct": 13,
+          "observed": 16,
+          "expected": 16
+        }
+      },
+      "semantic_confusion": {
+        "left": {
+          "observed": 36,
+          "predictions": {
+            "left": 31,
+            "justify": 5
+          }
+        },
+        "center": {
+          "observed": 36,
+          "predictions": {
+            "center": 30,
+            "left": 2,
+            "justify": 4
+          }
+        },
+        "right": {
+          "observed": 36,
+          "predictions": {
+            "right": 18,
+            "center": 13,
+            "justify": 2,
+            "left": 3
+          }
+        },
+        "justify": {
+          "observed": 36,
+          "predictions": {
+            "justify": 30,
+            "left": 6
+          }
+        }
+      }
+    },
+    "textcolumns": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Text columns",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "1": {
+          "observed": 36,
+          "predictions": {
+            "1": 36
+          }
+        },
+        "2": {
+          "observed": 36,
+          "predictions": {
+            "2": 36
+          }
+        },
+        "3": {
+          "observed": 36,
+          "predictions": {
+            "3": 36
+          }
+        }
+      }
+    },
+    "gridcols": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Grid columns",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "2": {
+          "observed": 36,
+          "predictions": {
+            "2": 36
+          }
+        },
+        "3": {
+          "observed": 36,
+          "predictions": {
+            "3": 36
+          }
+        },
+        "4": {
+          "observed": 36,
+          "predictions": {
+            "4": 36
+          }
+        }
+      }
+    },
+    "gridrows": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Grid rows",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "2": {
+          "observed": 36,
+          "predictions": {
+            "2": 36
+          }
+        },
+        "3": {
+          "observed": 36,
+          "predictions": {
+            "3": 36
+          }
+        },
+        "4": {
+          "observed": 36,
+          "predictions": {
+            "4": 36
+          }
+        }
+      }
+    },
+    "gridgaps": {
+      "correct": 85,
+      "observed": 108,
+      "expected": 108,
+      "label": "Grid gutter comparison",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 11,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 11,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 8,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 8,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 4,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 10,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 9,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "horizontal": {
+          "observed": 36,
+          "predictions": {
+            "horizontal": 34,
+            "vertical": 2
+          }
+        },
+        "vertical": {
+          "observed": 36,
+          "predictions": {
+            "vertical": 31,
+            "horizontal": 4,
+            "equal": 1
+          }
+        },
+        "equal": {
+          "observed": 36,
+          "predictions": {
+            "equal": 20,
+            "vertical": 16
+          }
+        }
+      }
+    },
+    "gridtracks": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Grid track proportions",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "equal": {
+          "observed": 36,
+          "predictions": {
+            "equal": 36
+          }
+        },
+        "left": {
+          "observed": 36,
+          "predictions": {
+            "left": 36
+          }
+        },
+        "right": {
+          "observed": 36,
+          "predictions": {
+            "right": 36
+          }
+        }
+      }
+    },
+    "gridspan": {
+      "correct": 98,
+      "observed": 108,
+      "expected": 108,
+      "label": "Column span",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 8,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 6,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "1": {
+          "observed": 36,
+          "predictions": {
+            "1": 31,
+            "2": 5
+          }
+        },
+        "2": {
+          "observed": 36,
+          "predictions": {
+            "2": 31,
+            "3": 5
+          }
+        },
+        "3": {
+          "observed": 36,
+          "predictions": {
+            "3": 36
+          }
+        }
+      }
+    },
+    "wrapcount": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Wrapped row count",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "1": {
+          "observed": 36,
+          "predictions": {
+            "1": 36
+          }
+        },
+        "2": {
+          "observed": 36,
+          "predictions": {
+            "2": 36
+          }
+        },
+        "3": {
+          "observed": 36,
+          "predictions": {
+            "3": 36
+          }
+        }
+      }
+    },
+    "wrapalign": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Incomplete row alignment",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "left": {
+          "observed": 36,
+          "predictions": {
+            "left": 36
+          }
+        },
+        "center": {
+          "observed": 36,
+          "predictions": {
+            "center": 36
+          }
+        },
+        "right": {
+          "observed": 36,
+          "predictions": {
+            "right": 36
+          }
+        }
+      }
+    },
+    "gapcompare": {
+      "correct": 103,
+      "observed": 108,
+      "expected": 108,
+      "label": "Neighboring gap comparison",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 11,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 8,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "first": {
+          "observed": 36,
+          "predictions": {
+            "first": 32,
+            "last": 1,
+            "equal": 3
+          }
+        },
+        "last": {
+          "observed": 36,
+          "predictions": {
+            "last": 35,
+            "equal": 1
+          }
+        },
+        "equal": {
+          "observed": 36,
+          "predictions": {
+            "equal": 36
+          }
+        }
+      }
+    },
+    "padcompare": {
+      "correct": 87,
+      "observed": 108,
+      "expected": 108,
+      "label": "Horizontal versus vertical inset",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 11,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 11,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 9,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 9,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 6,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 9,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 8,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "horizontal": {
+          "observed": 36,
+          "predictions": {
+            "horizontal": 35,
+            "vertical": 1
+          }
+        },
+        "vertical": {
+          "observed": 36,
+          "predictions": {
+            "vertical": 35,
+            "horizontal": 1
+          }
+        },
+        "equal": {
+          "observed": 36,
+          "predictions": {
+            "equal": 17,
+            "horizontal": 5,
+            "vertical": 14
+          }
+        }
+      }
+    },
+    "blockalign": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Text block placement",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "left": {
+          "observed": 36,
+          "predictions": {
+            "left": 36
+          }
+        },
+        "center": {
+          "observed": 36,
+          "predictions": {
+            "center": 36
+          }
+        },
+        "right": {
+          "observed": 36,
+          "predictions": {
+            "right": 36
+          }
+        }
+      }
+    },
+    "widthcompare": {
+      "correct": 108,
+      "observed": 108,
+      "expected": 108,
+      "label": "Relative panel width",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "first": {
+          "observed": 36,
+          "predictions": {
+            "first": 36
+          }
+        },
+        "last": {
+          "observed": 36,
+          "predictions": {
+            "last": 36
+          }
+        },
+        "equal": {
+          "observed": 36,
+          "predictions": {
+            "equal": 36
+          }
+        }
+      }
+    },
+    "groupgap": {
+      "correct": 96,
+      "observed": 108,
+      "expected": 108,
+      "label": "Spacing within and between groups",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-sol": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-terra": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gpt-5.6-luna": {
+          "correct": 8,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.8-flash": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 5,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.3": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "muse-spark-1.2": {
+          "correct": 11,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "semantic_confusion": {
+        "between": {
+          "observed": 36,
+          "predictions": {
+            "between": 36
+          }
+        },
+        "within": {
+          "observed": 36,
+          "predictions": {
+            "within": 32,
+            "between": 4
+          }
+        },
+        "equal": {
+          "observed": 36,
+          "predictions": {
+            "equal": 28,
+            "between": 8
+          }
+        }
+      }
+    },
+    "topflow": {
+      "correct": 216,
+      "observed": 216,
+      "expected": 216,
+      "label": "Top-level hierarchy",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-sol": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-terra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-luna": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.8-flash": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.3": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.2": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        }
+      },
+      "semantic_confusion": {
+        "row": {
+          "observed": 108,
+          "predictions": {
+            "row": 108
+          }
+        },
+        "column": {
+          "observed": 108,
+          "predictions": {
+            "column": 108
+          }
+        }
+      }
+    },
+    "nestedflow": {
+      "correct": 216,
+      "observed": 216,
+      "expected": 216,
+      "label": "Nested section flow",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-sol": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-terra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-luna": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.8-flash": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.3": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.2": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        }
+      },
+      "semantic_confusion": {
+        "row": {
+          "observed": 72,
+          "predictions": {
+            "row": 72
+          }
+        },
+        "column": {
+          "observed": 72,
+          "predictions": {
+            "column": 72
+          }
+        },
+        "wrapped": {
+          "observed": 72,
+          "predictions": {
+            "wrapped": 72
+          }
+        }
+      }
+    },
+    "nestedwrap": {
+      "correct": 216,
+      "observed": 216,
+      "expected": 216,
+      "label": "Nested incomplete row alignment",
+      "by_model": {
+        "gpt-6-astra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-sol": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-terra": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gpt-5.6-luna": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.1-pro-preview": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.8-flash": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "gemini-3.5-flash-lite": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.3": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        },
+        "muse-spark-1.2": {
+          "correct": 24,
+          "observed": 24,
+          "expected": 24
+        }
+      },
+      "semantic_confusion": {
+        "left": {
+          "observed": 72,
+          "predictions": {
+            "left": 72
+          }
+        },
+        "center": {
+          "observed": 72,
+          "predictions": {
+            "center": 72
+          }
+        },
+        "right": {
+          "observed": 72,
+          "predictions": {
+            "right": 72
+          }
+        }
+      }
+    }
+  },
+  "hierarchy_pairs": {
+    "gpt-6-astra": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "gpt-5.6-sol": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "gpt-5.6-terra": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "gpt-5.6-luna": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "gemini-3.1-pro-preview": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "gemini-3.8-flash": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "gemini-3.5-flash-lite": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "muse-spark-1.3": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    },
+    "muse-spark-1.2": {
+      "pair_count": 24,
+      "both": 24,
+      "outer_only": 0,
+      "inner_only": 0,
+      "neither": 0,
+      "errors": []
+    }
+  },
+  "nestedwrap": {
+    "gpt-6-astra": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "gpt-5.6-sol": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "gpt-5.6-terra": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "gpt-5.6-luna": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "gemini-3.1-pro-preview": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "gemini-3.8-flash": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "gemini-3.5-flash-lite": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "muse-spark-1.3": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    },
+    "muse-spark-1.2": {
+      "total": {
+        "correct": 24,
+        "observed": 24,
+        "expected": 24
+      },
+      "by_parent": {
+        "row": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "column": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_position": {
+        "1": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        },
+        "2": {
+          "correct": 12,
+          "observed": 12,
+          "expected": 12
+        }
+      },
+      "by_alignment": {
+        "left": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "center": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        },
+        "right": {
+          "correct": 8,
+          "observed": 8,
+          "expected": 8
+        }
+      },
+      "joint_cells": {
+        "row|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "row|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-1|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|left": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|center": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        },
+        "column|position-2|right": {
+          "correct": 2,
+          "observed": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    }
+  },
+  "examples": {
+    "direction": {
+      "task_id": "layoutbench-direction-001",
+      "image": "direction-row-light-0.png",
+      "prompt": "How are the cards inside the outlined frame arranged?\nA: Stacked in one vertical column\nB: Side by side in one horizontal row\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "row",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        }
+      ]
+    },
+    "distribution": {
+      "task_id": "layoutbench-distribution-004",
+      "image": "distribution-start-dark-1.png",
+      "prompt": "Consider the sequence of cards along its long direction inside the outlined frame. Start means left for a row and top for a column. Which description fits the empty spaces measured from card edges to the INSIDE of the frame border?\nA: All interior gaps and both outer spaces are equal\nB: Packed together in the middle, with much larger equal outer spaces\nC: Packed at the end, touching that inner edge\nD: Packed at the start, touching that inner edge\nE: First and last cards touch opposite inner edges; equal gaps between cards\nF: Equal outer spaces, each half the size of an interior gap\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "start",
+      "correct": 8,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"D\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"D\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"D\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"D\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\": \"D\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\": \"D\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "center",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\": \"D\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\": \"D\"}"
+        }
+      ]
+    },
+    "crossalign": {
+      "task_id": "layoutbench-crossalign-001",
+      "image": "crossalign-start-light-0.png",
+      "prompt": "Across the direction perpendicular to the sequence of cards, how do their visible boxes align inside the outlined frame? For a horizontal sequence compare vertical positions; for a vertical sequence compare horizontal positions.\nA: Every box is centered on that cross axis, with empty space on both sides of the box\nB: Every box touches the top (horizontal sequence) or left (vertical sequence) inner edge, leaving space before the opposite edge\nC: Every box fills the frame along that cross axis\nD: Every box touches the bottom (horizontal sequence) or right (vertical sequence) inner edge, leaving space before the opposite edge\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "start",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "start",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        }
+      ]
+    },
+    "textalign": {
+      "task_id": "layoutbench-textalign-012",
+      "image": "textalign-right-dark-1.png",
+      "prompt": "How are the lines of body text aligned within the outlined text region? For both-edge justification, disregard the short final line.\nA: Right edges line up; left edges are ragged\nB: Left edges line up; right edges are ragged\nC: Both left and right edges line up on the nonfinal lines\nD: Line centers line up; both edges are ragged\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "right",
+      "correct": 2,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "right",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "center",
+          "correct": false,
+          "raw": "{\"choice\":\"D\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "center",
+          "correct": false,
+          "raw": "{\"choice\":\"D\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "center",
+          "correct": false,
+          "raw": "{\"choice\":\"D\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "center",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"D\"\n}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "right",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "left",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "center",
+          "correct": false,
+          "raw": "{\"choice\": \"D\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "center",
+          "correct": false,
+          "raw": "{\"choice\":\"D\"}"
+        }
+      ]
+    },
+    "textcolumns": {
+      "task_id": "layoutbench-textcolumns-001",
+      "image": "textcolumns-1-light-0.png",
+      "prompt": "How many side-by-side columns of body text are visible inside the frame?\nA: One\nB: Two\nC: Three\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "1",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        }
+      ]
+    },
+    "gridcols": {
+      "task_id": "layoutbench-gridcols-001",
+      "image": "gridcols-2-light-0.png",
+      "prompt": "How many columns of cards are in the rectangular grid? Count the cards across one complete row.\nA: Two\nB: Three\nC: Four\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "2",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        }
+      ]
+    },
+    "gridrows": {
+      "task_id": "layoutbench-gridrows-001",
+      "image": "gridcols-2-light-0.png",
+      "prompt": "How many rows of cards are in the rectangular grid? Count the cards down one complete column.\nA: Two\nB: Three\nC: Four\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "2",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "2",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        }
+      ]
+    },
+    "gridgaps": {
+      "task_id": "layoutbench-gridgaps-010",
+      "image": "gridcols-3-light-1.png",
+      "prompt": "Compare the horizontal empty gutters between columns with the vertical empty gutters between rows. Measure between the visible card boxes.\nA: The two gutter sizes are equal\nB: Horizontal gutters are larger\nC: Vertical gutters are larger\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "equal",
+      "correct": 4,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\"choice\": \"C\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"C\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\"choice\": \"C\"}"
+        }
+      ]
+    },
+    "gridtracks": {
+      "task_id": "layoutbench-gridtracks-001",
+      "image": "gridgaps-equal-light-0.png",
+      "prompt": "Compare the widths of the three card columns in this grid.\nA: The left column is wider; the other two have equal widths\nB: The right column is wider; the other two have equal widths\nC: All three columns have equal widths\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "equal",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\": \"C\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\": \"C\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"C\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\": \"C\"}"
+        }
+      ]
+    },
+    "gridspan": {
+      "task_id": "layoutbench-gridspan-001",
+      "image": "gridspan-1-light-0.png",
+      "prompt": "Use the three equal-width cards in the lower row as column guides. How many of those column positions does the single card in the upper row cover, including any intervening gutters?\nA: Three column positions\nB: One column position\nC: Two column positions\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "1",
+      "correct": 7,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "2",
+          "correct": false,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "2",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"C\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        }
+      ]
+    },
+    "wrapcount": {
+      "task_id": "layoutbench-wrapcount-001",
+      "image": "wrapcount-1-light-0.png",
+      "prompt": "How many horizontal rows of small cards are visible inside the frame?\nA: One row\nB: Three rows\nC: Two rows\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "1",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "1",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        }
+      ]
+    },
+    "wrapalign": {
+      "task_id": "layoutbench-wrapalign-001",
+      "image": "wrapalign-left-light-0.png",
+      "prompt": "Look only at the shorter final row of cards. How is that row placed horizontally inside the outlined frame?\nA: Against the right inner edge\nB: Against the left inner edge\nC: Centered, with equal empty space on either side\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "left",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        }
+      ]
+    },
+    "gapcompare": {
+      "task_id": "layoutbench-gapcompare-001",
+      "image": "gapcompare-first-light-0.png",
+      "prompt": "Compare the two empty gaps between the three card boxes, reading left to right for a row or top to bottom for a column.\nA: The gaps are equal\nB: The second gap is larger\nC: The first gap is larger\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "first",
+      "correct": 8,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\": \"C\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"C\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "equal",
+          "correct": false,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\": \"C\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\": \"C\"}"
+        }
+      ]
+    },
+    "padcompare": {
+      "task_id": "layoutbench-padcompare-012",
+      "image": "padcompare-equal-dark-1.png",
+      "prompt": "The tinted rectangle is centered inside the outlined frame. Compare the horizontal inset (frame to rectangle on either side) with the vertical inset (frame to rectangle above or below). Measure to the rectangle's visible outer edge, not to its text.\nA: The horizontal inset is larger\nB: The vertical inset is larger\nC: The horizontal and vertical insets are equal\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "equal",
+      "correct": 3,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "horizontal",
+          "correct": false,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "horizontal",
+          "correct": false,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "vertical",
+          "correct": false,
+          "raw": "{\"choice\": \"B\"}"
+        }
+      ]
+    },
+    "blockalign": {
+      "task_id": "layoutbench-blockalign-001",
+      "image": "blockalign-left-light-0.png",
+      "prompt": "Where is the tinted text block placed horizontally within the outer frame? Judge the block's outer edges, independently of how its text lines align.\nA: Against the left inner edge\nB: Centered, with equal empty space on either side\nC: Against the right inner edge\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "left",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        }
+      ]
+    },
+    "widthcompare": {
+      "task_id": "layoutbench-widthcompare-001",
+      "image": "widthcompare-first-light-0.png",
+      "prompt": "Compare the widths of the two tinted panels, from their visible left edge to right edge.\nA: Their widths are equal\nB: The left panel is wider\nC: The right panel is wider\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "first",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "first",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        }
+      ]
+    },
+    "groupgap": {
+      "task_id": "layoutbench-groupgap-009",
+      "image": "groupgap-equal-light-0.png",
+      "prompt": "The cards form two groups marked Harbor and Meadow. Compare the gap between the groups' nearest card boxes with the gaps between cards within each group. Ignore the small group captions.\nA: The within-group gaps are larger\nB: The between-group and within-group gaps are equal\nC: The between-group gap is larger\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "equal",
+      "correct": 6,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "between",
+          "correct": false,
+          "raw": "{\"choice\":\"C\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "between",
+          "correct": false,
+          "raw": "{\n  \"choice\": \"C\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "equal",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "between",
+          "correct": false,
+          "raw": "{\"choice\": \"C\"}"
+        }
+      ]
+    },
+    "topflow": {
+      "task_id": "layoutbench-topflow-001",
+      "image": "h-01.png",
+      "prompt": "Look at the two large outlined sections headed Field notes and Harbor log. At the top level, how are these two sections arranged? Ignore the arrangement of cards inside either section.\nA: Side by side horizontally\nB: Stacked vertically\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "row",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        }
+      ]
+    },
+    "nestedflow": {
+      "task_id": "layoutbench-nestedflow-001",
+      "image": "h-01.png",
+      "prompt": "Look inside the large section headed Field notes. How are its small cards arranged? Ignore how Field notes is placed relative to Harbor log.\nA: One horizontal row\nB: One vertical column\nC: Multiple horizontal rows, with a shorter final row\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "row",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"A\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\":\"A\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "row",
+          "correct": true,
+          "raw": "{\"choice\": \"A\"}"
+        }
+      ]
+    },
+    "nestedwrap": {
+      "task_id": "layoutbench-nestedwrap-001",
+      "image": "h-09.png",
+      "prompt": "Inside Field notes, look only at the shorter final row of cards. How is it placed horizontally inside its own outlined inner frame? Ignore the surrounding page's arrangement.\nA: Against that frame's right inner edge\nB: Against that frame's left inner edge\nC: Centered in that frame\nReturn only a JSON object with one key, \"choice\", whose value is the selected option letter.",
+      "truth": "left",
+      "correct": 9,
+      "observed": 9,
+      "responses": [
+        {
+          "model": "gpt-6-astra",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "gemini-3.1-pro-preview",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\n  \"choice\": \"B\"\n}"
+        },
+        {
+          "model": "muse-spark-1.3",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\":\"B\"}"
+        },
+        {
+          "model": "muse-spark-1.2",
+          "prediction": "left",
+          "correct": true,
+          "raw": "{\"choice\": \"B\"}"
+        }
+      ]
+    }
+  },
+  "confusion_candidates": [
+    {
+      "family": "gridgaps",
+      "truth": "equal",
+      "predicted": "vertical",
+      "confusion_count": 16,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-terra": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.1-pro-preview": {
+          "confusion_count": 4,
+          "truth_observed": 4
+        },
+        "gemini-3.8-flash": {
+          "confusion_count": 4,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "muse-spark-1.3": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "muse-spark-1.2": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "padcompare",
+      "truth": "equal",
+      "predicted": "vertical",
+      "confusion_count": 14,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.1-pro-preview": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        },
+        "gemini-3.8-flash": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        },
+        "muse-spark-1.3": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "muse-spark-1.2": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "textalign",
+      "truth": "right",
+      "predicted": "center",
+      "confusion_count": 13,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-sol": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "gpt-5.6-terra": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        },
+        "gpt-5.6-luna": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "gemini-3.1-pro-preview": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "muse-spark-1.3": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "muse-spark-1.2": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "groupgap",
+      "truth": "equal",
+      "predicted": "between",
+      "confusion_count": 8,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 4,
+          "truth_observed": 4
+        },
+        "muse-spark-1.2": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "textalign",
+      "truth": "justify",
+      "predicted": "left",
+      "confusion_count": 6,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-terra": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.1-pro-preview": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gridspan",
+      "truth": "1",
+      "predicted": "2",
+      "confusion_count": 5,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 4,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gridspan",
+      "truth": "2",
+      "predicted": "3",
+      "confusion_count": 5,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "padcompare",
+      "truth": "equal",
+      "predicted": "horizontal",
+      "confusion_count": 5,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-terra": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "muse-spark-1.3": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "muse-spark-1.2": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "textalign",
+      "truth": "left",
+      "predicted": "justify",
+      "confusion_count": 5,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-terra": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        },
+        "muse-spark-1.3": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gridgaps",
+      "truth": "vertical",
+      "predicted": "horizontal",
+      "confusion_count": 4,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "groupgap",
+      "truth": "within",
+      "predicted": "between",
+      "confusion_count": 4,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "textalign",
+      "truth": "center",
+      "predicted": "justify",
+      "confusion_count": 4,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gapcompare",
+      "truth": "first",
+      "predicted": "equal",
+      "confusion_count": 3,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "textalign",
+      "truth": "right",
+      "predicted": "left",
+      "confusion_count": 3,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 3,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "distribution",
+      "truth": "around",
+      "predicted": "center",
+      "confusion_count": 2,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "distribution",
+      "truth": "between",
+      "predicted": "evenly",
+      "confusion_count": 2,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "distribution",
+      "truth": "evenly",
+      "predicted": "around",
+      "confusion_count": 2,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gridgaps",
+      "truth": "horizontal",
+      "predicted": "vertical",
+      "confusion_count": 2,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 2,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "textalign",
+      "truth": "center",
+      "predicted": "left",
+      "confusion_count": 2,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-terra": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "textalign",
+      "truth": "right",
+      "predicted": "justify",
+      "confusion_count": 2,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        },
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "distribution",
+      "truth": "around",
+      "predicted": "evenly",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "distribution",
+      "truth": "between",
+      "predicted": "around",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "distribution",
+      "truth": "evenly",
+      "predicted": "center",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "distribution",
+      "truth": "start",
+      "predicted": "center",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gapcompare",
+      "truth": "first",
+      "predicted": "last",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gpt-5.6-luna": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gapcompare",
+      "truth": "last",
+      "predicted": "equal",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "gridgaps",
+      "truth": "vertical",
+      "predicted": "equal",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "padcompare",
+      "truth": "horizontal",
+      "predicted": "vertical",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    },
+    {
+      "family": "padcompare",
+      "truth": "vertical",
+      "predicted": "horizontal",
+      "confusion_count": 1,
+      "truth_observed": 36,
+      "by_model": {
+        "gemini-3.5-flash-lite": {
+          "confusion_count": 1,
+          "truth_observed": 4
+        }
+      }
+    }
+  ],
+  "ceiling_families_all_models": [
+    "direction",
+    "crossalign",
+    "textcolumns",
+    "gridcols",
+    "gridrows",
+    "gridtracks",
+    "wrapcount",
+    "wrapalign",
+    "blockalign",
+    "widthcompare",
+    "topflow",
+    "nestedflow",
+    "nestedwrap"
+  ],
+  "fully_correct_models_by_family": {
+    "direction": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "distribution": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "crossalign": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "textalign": [
+      "gpt-6-astra",
+      "gemini-3.8-flash"
+    ],
+    "textcolumns": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "gridcols": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "gridrows": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "gridgaps": [
+      "gpt-6-astra",
+      "gpt-5.6-sol"
+    ],
+    "gridtracks": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "gridspan": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "wrapcount": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "wrapalign": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "gapcompare": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "padcompare": [
+      "gpt-6-astra",
+      "gpt-5.6-sol"
+    ],
+    "blockalign": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "widthcompare": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "groupgap": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "muse-spark-1.3"
+    ],
+    "topflow": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "nestedflow": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ],
+    "nestedwrap": [
+      "gpt-6-astra",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gemini-3.1-pro-preview",
+      "gemini-3.8-flash",
+      "gemini-3.5-flash-lite",
+      "muse-spark-1.3",
+      "muse-spark-1.2"
+    ]
+  }
+}
