@@ -1,0 +1,93 @@
+EEEEEEEE
+======================================================================
+ERROR: test_changed_prefix_refused (__main__.LineageControls.test_changed_prefix_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 31, in test_changed_prefix_refused
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+======================================================================
+ERROR: test_equivalent_but_rewritten_final_json_refused (__main__.LineageControls.test_equivalent_but_rewritten_final_json_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 41, in test_equivalent_but_rewritten_final_json_refused
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+======================================================================
+ERROR: test_missing_original_final_refused (__main__.LineageControls.test_missing_original_final_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 46, in test_missing_original_final_refused
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+======================================================================
+ERROR: test_reordered_prefix_refused (__main__.LineageControls.test_reordered_prefix_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 36, in test_reordered_prefix_refused
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+======================================================================
+ERROR: test_repeated_completed_answer_refused (__main__.LineageControls.test_repeated_completed_answer_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 51, in test_repeated_completed_answer_refused
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+======================================================================
+ERROR: test_truncated_prefix_refused (__main__.LineageControls.test_truncated_prefix_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 61, in test_truncated_prefix_refused
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+======================================================================
+ERROR: test_unrequested_model_refused (__main__.LineageControls.test_unrequested_model_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 56, in test_unrequested_model_refused
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+======================================================================
+ERROR: test_valid_missing_answer_appended (__main__.LineageControls.test_valid_missing_answer_appended)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 26, in test_valid_missing_answer_appended
+    self.check()
+  File "/tmp/layoutbench-audit-reversion-3iacjyra/feat-04-audit-controls.py", line 23, in check
+    namespace['check_lineage'](self.old, self.new, self.old_final, self.new_final, self.allowed)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'check_lineage'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+FAILED (errors=8)

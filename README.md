@@ -69,8 +69,8 @@ Human agreement has not been measured. Clear boundaries, coarse differences and 
 
 ## Results
 
-The complete comparison covers nine configurations on all 292 questions. Four Claude configurations each answered 221 questions before account credits ran out; those responses remain in the raw record outside the complete comparison.
+The complete comparison covers thirteen configurations on all 292 questions, including all four Claude configurations. Every configuration has complete coverage, with 3,796 final answers in the shared comparison.
 
-All nine complete configurations answered every outlined hierarchy question correctly. Equal spacing and right-aligned text exposed recurring errors. [Task-level findings and exact examples](tickets/evidence/feat-03-analysis/findings.md) include the denominators, model contrasts and reproduction commands. [Sealed results and raw responses](results/runs/0.3.0/qualitative-20260917) preserve all 3,512 final answers and the complete attempt ledger.
+All thirteen configurations answered both flow questions correctly on each of the 24 shared hierarchy images. Nested final-row alignment distinguished Claude Haiku 4.5 (17/24 correct) from the other twelve configurations (24/24 each). Equal spacing and right-aligned text also exposed recurring errors. [Task-level findings and exact examples](tickets/evidence/feat-04-analysis/findings.md) include denominators, model contrasts and reproduction commands; [Claude family results](tickets/evidence/feat-04-analysis/claude-family-results.md) and [all model-family results](tickets/evidence/feat-04-analysis/model-family-results.csv) show the separate task scores. [Sealed results and raw responses](results/runs/full-roster/0.3.0/qualitative-20260917) preserve all 3,796 final answers and the complete attempt ledger.
 
-[Methodology](docs/methodology.md) · [Release format](releases/README.md) · [Finalization](releases/FINALIZATION.md) · [Review and delivery record](tickets/feat-03-qualitative-layout.md)
+[Methodology](docs/methodology.md) · [Release format](releases/README.md) · [Finalization](releases/FINALIZATION.md) · [Review and delivery record](tickets/feat-04-complete-roster.md)
