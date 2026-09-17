@@ -42,6 +42,8 @@ def audit(path):
     assert all(t["design"]["kind"] == "qualitative" for t in manifest)
     cohort = set(report["comparison"]["task_ids"])
     roster = set(report["comparison"]["model_ids"])
+    model_ids = [model["model_id"] for model in report["models"]]
+    assert len(model_ids) == len(set(model_ids)) and roster <= set(model_ids)
     assert len(cohort) == report["comparison"]["count"] and cohort <= tasks.keys()
     if report["comparison"]["scope"] == "full":
         assert cohort == tasks.keys()
@@ -50,6 +52,7 @@ def audit(path):
     for observation in report["results"]:
         row = observation["result"]
         model, task_id = observation["model_id"], row["task_id"]
+        assert model in model_ids
         assert (model, task_id) not in seen
         seen.add((model, task_id))
         task = tasks[task_id]
@@ -79,6 +82,7 @@ def audit(path):
             assert {r["task_id"] for r in selected} == cohort
         config = model["model_config"]
         families = {}
+        assert set(model["families"]) == {t["family"] for t in manifest}
         for family, stored in model["families"].items():
             subset = [r for r in selected if r["family"] == family]
             n = len(subset)
