@@ -9,15 +9,15 @@
   "manifest_path": "/mnt/disks/data/layoutbench/dataset/layoutbench-v0.3/manifest.json",
   "mock": false,
   "expected_task_count": 292,
-  "runner_git_commit": "6dabd9d196ed75034c4913240825308622fcd995",
+  "runner_git_commit": "0ba27f35c1dfe37ee9899cd80a808f7995d218c7",
   "runner_git_dirty": false,
   "created_at": "2026-09-17T03:08:40.885717+00:00",
-  "updated_at": "2026-09-17T03:28:03.220560+00:00",
+  "updated_at": "2026-09-17T12:10:06.516568+00:00",
   "budget_usd": 100.0,
-  "spent_cost_usd": 30.792377699999957,
+  "spent_cost_usd": 34.56476569999998,
   "cost_incomplete": false,
   "interruption_signal": null,
-  "status": "paused",
+  "status": "complete",
   "models": {
     "claude-fable-5-1": {
       "model_config": {
@@ -41,11 +41,11 @@
       "provider": "anthropic",
       "model": "claude-fable-5-1",
       "display_name": "Claude Fable 5.1",
-      "completed": 221,
-      "attempted_tasks": 222,
-      "status": "paused",
-      "reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.",
-      "cost_usd": 6.681610000000001,
+      "completed": 292,
+      "attempted_tasks": 292,
+      "status": "complete",
+      "reason": null,
+      "cost_usd": 8.74864,
       "families": {
         "flow": {
           "kind": "choice",
@@ -213,16 +213,16 @@
         },
         "direction": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 8,
+          "valid_count": 8,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 7,
+          "correct_count": 8,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
@@ -231,12 +231,12 @@
         },
         "distribution": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 15,
-          "accuracy": 0.8823529411764706,
+          "correct_count": 21,
+          "accuracy": 0.875,
           "chance_accuracy": 0.16666666666666666,
           "confusion": {
             "A": {
@@ -244,38 +244,39 @@
               "B": 1
             },
             "B": {
-              "B": 3
+              "B": 3,
+              "D": 1
             },
             "C": {
-              "C": 1,
+              "C": 3,
               "A": 1
             },
             "D": {
-              "D": 3
+              "D": 4
             },
             "E": {
-              "E": 3
+              "E": 4
             },
             "F": {
-              "F": 2
+              "F": 4
             }
           }
         },
         "crossalign": {
           "kind": "choice",
-          "count": 12,
-          "valid_count": 12,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 12,
+          "correct_count": 16,
           "accuracy": 1.0,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 4
             },
             "B": {
-              "B": 2
+              "B": 4
             },
             "C": {
               "C": 4
@@ -287,77 +288,35 @@
         },
         "textalign": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 11,
+          "correct_count": 16,
           "accuracy": 1.0,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
             },
             "D": {
-              "D": 1
+              "D": 4
             }
           }
         },
         "textcolumns": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 3
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "gridcols": {
-          "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 7,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 2
-            },
-            "C": {
-              "C": 2
-            }
-          }
-        },
-        "gridrows": {
-          "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 11,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -365,7 +324,49 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridcols": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridrows": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
             },
             "C": {
               "C": 4
@@ -374,12 +375,12 @@
         },
         "gridgaps": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
-          "accuracy": 0.7272727272727273,
+          "correct_count": 9,
+          "accuracy": 0.75,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
@@ -387,7 +388,7 @@
               "C": 1
             },
             "B": {
-              "B": 2,
+              "B": 3,
               "C": 1
             },
             "C": {
@@ -398,53 +399,11 @@
         },
         "gridtracks": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 1
-            },
-            "B": {
-              "B": 4
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "gridspan": {
-          "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 4
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "wrapcount": {
-          "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -452,28 +411,70 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
+            }
+          }
+        },
+        "gridspan": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "wrapcount": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
             }
           }
         },
         "wrapalign": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
@@ -482,11 +483,11 @@
         },
         "gapcompare": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -494,21 +495,21 @@
               "A": 4
             },
             "B": {
-              "B": 2
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "padcompare": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
-          "accuracy": 0.7272727272727273,
+          "correct_count": 9,
+          "accuracy": 0.75,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
@@ -520,47 +521,47 @@
               "A": 1
             },
             "C": {
-              "B": 1,
-              "C": 2
+              "C": 3,
+              "B": 1
             }
           }
         },
         "blockalign": {
           "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "widthcompare": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 1
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
@@ -569,71 +570,50 @@
         },
         "groupgap": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 7,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
-              "B": 1
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "topflow": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 17,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 8
+              "A": 12
             },
             "B": {
-              "B": 9
+              "B": 12
             }
           }
         },
         "nestedflow": {
           "kind": "choice",
-          "count": 18,
-          "valid_count": 18,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 18,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 6
-            },
-            "B": {
-              "B": 7
-            },
-            "C": {
-              "C": 5
-            }
-          }
-        },
-        "nestedwrap": {
-          "kind": "choice",
-          "count": 19,
-          "valid_count": 19,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 19,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -641,10 +621,31 @@
               "A": 8
             },
             "B": {
-              "B": 5
+              "B": 8
             },
             "C": {
-              "C": 6
+              "C": 8
+            }
+          }
+        },
+        "nestedwrap": {
+          "kind": "choice",
+          "count": 24,
+          "valid_count": 24,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 24,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 8
+            },
+            "B": {
+              "B": 8
+            },
+            "C": {
+              "C": 8
             }
           }
         },
@@ -715,7 +716,7 @@
           "constant16_mean_err": null
         }
       },
-      "avg_latency_sec": 4.317831784551563
+      "avg_latency_sec": 4.353656184903827
     },
     "claude-haiku-4-5-20251001": {
       "model_config": {
@@ -739,11 +740,11 @@
       "provider": "anthropic",
       "model": "claude-haiku-4-5-20251001",
       "display_name": "Claude Haiku 4.5",
-      "completed": 221,
-      "attempted_tasks": 221,
-      "status": "paused",
-      "reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.",
-      "cost_usd": 0.41222899999999973,
+      "completed": 292,
+      "attempted_tasks": 292,
+      "status": "complete",
+      "reason": null,
+      "cost_usd": 0.5448400000000002,
       "families": {
         "flow": {
           "kind": "choice",
@@ -911,16 +912,16 @@
         },
         "direction": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 8,
+          "valid_count": 8,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 7,
+          "correct_count": 8,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
@@ -929,56 +930,63 @@
         },
         "distribution": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 4,
-          "accuracy": 0.23529411764705882,
+          "correct_count": 5,
+          "accuracy": 0.20833333333333334,
           "chance_accuracy": 0.16666666666666666,
           "confusion": {
             "A": {
-              "B": 2,
               "A": 1,
+              "B": 2,
               "D": 1
             },
             "B": {
+              "D": 1,
               "A": 2,
-              "D": 1
+              "B": 1
             },
             "C": {
               "C": 1,
-              "A": 1
+              "A": 2,
+              "D": 1
             },
             "D": {
               "B": 2,
-              "D": 1
+              "D": 1,
+              "E": 1
             },
             "E": {
               "A": 2,
-              "E": 1
+              "E": 1,
+              "C": 1
             },
             "F": {
+              "C": 1,
               "B": 1,
-              "C": 1
+              "E": 1,
+              "A": 1
             }
           }
         },
         "crossalign": {
           "kind": "choice",
-          "count": 12,
-          "valid_count": 12,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 0.8333333333333334,
+          "correct_count": 13,
+          "accuracy": 0.8125,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 3,
+              "D": 1
             },
             "B": {
-              "B": 2
+              "B": 4
             },
             "C": {
               "C": 3,
@@ -992,82 +1000,43 @@
         },
         "textalign": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
           "correct_count": 4,
-          "accuracy": 0.36363636363636365,
+          "accuracy": 0.25,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
               "D": 1,
               "B": 1,
-              "A": 1
-            },
-            "B": {
-              "D": 1,
               "A": 1,
               "C": 1
             },
-            "C": {
-              "C": 3,
+            "B": {
+              "A": 1,
+              "C": 2,
               "D": 1
             },
+            "C": {
+              "D": 1,
+              "C": 3
+            },
             "D": {
-              "B": 1
+              "B": 1,
+              "C": 2,
+              "A": 1
             }
           }
         },
         "textcolumns": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 3
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "gridcols": {
-          "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 7,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 2
-            },
-            "C": {
-              "C": 2
-            }
-          }
-        },
-        "gridrows": {
-          "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 11,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -1075,7 +1044,49 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridcols": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridrows": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
             },
             "C": {
               "C": 4
@@ -1084,21 +1095,21 @@
         },
         "gridgaps": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
           "correct_count": 3,
-          "accuracy": 0.2727272727272727,
+          "accuracy": 0.25,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
               "C": 1,
-              "A": 2,
-              "B": 1
+              "B": 1,
+              "A": 2
             },
             "B": {
-              "A": 2,
+              "A": 3,
               "B": 1
             },
             "C": {
@@ -1109,58 +1120,58 @@
         },
         "gridtracks": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 7,
-          "accuracy": 0.875,
+          "correct_count": 11,
+          "accuracy": 0.9166666666666666,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 1
+              "A": 4
             },
             "B": {
               "B": 3,
               "A": 1
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "gridspan": {
           "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
           "correct_count": 5,
-          "accuracy": 0.5,
+          "accuracy": 0.4166666666666667,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
               "A": 1,
-              "C": 1,
-              "B": 1
+              "B": 2,
+              "C": 1
             },
             "B": {
               "A": 1,
               "B": 3
             },
             "C": {
-              "A": 2,
+              "A": 3,
               "C": 1
             }
           }
         },
         "wrapcount": {
           "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -1168,69 +1179,71 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "wrapalign": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 6,
-          "accuracy": 0.6666666666666666,
+          "correct_count": 7,
+          "accuracy": 0.5833333333333334,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 3,
+              "B": 1
             },
             "B": {
-              "B": 3
+              "B": 3,
+              "A": 1
             },
             "C": {
-              "C": 1,
               "A": 2,
+              "C": 1,
               "B": 1
             }
           }
         },
         "gapcompare": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 4,
-          "accuracy": 0.4444444444444444,
+          "correct_count": 5,
+          "accuracy": 0.4166666666666667,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 2,
               "C": 1,
-              "B": 1
+              "B": 1,
+              "A": 2
             },
             "B": {
-              "B": 1,
-              "A": 1
+              "A": 3,
+              "B": 1
             },
             "C": {
               "A": 2,
-              "C": 1
+              "C": 2
             }
           }
         },
         "padcompare": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
           "correct_count": 1,
-          "accuracy": 0.09090909090909091,
+          "accuracy": 0.08333333333333333,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
@@ -1241,47 +1254,48 @@
               "A": 4
             },
             "C": {
+              "C": 1,
               "A": 2,
-              "C": 1
+              "B": 1
             }
           }
         },
         "blockalign": {
           "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "widthcompare": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 1
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
@@ -1290,74 +1304,75 @@
         },
         "groupgap": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 2,
-          "accuracy": 0.2857142857142857,
+          "correct_count": 4,
+          "accuracy": 0.3333333333333333,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "B": 2,
-              "A": 1
+              "A": 1,
+              "B": 3
             },
             "B": {
-              "B": 1
+              "B": 3,
+              "C": 1
             },
             "C": {
-              "B": 1,
-              "A": 2
+              "A": 2,
+              "B": 2
             }
           }
         },
         "topflow": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 17,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 8
+              "A": 12
             },
             "B": {
-              "B": 9
+              "B": 12
             }
           }
         },
         "nestedflow": {
           "kind": "choice",
-          "count": 18,
-          "valid_count": 18,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 18,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 6
+              "A": 8
             },
             "B": {
-              "B": 7
+              "B": 8
             },
             "C": {
-              "C": 5
+              "C": 8
             }
           }
         },
         "nestedwrap": {
           "kind": "choice",
-          "count": 19,
-          "valid_count": 19,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 14,
-          "accuracy": 0.7368421052631579,
+          "correct_count": 17,
+          "accuracy": 0.7083333333333334,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
@@ -1365,12 +1380,12 @@
               "B": 1
             },
             "B": {
-              "A": 2,
-              "B": 3
+              "B": 5,
+              "A": 3
             },
             "C": {
-              "C": 4,
-              "B": 1,
+              "C": 5,
+              "B": 2,
               "A": 1
             }
           }
@@ -1442,7 +1457,7 @@
           "constant16_mean_err": null
         }
       },
-      "avg_latency_sec": 0.9032085214771027
+      "avg_latency_sec": 0.9070300399521143
     },
     "claude-opus-5": {
       "model_config": {
@@ -1466,11 +1481,11 @@
       "provider": "anthropic",
       "model": "claude-opus-5",
       "display_name": "Claude Opus 5",
-      "completed": 221,
-      "attempted_tasks": 222,
-      "status": "paused",
-      "reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.",
-      "cost_usd": 3.5720950000000014,
+      "completed": 292,
+      "attempted_tasks": 292,
+      "status": "complete",
+      "reason": null,
+      "cost_usd": 4.69445,
       "families": {
         "flow": {
           "kind": "choice",
@@ -1638,16 +1653,16 @@
         },
         "direction": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 8,
+          "valid_count": 8,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 7,
+          "correct_count": 8,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
@@ -1656,11 +1671,11 @@
         },
         "distribution": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 17,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.16666666666666666,
           "confusion": {
@@ -1668,37 +1683,37 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
-              "C": 2
+              "C": 4
             },
             "D": {
-              "D": 3
+              "D": 4
             },
             "E": {
-              "E": 3
+              "E": 4
             },
             "F": {
-              "F": 2
+              "F": 4
             }
           }
         },
         "crossalign": {
           "kind": "choice",
-          "count": 12,
-          "valid_count": 12,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 12,
+          "correct_count": 16,
           "accuracy": 1.0,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 4
             },
             "B": {
-              "B": 2
+              "B": 4
             },
             "C": {
               "C": 4
@@ -1710,77 +1725,35 @@
         },
         "textalign": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 11,
+          "correct_count": 16,
           "accuracy": 1.0,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
             },
             "D": {
-              "D": 1
+              "D": 4
             }
           }
         },
         "textcolumns": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 3
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "gridcols": {
-          "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 7,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 2
-            },
-            "C": {
-              "C": 2
-            }
-          }
-        },
-        "gridrows": {
-          "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 11,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -1788,7 +1761,49 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridcols": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridrows": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
             },
             "C": {
               "C": 4
@@ -1797,19 +1812,19 @@
         },
         "gridgaps": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 0.9090909090909091,
+          "correct_count": 11,
+          "accuracy": 0.9166666666666666,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 3,
@@ -1819,53 +1834,11 @@
         },
         "gridtracks": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 1
-            },
-            "B": {
-              "B": 4
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "gridspan": {
-          "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 4
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "wrapcount": {
-          "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -1873,28 +1846,70 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
+            }
+          }
+        },
+        "gridspan": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "wrapcount": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
             }
           }
         },
         "wrapalign": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
@@ -1903,32 +1918,33 @@
         },
         "gapcompare": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
-          "accuracy": 1.0,
+          "correct_count": 11,
+          "accuracy": 0.9166666666666666,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
               "A": 4
             },
             "B": {
-              "B": 2
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 3,
+              "A": 1
             }
           }
         },
         "padcompare": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 11,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -1939,46 +1955,46 @@
               "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "blockalign": {
           "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "widthcompare": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 1
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
@@ -1987,71 +2003,50 @@
         },
         "groupgap": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 7,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
-              "B": 1
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "topflow": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 17,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 8
+              "A": 12
             },
             "B": {
-              "B": 9
+              "B": 12
             }
           }
         },
         "nestedflow": {
           "kind": "choice",
-          "count": 18,
-          "valid_count": 18,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 18,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 6
-            },
-            "B": {
-              "B": 7
-            },
-            "C": {
-              "C": 5
-            }
-          }
-        },
-        "nestedwrap": {
-          "kind": "choice",
-          "count": 19,
-          "valid_count": 19,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 19,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -2059,10 +2054,31 @@
               "A": 8
             },
             "B": {
-              "B": 5
+              "B": 8
             },
             "C": {
-              "C": 6
+              "C": 8
+            }
+          }
+        },
+        "nestedwrap": {
+          "kind": "choice",
+          "count": 24,
+          "valid_count": 24,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 24,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 8
+            },
+            "B": {
+              "B": 8
+            },
+            "C": {
+              "C": 8
             }
           }
         },
@@ -2133,7 +2149,7 @@
           "constant16_mean_err": null
         }
       },
-      "avg_latency_sec": 3.0263422103730404
+      "avg_latency_sec": 3.027752977840153
     },
     "claude-sonnet-5": {
       "model_config": {
@@ -2157,11 +2173,11 @@
       "provider": "anthropic",
       "model": "claude-sonnet-5",
       "display_name": "Claude Sonnet 5",
-      "completed": 221,
-      "attempted_tasks": 222,
-      "status": "paused",
-      "reason": "HTTP 400: Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.",
-      "cost_usd": 1.4544279999999998,
+      "completed": 292,
+      "attempted_tasks": 292,
+      "status": "complete",
+      "reason": null,
+      "cost_usd": 1.9048199999999995,
       "families": {
         "flow": {
           "kind": "choice",
@@ -2329,16 +2345,16 @@
         },
         "direction": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 8,
+          "valid_count": 8,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 7,
+          "correct_count": 8,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
@@ -2347,50 +2363,50 @@
         },
         "distribution": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 16,
-          "accuracy": 0.9411764705882353,
+          "correct_count": 23,
+          "accuracy": 0.9583333333333334,
           "chance_accuracy": 0.16666666666666666,
           "confusion": {
             "A": {
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
-              "C": 2
+              "C": 4
             },
             "D": {
               "F": 1,
-              "D": 2
+              "D": 3
             },
             "E": {
-              "E": 3
+              "E": 4
             },
             "F": {
-              "F": 2
+              "F": 4
             }
           }
         },
         "crossalign": {
           "kind": "choice",
-          "count": 12,
-          "valid_count": 12,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 12,
+          "correct_count": 16,
           "accuracy": 1.0,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 4
             },
             "B": {
-              "B": 2
+              "B": 4
             },
             "C": {
               "C": 4
@@ -2402,77 +2418,37 @@
         },
         "textalign": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 16,
+          "valid_count": 16,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 0.9090909090909091,
+          "correct_count": 14,
+          "accuracy": 0.875,
           "chance_accuracy": 0.25,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 3,
+              "D": 1
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
             },
             "D": {
-              "A": 1
+              "A": 1,
+              "D": 3
             }
           }
         },
         "textcolumns": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 3
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "gridcols": {
-          "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 7,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 2
-            },
-            "C": {
-              "C": 2
-            }
-          }
-        },
-        "gridrows": {
-          "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 11,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -2480,7 +2456,49 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridcols": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridrows": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
             },
             "C": {
               "C": 4
@@ -2489,19 +2507,19 @@
         },
         "gridgaps": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 0.9090909090909091,
+          "correct_count": 11,
+          "accuracy": 0.9166666666666666,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 3,
@@ -2511,53 +2529,11 @@
         },
         "gridtracks": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 1
-            },
-            "B": {
-              "B": 4
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "gridspan": {
-          "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 3
-            },
-            "B": {
-              "B": 4
-            },
-            "C": {
-              "C": 3
-            }
-          }
-        },
-        "wrapcount": {
-          "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -2565,28 +2541,70 @@
               "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
+            }
+          }
+        },
+        "gridspan": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "wrapcount": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
             }
           }
         },
         "wrapalign": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 2
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
@@ -2595,11 +2613,11 @@
         },
         "gapcompare": {
           "kind": "choice",
-          "count": 9,
-          "valid_count": 9,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 9,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -2607,21 +2625,21 @@
               "A": 4
             },
             "B": {
-              "B": 2
+              "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "padcompare": {
           "kind": "choice",
-          "count": 11,
-          "valid_count": 11,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
-          "accuracy": 0.9090909090909091,
+          "correct_count": 11,
+          "accuracy": 0.9166666666666666,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
@@ -2631,47 +2649,47 @@
               "B": 4
             },
             "C": {
-              "B": 1,
-              "C": 2
+              "C": 3,
+              "B": 1
             }
           }
         },
         "blockalign": {
           "kind": "choice",
-          "count": 10,
-          "valid_count": 10,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 10,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 3
+              "A": 4
             },
             "B": {
               "B": 4
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "widthcompare": {
           "kind": "choice",
-          "count": 8,
-          "valid_count": 8,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 8,
+          "correct_count": 12,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 1
+              "A": 4
             },
             "B": {
-              "B": 3
+              "B": 4
             },
             "C": {
               "C": 4
@@ -2680,72 +2698,52 @@
         },
         "groupgap": {
           "kind": "choice",
-          "count": 7,
-          "valid_count": 7,
+          "count": 12,
+          "valid_count": 12,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 6,
-          "accuracy": 0.8571428571428571,
+          "correct_count": 10,
+          "accuracy": 0.8333333333333334,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 2,
+              "A": 3,
               "B": 1
             },
             "B": {
-              "B": 1
+              "B": 3,
+              "C": 1
             },
             "C": {
-              "C": 3
+              "C": 4
             }
           }
         },
         "topflow": {
           "kind": "choice",
-          "count": 17,
-          "valid_count": 17,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 17,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.5,
           "confusion": {
             "A": {
-              "A": 8
+              "A": 12
             },
             "B": {
-              "B": 9
+              "B": 12
             }
           }
         },
         "nestedflow": {
           "kind": "choice",
-          "count": 18,
-          "valid_count": 18,
+          "count": 24,
+          "valid_count": 24,
           "invalid_count": 0,
           "validity_rate": 1.0,
-          "correct_count": 18,
-          "accuracy": 1.0,
-          "chance_accuracy": 0.3333333333333333,
-          "confusion": {
-            "A": {
-              "A": 6
-            },
-            "B": {
-              "B": 7
-            },
-            "C": {
-              "C": 5
-            }
-          }
-        },
-        "nestedwrap": {
-          "kind": "choice",
-          "count": 19,
-          "valid_count": 19,
-          "invalid_count": 0,
-          "validity_rate": 1.0,
-          "correct_count": 19,
+          "correct_count": 24,
           "accuracy": 1.0,
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
@@ -2753,10 +2751,31 @@
               "A": 8
             },
             "B": {
-              "B": 5
+              "B": 8
             },
             "C": {
-              "C": 6
+              "C": 8
+            }
+          }
+        },
+        "nestedwrap": {
+          "kind": "choice",
+          "count": 24,
+          "valid_count": 24,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 24,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 8
+            },
+            "B": {
+              "B": 8
+            },
+            "C": {
+              "C": 8
             }
           }
         },
@@ -2827,7 +2846,7 @@
           "constant16_mean_err": null
         }
       },
-      "avg_latency_sec": 2.320606807425378
+      "avg_latency_sec": 2.3792623017303813
     },
     "gemini-3.1-pro-preview": {
       "model_config": {
@@ -3330,9 +3349,9 @@
               "A": 1
             },
             "C": {
-              "B": 1,
               "C": 2,
-              "A": 1
+              "A": 1,
+              "B": 1
             }
           }
         },
@@ -3750,22 +3769,22 @@
           "confusion": {
             "A": {
               "A": 2,
-              "B": 1,
-              "E": 1
+              "E": 1,
+              "B": 1
             },
             "B": {
               "B": 3,
               "C": 1
             },
             "C": {
-              "E": 2,
+              "B": 1,
               "D": 1,
-              "B": 1
+              "E": 2
             },
             "D": {
+              "D": 2,
               "B": 1,
-              "E": 1,
-              "D": 2
+              "E": 1
             },
             "E": {
               "E": 4
@@ -3816,19 +3835,19 @@
               "B": 1
             },
             "B": {
-              "C": 3,
-              "A": 1
+              "A": 1,
+              "C": 3
             },
             "C": {
-              "D": 1,
+              "A": 2,
               "C": 1,
-              "A": 2
+              "D": 1
             },
             "D": {
-              "B": 1,
-              "C": 1,
               "D": 1,
-              "A": 1
+              "C": 1,
+              "A": 1,
+              "B": 1
             }
           }
         },
@@ -3910,8 +3929,8 @@
               "A": 1
             },
             "B": {
-              "A": 1,
-              "B": 3
+              "B": 3,
+              "A": 1
             },
             "C": {
               "B": 2,
@@ -3952,8 +3971,8 @@
           "confusion": {
             "A": {
               "C": 1,
-              "A": 1,
-              "B": 2
+              "B": 2,
+              "A": 1
             },
             "B": {
               "C": 1,
@@ -4021,12 +4040,12 @@
               "A": 4
             },
             "B": {
-              "B": 1,
-              "A": 3
+              "A": 3,
+              "B": 1
             },
             "C": {
-              "C": 3,
-              "A": 1
+              "A": 1,
+              "C": 3
             }
           }
         },
@@ -4049,8 +4068,8 @@
               "A": 1
             },
             "C": {
-              "B": 3,
-              "A": 1
+              "A": 1,
+              "B": 3
             }
           }
         },
@@ -4107,16 +4126,16 @@
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "B": 2,
-              "A": 2
+              "A": 2,
+              "B": 2
             },
             "B": {
               "B": 3,
               "C": 1
             },
             "C": {
-              "B": 2,
-              "A": 2
+              "A": 2,
+              "B": 2
             }
           }
         },
@@ -4748,9 +4767,9 @@
               "A": 1
             },
             "C": {
-              "B": 1,
               "C": 2,
-              "A": 1
+              "A": 1,
+              "B": 1
             }
           }
         },
@@ -5225,16 +5244,16 @@
               "D": 2
             },
             "B": {
-              "D": 1,
               "B": 2,
-              "C": 1
+              "C": 1,
+              "D": 1
             },
             "C": {
               "C": 4
             },
             "D": {
-              "A": 1,
-              "D": 3
+              "D": 3,
+              "A": 1
             }
           }
         },
@@ -5356,8 +5375,8 @@
           "confusion": {
             "A": {
               "A": 1,
-              "C": 1,
-              "B": 2
+              "B": 2,
+              "C": 1
             },
             "B": {
               "C": 1,
@@ -5421,8 +5440,8 @@
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "A": 3,
-              "B": 1
+              "B": 1,
+              "A": 3
             },
             "B": {
               "B": 4
@@ -5507,8 +5526,8 @@
           "chance_accuracy": 0.3333333333333333,
           "confusion": {
             "A": {
-              "B": 2,
-              "A": 2
+              "A": 2,
+              "B": 2
             },
             "B": {
               "B": 3,
@@ -5934,8 +5953,8 @@
               "C": 4
             },
             "D": {
-              "A": 1,
-              "D": 3
+              "D": 3,
+              "A": 1
             }
           }
         },
@@ -6620,16 +6639,16 @@
               "A": 1
             },
             "B": {
-              "B": 3,
-              "C": 1
+              "C": 1,
+              "B": 3
             },
             "C": {
-              "D": 1,
-              "C": 3
+              "C": 3,
+              "D": 1
             },
             "D": {
-              "A": 1,
-              "D": 3
+              "D": 3,
+              "A": 1
             }
           }
         },
@@ -6840,8 +6859,8 @@
               "B": 4
             },
             "C": {
-              "A": 1,
-              "C": 3
+              "C": 3,
+              "A": 1
             }
           }
         },
@@ -8006,15 +8025,15 @@
               "D": 1
             },
             "B": {
-              "A": 1,
-              "B": 3
+              "B": 3,
+              "A": 1
             },
             "C": {
               "C": 4
             },
             "D": {
-              "A": 1,
-              "D": 3
+              "D": 3,
+              "A": 1
             }
           }
         },
@@ -8229,9 +8248,9 @@
               "C": 1
             },
             "C": {
-              "B": 1,
               "C": 2,
-              "A": 1
+              "A": 1,
+              "B": 1
             }
           }
         },
@@ -8713,9 +8732,9 @@
               "C": 4
             },
             "D": {
-              "A": 2,
+              "C": 1,
               "D": 1,
-              "C": 1
+              "A": 2
             }
           }
         },
@@ -8928,8 +8947,8 @@
               "B": 4
             },
             "C": {
-              "A": 2,
-              "C": 2
+              "C": 2,
+              "A": 2
             }
           }
         },
@@ -9126,5 +9145,5 @@
       "avg_latency_sec": 8.297562309480208
     }
   },
-  "invocations": 1
+  "invocations": 2
 }
