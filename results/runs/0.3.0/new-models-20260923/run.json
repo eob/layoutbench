@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "run_id": "new-models-20260923",
+  "grading_version": "1",
+  "release": "0.3.0",
+  "dataset_git_commit": "70a514f06f9e156be480e2a0b28a1d3380467ace",
+  "dataset_fingerprint": "fc531bdb2e7c9d10e2074519bd3e0d0f66bc8ec970d20f25cdb628054784c6de",
+  "evaluation_protocol": "deed0698dca65b5e24f3b06766d2d5344bbf0964e871167cebfc5e4aaba554fa",
+  "manifest_path": "/mnt/disks/data/layoutbench/dataset/layoutbench-v0.3/manifest.json",
+  "mock": false,
+  "expected_task_count": 292,
+  "runner_git_commit": "53420c002bc95879712e083d171f7144d5bc583e",
+  "runner_git_dirty": false,
+  "created_at": "2026-09-23T12:08:48.410592+00:00",
+  "invocations": [
+    {
+      "runner_git_commit": "53420c002bc95879712e083d171f7144d5bc583e",
+      "runner_git_dirty": false,
+      "started_at": "2026-09-23T12:08:48.410613+00:00",
+      "max_tasks": null,
+      "budget_usd": 30.0,
+      "concurrency": 6,
+      "models": [
+        {
+          "id": "gpt-6-sol",
+          "provider": "openai",
+          "model": "gpt-6-sol",
+          "display_name": "GPT-6 Sol",
+          "api_key_env": "OPENAI_API_KEY",
+          "source_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+          "pricing_source_url": "https://developers.openai.com/api/docs/changelog",
+          "pricing_notes": "Standard online rates in USD per million tokens for prompts up to 272K input tokens; excludes cached-input discount, cache writes, regional processing and batch tiers.",
+          "notes": "September 22, 2026 API release; model-default medium reasoning effort.",
+          "base_url": null,
+          "input_per_m": 2.0,
+          "output_per_m": 10.0,
+          "max_output_tokens": 4096,
+          "enabled": true
+        },
+        {
+          "id": "gpt-6-luna",
+          "provider": "openai",
+          "model": "gpt-6-luna",
+          "display_name": "GPT-6 Luna",
+          "api_key_env": "OPENAI_API_KEY",
+          "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "pricing_source_url": "https://developers.openai.com/api/docs/changelog",
+          "pricing_notes": "Standard online rates in USD per million tokens for prompts up to 272K input tokens; excludes cached-input discount, cache writes, regional processing and batch tiers.",
+          "notes": "September 22, 2026 API release; model-default medium reasoning effort.",
+          "base_url": null,
+          "input_per_m": 0.1,
+          "output_per_m": 0.5,
+          "max_output_tokens": 4096,
+          "enabled": true
+        },
+        {
+          "id": "claude-opus-5-5",
+          "provider": "anthropic",
+          "model": "claude-opus-5-5",
+          "display_name": "Claude Opus 5.5",
+          "api_key_env": "ANTHROPIC_API_KEY",
+          "source_url": "https://platform.claude.com/docs/en/models/overview",
+          "pricing_source_url": "https://platform.claude.com/docs/en/models/overview",
+          "pricing_notes": "Standard online API rates in USD per million tokens; excludes caching, batch discounts and tools.",
+          "notes": "September 22, 2026 API release; model-default medium effort with always-on adaptive thinking.",
+          "base_url": null,
+          "input_per_m": 4.0,
+          "output_per_m": 20.0,
+          "max_output_tokens": 4096,
+          "enabled": true
+        }
+      ],
+      "request_timeouts_sec": {
+        "gpt-6-sol": 60.0,
+        "gpt-6-luna": 60.0,
+        "claude-opus-5-5": 60.0
+      },
+      "status": "complete",
+      "updated_at": "2026-09-23T12:14:08.037848+00:00",
+      "finished_at": "2026-09-23T12:14:08.037848+00:00"
+    }
+  ],
+  "model_configs": {
+    "gpt-6-sol": {
+      "id": "gpt-6-sol",
+      "provider": "openai",
+      "model": "gpt-6-sol",
+      "display_name": "GPT-6 Sol",
+      "api_key_env": "OPENAI_API_KEY",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "pricing_source_url": "https://developers.openai.com/api/docs/changelog",
+      "pricing_notes": "Standard online rates in USD per million tokens for prompts up to 272K input tokens; excludes cached-input discount, cache writes, regional processing and batch tiers.",
+      "notes": "September 22, 2026 API release; model-default medium reasoning effort.",
+      "base_url": null,
+      "input_per_m": 2.0,
+      "output_per_m": 10.0,
+      "max_output_tokens": 4096,
+      "enabled": true
+    },
+    "gpt-6-luna": {
+      "id": "gpt-6-luna",
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "display_name": "GPT-6 Luna",
+      "api_key_env": "OPENAI_API_KEY",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "pricing_source_url": "https://developers.openai.com/api/docs/changelog",
+      "pricing_notes": "Standard online rates in USD per million tokens for prompts up to 272K input tokens; excludes cached-input discount, cache writes, regional processing and batch tiers.",
+      "notes": "September 22, 2026 API release; model-default medium reasoning effort.",
+      "base_url": null,
+      "input_per_m": 0.1,
+      "output_per_m": 0.5,
+      "max_output_tokens": 4096,
+      "enabled": true
+    },
+    "claude-opus-5-5": {
+      "id": "claude-opus-5-5",
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "display_name": "Claude Opus 5.5",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "source_url": "https://platform.claude.com/docs/en/models/overview",
+      "pricing_source_url": "https://platform.claude.com/docs/en/models/overview",
+      "pricing_notes": "Standard online API rates in USD per million tokens; excludes caching, batch discounts and tools.",
+      "notes": "September 22, 2026 API release; model-default medium effort with always-on adaptive thinking.",
+      "base_url": null,
+      "input_per_m": 4.0,
+      "output_per_m": 20.0,
+      "max_output_tokens": 4096,
+      "enabled": true
+    }
+  }
+}
