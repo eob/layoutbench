@@ -1,6 +1,6 @@
 # feat-05-september-2026-models: Add September 22 model observations
 
-- **Status**: In Progress
+- **Status**: Completed
 - **Branch**: `main` (direct repository delivery requested)
 - **Machine**: `eob-dev2`
 - **Harness**: `codex`
@@ -40,7 +40,12 @@ config/models.all.json missing= ['claude-opus-5-5', 'gpt-6-luna', 'gpt-6-sol'] e
 | `.venv/bin/python -m pytest tests/test_model_config.py -q` | `53420c0` | 24 passed. |
 | `.venv/bin/python -m baseline.releases --release 0.3.0` | `53420c0` | Frozen release valid; 292 questions; protocol fingerprint `deed0698dca65b5e24f3b06766d2d5344bbf0964e871167cebfc5e4aaba554fa`. |
 | `.venv/bin/python -m baseline.runner --release 0.3.0 --config config/models.20260922.json --run-id new-models-20260923 --concurrency 6 --budget-usd 30` | `53420c0` | Complete: 292 final answers per model, 876 total; $5.2096909 recorded spend. |
+| `.venv/bin/python -m pytest tests -q` | `53420c0` | 117 passed. |
+| `.venv/bin/python -m baseline.finalize --run-dir results/runs/0.3.0/new-models-20260923 --scope full --models gpt-6-sol gpt-6-luna claude-opus-5-5` | `39b9e7e` | Full 292-question comparison sealed; 876 responses and attempts; no infrastructure errors. |
+| `verify_finalization('results/runs/0.3.0/new-models-20260923')` | `39b9e7e` | Independent seal verification passed. |
 
 GPT-6 Sol and GPT-6 Luna returned 292 valid answers each. Claude Opus 5.5 returned 290 valid answers and two `max_tokens` responses at the configured 4,096-token cap. The frozen protocol treats these as invalid final answers; their raw responses and token counts remain in the checkpoint and published ledger. The same 4,096-token output cap was used for earlier high-end models, preserving that inference setting.
 
-Only `config/models.20260922.json`, this delivery record, and the new run evidence were added. No release descriptor, dataset, prompt, rendering, provider, grading, or prior model result changed.
+Only `config/models.20260922.json`, this delivery record, a README link, and the new run evidence were added. No release descriptor, dataset, prompt, rendering, provider, grading, or prior model result changed.
+
+The new cohort fingerprint is `56e2fb761613c5caa49412d9ea2c156fe82287109203dd73d974c23290fb64da`, identical to the prior 13-model 0.3.0 publication. The task ID lists and dataset fingerprint also match, so the new per-family results can be combined with that publication.
