@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "verified_at": "2026-09-23",
+  "models": [
+    {
+      "id": "gpt-6-sol",
+      "provider": "openai",
+      "model": "gpt-6-sol",
+      "display_name": "GPT-6 Sol",
+      "api_key_env": "OPENAI_API_KEY",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "pricing_source_url": "https://developers.openai.com/api/docs/changelog",
+      "input_per_m": 2,
+      "output_per_m": 10,
+      "max_output_tokens": 4096,
+      "enabled": true,
+      "notes": "September 22, 2026 API release; model-default medium reasoning effort.",
+      "pricing_notes": "Standard online rates in USD per million tokens for prompts up to 272K input tokens; excludes cached-input discount, cache writes, regional processing and batch tiers."
+    },
+    {
+      "id": "gpt-6-luna",
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "display_name": "GPT-6 Luna",
+      "api_key_env": "OPENAI_API_KEY",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "pricing_source_url": "https://developers.openai.com/api/docs/changelog",
+      "input_per_m": 0.1,
+      "output_per_m": 0.5,
+      "max_output_tokens": 4096,
+      "enabled": true,
+      "notes": "September 22, 2026 API release; model-default medium reasoning effort.",
+      "pricing_notes": "Standard online rates in USD per million tokens for prompts up to 272K input tokens; excludes cached-input discount, cache writes, regional processing and batch tiers."
+    },
+    {
+      "id": "claude-opus-5-5",
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "display_name": "Claude Opus 5.5",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "source_url": "https://platform.claude.com/docs/en/models/overview",
+      "pricing_source_url": "https://platform.claude.com/docs/en/models/overview",
+      "input_per_m": 4,
+      "output_per_m": 20,
+      "max_output_tokens": 4096,
+      "enabled": true,
+      "notes": "September 22, 2026 API release; model-default medium effort with always-on adaptive thinking.",
+      "pricing_notes": "Standard online API rates in USD per million tokens; excludes caching, batch discounts and tools."
+    }
+  ]
+}
