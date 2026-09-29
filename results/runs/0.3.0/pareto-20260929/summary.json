@@ -1,0 +1,733 @@
+{
+  "schema_version": 1,
+  "run_id": "pareto-20260929",
+  "grading_version": "1",
+  "release": "0.3.0",
+  "dataset_git_commit": "70a514f06f9e156be480e2a0b28a1d3380467ace",
+  "dataset_fingerprint": "fc531bdb2e7c9d10e2074519bd3e0d0f66bc8ec970d20f25cdb628054784c6de",
+  "evaluation_protocol": "deed0698dca65b5e24f3b06766d2d5344bbf0964e871167cebfc5e4aaba554fa",
+  "manifest_path": "/mnt/disks/data/layoutbench/dataset/layoutbench-v0.3/manifest.json",
+  "mock": false,
+  "expected_task_count": 292,
+  "runner_git_commit": "2ebb66c28ace2af5ba973dc1444e713ea7065755",
+  "runner_git_dirty": false,
+  "created_at": "2026-09-29T14:16:48.877865+00:00",
+  "updated_at": "2026-09-29T14:18:06.680045+00:00",
+  "budget_usd": null,
+  "spent_cost_usd": 2.4456175,
+  "cost_incomplete": false,
+  "interruption_signal": null,
+  "status": "complete",
+  "models": {
+    "pareto": {
+      "model_config": {
+        "api_key_env": "PARETO_API_KEY",
+        "base_url": "http://127.0.0.1:8088/v1",
+        "display_name": "Pareto",
+        "enabled": true,
+        "id": "pareto",
+        "input_per_m": 2.5,
+        "max_output_tokens": 4096,
+        "model": "pareto",
+        "notes": "Pareto 26.9 from Unbiased AI via local adapter proxy to https://api.unbiased.ai/v1/messages",
+        "output_per_m": 7.5,
+        "pricing_notes": "Standard online API rates $2.50/M input, $7.50/M output; cached input $0.25/M.",
+        "pricing_source_url": "https://unbiased.ai/pricing",
+        "provider": "anthropic",
+        "source_url": "https://unbiased.ai/"
+      },
+      "model_config_fingerprint": "45eb4bc3747be6a3944e91a903f2a4ccb647cd70fd8a4078e8907c26da8d2c8e",
+      "max_output_tokens": 4096,
+      "provider": "anthropic",
+      "model": "pareto",
+      "display_name": "Pareto",
+      "completed": 292,
+      "attempted_tasks": 292,
+      "status": "complete",
+      "reason": null,
+      "cost_usd": 2.4456175,
+      "families": {
+        "flow": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.25,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {}
+          }
+        },
+        "distribute": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.2,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          }
+        },
+        "align": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.25,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {}
+          }
+        },
+        "gap": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.14285714285714285,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {},
+            "F": {},
+            "G": {}
+          }
+        },
+        "pad": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.2,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          }
+        },
+        "columns": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {}
+          }
+        },
+        "textjustify": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.25,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {}
+          }
+        },
+        "headerpad": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {}
+          }
+        },
+        "regionpad": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.2,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          }
+        },
+        "tablepad": {
+          "kind": "choice",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "correct_count": 0,
+          "accuracy": null,
+          "chance_accuracy": 0.25,
+          "confusion": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {}
+          }
+        },
+        "direction": {
+          "kind": "choice",
+          "count": 8,
+          "valid_count": 8,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 8,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.5,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            }
+          }
+        },
+        "distribution": {
+          "kind": "choice",
+          "count": 24,
+          "valid_count": 24,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 23,
+          "accuracy": 0.9583333333333334,
+          "chance_accuracy": 0.16666666666666666,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 3,
+              "A": 1
+            },
+            "C": {
+              "C": 4
+            },
+            "D": {
+              "D": 4
+            },
+            "E": {
+              "E": 4
+            },
+            "F": {
+              "F": 4
+            }
+          }
+        },
+        "crossalign": {
+          "kind": "choice",
+          "count": 16,
+          "valid_count": 16,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 16,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.25,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            },
+            "D": {
+              "D": 4
+            }
+          }
+        },
+        "textalign": {
+          "kind": "choice",
+          "count": 16,
+          "valid_count": 13,
+          "invalid_count": 3,
+          "validity_rate": 0.8125,
+          "correct_count": 10,
+          "accuracy": 0.625,
+          "chance_accuracy": 0.25,
+          "confusion": {
+            "A": {
+              "A": 3,
+              "D": 1
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 1,
+              "D": 1,
+              "A": 1,
+              "invalid": 1
+            },
+            "D": {
+              "invalid": 2,
+              "D": 2
+            }
+          }
+        },
+        "textcolumns": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridcols": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridrows": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridgaps": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 10,
+          "invalid_count": 2,
+          "validity_rate": 0.8333333333333334,
+          "correct_count": 8,
+          "accuracy": 0.6666666666666666,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 2,
+              "invalid": 1,
+              "B": 1
+            },
+            "B": {
+              "B": 3,
+              "C": 1
+            },
+            "C": {
+              "C": 3,
+              "invalid": 1
+            }
+          }
+        },
+        "gridtracks": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gridspan": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "wrapcount": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "wrapalign": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "gapcompare": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 9,
+          "invalid_count": 3,
+          "validity_rate": 0.75,
+          "correct_count": 9,
+          "accuracy": 0.75,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 3,
+              "invalid": 1
+            },
+            "B": {
+              "invalid": 1,
+              "B": 3
+            },
+            "C": {
+              "C": 3,
+              "invalid": 1
+            }
+          }
+        },
+        "padcompare": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 11,
+          "invalid_count": 1,
+          "validity_rate": 0.9166666666666666,
+          "correct_count": 9,
+          "accuracy": 0.75,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 3,
+              "invalid": 1
+            },
+            "B": {
+              "B": 3,
+              "A": 1
+            },
+            "C": {
+              "C": 3,
+              "A": 1
+            }
+          }
+        },
+        "blockalign": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "widthcompare": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 12,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 12,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 4
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "groupgap": {
+          "kind": "choice",
+          "count": 12,
+          "valid_count": 11,
+          "invalid_count": 1,
+          "validity_rate": 0.9166666666666666,
+          "correct_count": 11,
+          "accuracy": 0.9166666666666666,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 3,
+              "invalid": 1
+            },
+            "B": {
+              "B": 4
+            },
+            "C": {
+              "C": 4
+            }
+          }
+        },
+        "topflow": {
+          "kind": "choice",
+          "count": 24,
+          "valid_count": 24,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 24,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.5,
+          "confusion": {
+            "A": {
+              "A": 12
+            },
+            "B": {
+              "B": 12
+            }
+          }
+        },
+        "nestedflow": {
+          "kind": "choice",
+          "count": 24,
+          "valid_count": 24,
+          "invalid_count": 0,
+          "validity_rate": 1.0,
+          "correct_count": 24,
+          "accuracy": 1.0,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 8
+            },
+            "B": {
+              "B": 8
+            },
+            "C": {
+              "C": 8
+            }
+          }
+        },
+        "nestedwrap": {
+          "kind": "choice",
+          "count": 24,
+          "valid_count": 21,
+          "invalid_count": 3,
+          "validity_rate": 0.875,
+          "correct_count": 21,
+          "accuracy": 0.875,
+          "chance_accuracy": 0.3333333333333333,
+          "confusion": {
+            "A": {
+              "A": 7,
+              "invalid": 1
+            },
+            "B": {
+              "B": 8
+            },
+            "C": {
+              "C": 6,
+              "invalid": 2
+            }
+          }
+        },
+        "gapnum": {
+          "kind": "numeric",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "mean_score": null,
+          "mean_tight_score": null,
+          "mean_err": null,
+          "median_err": null,
+          "p90_err": null,
+          "mean_key_errors": {},
+          "key_known_count": {},
+          "band_hit_rate": {
+            "1": null,
+            "2": null,
+            "4": null,
+            "8": null
+          },
+          "constant16_mean_score": null,
+          "constant16_mean_err": null
+        },
+        "headerpx": {
+          "kind": "numeric",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "mean_score": null,
+          "mean_tight_score": null,
+          "mean_err": null,
+          "median_err": null,
+          "p90_err": null,
+          "mean_key_errors": {},
+          "key_known_count": {},
+          "band_hit_rate": {
+            "1": null,
+            "2": null,
+            "4": null,
+            "8": null
+          },
+          "constant16_mean_score": null,
+          "constant16_mean_err": null
+        },
+        "regionpx": {
+          "kind": "numeric",
+          "count": 0,
+          "valid_count": 0,
+          "invalid_count": 0,
+          "validity_rate": null,
+          "mean_score": null,
+          "mean_tight_score": null,
+          "mean_err": null,
+          "median_err": null,
+          "p90_err": null,
+          "mean_key_errors": {},
+          "key_known_count": {},
+          "band_hit_rate": {
+            "1": null,
+            "2": null,
+            "4": null,
+            "8": null
+          },
+          "constant16_mean_score": null,
+          "constant16_mean_err": null
+        }
+      },
+      "avg_latency_sec": 2.60754098398898
+    }
+  },
+  "invocations": 1
+}
