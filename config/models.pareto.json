@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "verified_at": "2026-09-29",
+  "models": [
+    {
+      "id": "pareto",
+      "provider": "anthropic",
+      "model": "pareto",
+      "display_name": "Pareto",
+      "api_key_env": "PARETO_API_KEY",
+      "source_url": "https://unbiased.ai",
+      "pricing_source_url": "https://unbiased.ai/pricing",
+      "base_url": "http://127.0.0.1:8088/v1",
+      "input_per_m": 2.5,
+      "output_per_m": 7.5,
+      "max_output_tokens": 4096,
+      "enabled": true,
+      "notes": "Pareto 26.9 from Unbiased AI via local adapter proxy to https://api.unbiased.ai/v1/messages",
+      "pricing_notes": "Standard online API rates $2.50/M input, $7.50/M output; cached input $0.25/M."
+    }
+  ]
+}
